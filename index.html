@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" oncontextmenu="return false">
+<head>
+    <meta charset="UTF-8">
+    <title>Milan Web Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Milan Petkovski">
+    <meta name="copyright" content="Milan Petkovski">
+    <meta property="og:url" content="https://milanwebportal.com">
+    <meta property="og:title" content="Milan Web Portal">
+    <meta property="og:description" content="Milan Web Portal offers professional web design and development services. Visit to explore unique projects and innovative solutions!">
+    <meta property="og:image" content="https://i.postimg.cc/YSvBg0Pw/mwp.jpg">
+    <meta name="theme-color" content="#1C1C1C">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://bit.ly/3TlBnOO">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="unselectable">
+
+<div class="preloader">
+  <div id="loading" class="ui-circle-loading">
+    <ul class="animate">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+
+<header>
+    <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
+    <ul>
+        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
+        <li title="Status"><a href="https://milanwebportal.instatus.com" id="icon" target="_blank"><i class="fa-solid fa-wifi"></i></a></li>
+        <li title="Roadmap"><a href="roadmap.html" id="icon"><i class="fa-solid fa-road"></i></a></li>
+    </ul>
+</header>
+
+<section class="mobilni">
+    <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
+    <ul id="navbar">
+        <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
+        <li><a href="roadmap.html"><i class="fa-solid fa-road"></i> Roadmap</a></li>
+        <div class="ikone">
+            <li><a href="javascript:void(0)" onclick="openPopup('Custom')"><i class="fa-solid fa-phone fa-bounce"></i></a></li>
+            <li><a href="https://milanwebportal.instatus.com/" target="_blank"><i class="fa-solid fa-wifi fa-bounce"></i></a></li>
+            <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-sack-dollar fa-bounce"></i></a></li>
+        </div>
+        <iconify-icon icon="line-md:close" id="close"></iconify-icon>
+    </ul>
+    <div id="mobile">
+        <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+</section>
+
+<section class="landing">
+    <h1>Milan Web Portal</h1>
+    <a href="#start" class="go">Get started</a>
+    <a href="#start" class="down"><i class="fa-solid fa-chevron-down fa-bounce"></i></a>
+</section>
+
+<section class="services" id="start">
+    <h1 class="heading" id="pojavljivanje">MY <span>SERVICES</span></h1>
+
+    <div class="cards">
+
+        <div class="card" id="pojavljivanje">
+            <h3>Web Design</h3>
+            <p>
+            I create visually appealing and functional websites that will set you apart from the competition.
+            <br><br>
+            <i class="fa-solid fa-caret-right"></i> Unique design 
+            <br>
+            <i class="fa-solid fa-caret-right"></i> Responsive and user-friendly 
+            <br>
+            <i class="fa-solid fa-caret-right"></i> Fast turnaround
+            <br><br>
+            Contact me today to enhance your online presence!
+            </p>
+            <a href="mailto:contact@milanwebportal.com" onclick="copyText()">
+                <button class="card-button">Contact me <br><span>Email: contact@milanwebportal.com</span></button></a>
+        </div>
+
+        <div class="card" id="pojavljivanje">
+            <h3>Website Maintenance</h3>
+            <p>
+            I provide comprehensive website maintenance services to keep your site running smoothly and securely.
+            <br><br>
+            <i class="fa-solid fa-caret-right"></i> Regular updates
+            <br>
+            <i class="fa-solid fa-caret-right"></i> Security checks
+            <br>
+            <i class="fa-solid fa-caret-right"></i> Performance optimization
+            <br><br>
+            Contact me today to ensure your website is always at its best!
+            </p>
+            <a href="mailto:contact@milanwebportal.com" onclick="copyText()">
+                <button class="card-button">Contact me <br><span>Email: contact@milanwebportal.com</span></button></a>
+        </div>
+
+        <div class="card" id="pojavljivanje">
+            <h3>Bug fixes</h3>
+            <p>
+            I offer expert bug fixing services to ensure your website runs smoothly without any hiccups.
+            <br><br>
+            <i class="fa-solid fa-caret-right"></i> Fast resolution
+            <br>
+            <i class="fa-solid fa-caret-right"></i> Thorough testing
+            <br>
+            <i class="fa-solid fa-caret-right"></i> Reliable support
+            <br><br>
+            Contact me today to get rid of those pesky bugs!
+            </p>
+            <a href="mailto:contact@milanwebportal.com" onclick="copyText()">
+                <button class="card-button">Contact me <br><span>Email: contact@milanwebportal.com</span></button></a>
+        </div>
+
+    </div>
+</section>
+
+<section class="skills">
+    <h1 class="heading" id="pojavljivanje">MY <span>SKILLS</span></h1>
+
+    <div class="logos">
+
+        <div class="logo" id="pojavljivanje">
+            <iconify-icon icon="devicon:html5"></iconify-icon><p>HTML</p>
+        </div>
+
+        <div class="logo" id="pojavljivanje">
+            <iconify-icon icon="devicon:css3"></iconify-icon><p>CSS</p>
+        </div>
+
+        <div class="logo" id="pojavljivanje">
+            <iconify-icon icon="skill-icons:javascript"></iconify-icon><p>JavaScript</p>
+        </div>
+
+        <div class="logo" id="pojavljivanje">
+            <iconify-icon icon="logos:bootstrap"></iconify-icon><p>Bootstrap</p>
+        </div>
+
+        <div class="logo" id="pojavljivanje">
+            <iconify-icon icon="logos:shopify"></iconify-icon><p>Shopify</p>
+        </div>
+
+        <div class="logo" id="pojavljivanje">
+            <iconify-icon icon="skill-icons:wordpress"></iconify-icon><p>Wordpress</p>
+        </div>
+    </div> 
+    
+</section>
+
+<section class="project">
+    <a href="projects.html"><h1 class="heading" id="pojavljivanje">MY<span> PROJECTS </span><i class="fa-solid fa-up-right-from-square"></i></h1></a>
+
+    <div class="row" style="justify-content: center;">
+        <!-- Milan Web Portal -->
+        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item-thumbnail">
+            <a href="https://milanwebportal.com" target="_blank">
+            <img src="images/Projects/website1.png" loading="lazy"></a>
+        </div>
+        <h3 class="portfolio-item-title">Milan Web Portal</h3>
+        <button type="button" class="btn view-project-btn">Explore project</button>
+        <div class="portfolio-item-details">
+            <div class="description">
+                <p>Milan Web Portal is my website. Elegant design and simple navigation make it possible to view my skills and projects. In addition to this project, this website highlights my other projects that you can also view. It is regularly updated to reflect my professional growth and current projects.</p>
+            </div>
+            
+            <div class="general-info">
+            <ul>
+            <li>Created - <span>1. June 2022.</span></li>
+            <li>Technologies used - <span>Html, css, javasript</span></li>
+            <li>Development - <span>Frontend</span></li>
+            <li>Look online - <span><a href="https://milanwebportal.com" target="_blank">www.milanwebportal.com</a></span></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+        <!--- GRILLI WEBSITE ---->
+        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item-thumbnail">
+            <a href="https://grilli.milanwebportal.com" target="_blank">
+            <img src="images/Projects/website5.png" loading="lazy"></a>
+        </div>
+        <h3 class="portfolio-item-title">Grilli website</h3>
+        <button type="button" class="btn view-project-btn">Explore project</button>
+        <div class="portfolio-item-details">
+            <div class="description">
+                <p>Welcome to “Grilli Restaurant” website! As a web developer, I proudly present my latest project that combines exquisite cuisine with modern design and functionality. Our website is optimized for fast loading and is responsive across all devices! Explore menu, make online reservations, and stay updated on events. If you have any questions, feel free to contact us!</p>
+            </div>
+
+            <div class="general-info">
+            <ul>
+            <li>Created - <span>24 April 2024</span></li>
+            <li>Technologies used - <span>Html, css, javasript, bootstrap</span></li>
+            <li>Development - <span>Frontend</span></li>
+            <li>Look online - <span><a href="https://grilli.milanwebportal.com" target="_blank">www.grilli.milanwebportal.com</a></span></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+        <!---- GAMEX WEBSITE ---->
+        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item-thumbnail">
+            <a href="https://gamex.milanwebportal.com/" target="_blank">
+            <img src="images/Projects/website3.png" loading="lazy"></a>
+        </div>
+        <h3 class="portfolio-item-title">GameX website</h3>
+        <button type="button" class="btn view-project-btn">Explore project</button>
+        <div class="portfolio-item-details">
+            <div class="description">
+                <p>GameX is my latest dynamic website dedicated to FPS game. It provides the latest news, information about the game and tournaments, creating a central place for fans of FPS games. Unite with players and explore everything the FPS world has to offer in one place.</p>
+            </div>
+
+            <div class="general-info">
+            <ul>
+            <li>Created - <span>8 January 2024</span></li>
+            <li>Technologies used - <span>Html, css, javasript</span></li>
+            <li>Development - <span>Frontend</span></li>
+            <li>Look online - <span><a href="https://gamex.milanwebportal.com/" target="_blank">www.gamex.milanwebportal.com</a></span></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+        <!--- EDULAND WEBSITE --->
+        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item-thumbnail">
+            <a href="https://eduland.milanwebportal.com" target="_blank">
+            <img src="images/Projects/website4.png" loading="lazy"></a>
+        </div>
+        <h3 class="portfolio-item-title">Eduland website</h3>
+        <button type="button" class="btn view-project-btn">Explore project</button>
+        <div class="portfolio-item-details">
+            <div class="description">
+                <p>Discover top educational programs! Our courses in artificial intelligence, construction and business studies provide practical knowledge for a successful career. Join us for professional guidance and personal development!</p>
+            </div>
+    
+            <div class="general-info">
+            <ul>
+            <li>Created - <span>11 January 2024</span></li>
+            <li>Technologies used - <span>Html, css, javasript</span></li>
+            <li>Development - <span>Frontend</span></li>
+            <li>Look online - <span><a href="https://eduland.milanwebportal.com" target="_blank">www.eduland.milanwebportal.com</a></span></li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    
+    <div class="portfolio-popup">
+        <div class="pp-inner">
+        <div class="pp-content">
+    
+            <div class="pp-header">
+            <button type="button" class="btn pp-close"><i class="fa-solid fa-xmark"></i></button>
+            <div class="pp-thumbnail">
+                <img src="">
+            </div>
+            <h3></h3>
+            </div>
+    
+            <div class="pp-body">
+
+            </div>   
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <a href="projects.html" id="more">And more...</a>
+</section>
+
+<section class="pricing">
+    <h1 class="heading" id="pojavljivanje"><span>Pricing</span> list</h1>
+
+    <div class="cards">
+        <div class="box" id="pojavljivanje">
+            <ul class="deals">
+                <li class="plans">Basic</li>
+                <li style="font-size: 0.9rem;"><span style="font-size: 3rem">$100</span>/ Website</li>
+                <li>One-page design</li>
+                <li>Basic SEO</li>
+                <li>1 revision</li>
+                <li>Responsive Layout</li>
+                <li>Mobile responsive design</li>
+                <li><a href="javascript:void(0)" class="order" data-plan="Basic" onclick="openPopup('Basic')">Order now</a></li>
+            </ul>
+        </div>
+
+        <div class="box" id="pojavljivanje">
+            <ul class="deals">
+                <li class="plans">Standard</li>
+                <li style="font-size: 0.9rem; line-height: 30px;"><span style="font-size: 3rem">$150</span>/ Website <br>Everything in Basic &</li>
+                <li>Up to 5 pages design</li>
+                <li>Advanced SEO</li>
+                <li>3 revisions</li>
+                <li>Contact form integration</li>
+                <li>Ongoing support for 1 month</li>
+                <li><a href="javascript:void(0)" class="order" data-plan="Standard" onclick="openPopup('Standard')">Order now</a></li>
+            </ul>
+        </div>
+
+        <div class="box" id="pojavljivanje">
+            <ul class="deals">
+                <li class="plans">Premium</li>
+                <li style="font-size: 0.9rem; line-height: 30px;"><span style="font-size: 3rem">$200</span>/ Website <br>Everything in Standard &</li>
+                <li>Up to 10 pages design</li>
+                <li>Premium SEO</li>
+                <li>Unlimited revisions</li>
+                <li>E-commerce integration</li>
+                <li>Ongoing support for 3 months</li>
+                <li><a href="javascript:void(0)" class="order" data-plan="Premium" onclick="openPopup('Premium')">Order now</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="custom" id="pojavljivanje">
+        <h2>Want a Custom Solution?</h2>
+        <p>Looking for something unique and tailored just for your business? Let's make it happen! <br>Contact me today for a custom project that meets all your needs.</p>
+        <a href="javascript:void(0)" class="order" data-plan="Custom" onclick="openPopup('Custom')">Order now</a>
+    </div>
+
+    <!-- Popup -->
+    <div id="popupForm" class="contact popup">
+    <div id="forma">
+        <form method="POST" action="https://formsubmit.co/contact@milanwebportal.com">
+            <input type="hidden" name="_subject" value="Novi email!" required>
+            <div class="form-row">
+                <input type="text" name="Ime" placeholder="Name" required tabindex="1">
+                <input type="email" name="Email" placeholder="Email" required tabindex="2">
+            </div>
+            <div class="form-row">
+                <input type="text" name="Naslov" placeholder="Subject" required tabindex="3">
+                <select name="Paket" id="popupPackageSelect" tabindex="6">
+                    <option value="" selected>Choose a package</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </div>
+            <textarea rows="5" name="Poruka" placeholder="Write your message here..." required tabindex="4"></textarea>
+            <button class="white" type="submit" tabindex="5">Order <i class="fa-solid fa-paper-plane"></i></button>
+            <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+        </form>
+    </div>
+    <span class="close" onclick="closePopup()">&times;</span>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h1 class="heading">Testimonials</h1>
+
+    <div class="cards">
+
+        <div class="card" id="pojavljivanje">
+            <div class="testimonial-content">
+                <h3><i class="fa-solid fa-quote-left"></i> Stellar Web Design</h3>
+                <p>I am happy with the new website, especially the design and functionality. Maybe we could tweak a few things, but overall, great job! Thank you for your effort and professionalism! I look forward to further cooperation and possible improvements.</p>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="user-info">
+                <img src="images/Photos/andrea.jpg" alt="Andrea Ilic">
+                <p>Andrea Ilic</p>
+            </div>
+        </div>
+
+        <div class="card" id="pojavljivanje">
+            <div class="testimonial-content">
+                <h3><i class="fa-solid fa-quote-left"></i> Exceptional Service</h3>
+                <p>I am delighted with the website! The design is fantastic, the functionality works great and everything is exactly as I wanted. Everything was done even before the deadline, which I really like. I look forward to further cooperation!</p>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="user-info">
+                <img src="images/Photos/tutz.jpg" alt="Tutz">
+                <p>Tutz</p>
+            </div>
+        </div>
+
+        <div class="card" id="pojavljivanje">
+            <div class="testimonial-content">
+                <h3><i class="fa-solid fa-quote-left"></i> Outstanding Performance</h3>
+                <p>Working with this man has been a wonderful experience. They understood my requirements perfectly and delivered a website that exceeded my expectations. I highly recommend their services to anyone looking for top web development.</p>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="user-info">
+                <img src="images/Photos/brown.jpg" alt="Michael Brown">
+                <p>Michael Brown</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="clients">
+    <h1 class="heading" id="pojavljivanje">OUR <span>CLIENTS</span></h1>
+    <div class="card">
+        <div class="logos">
+            <div class="logoscontainer">
+                <img src="images/Brands/tutz.png" alt="Tutz">
+                <img src="images/Brands/leafy.png" alt="Leafy">
+                <img src="images/Brands/gamex.png" alt="Gamex">
+                <img src="images/Brands/grilli.png" alt="Grilli">
+                <img src="images/Brands/eduland.png" alt="Eduland">
+
+                <img src="images/Brands/tutz.png" alt="Tutz">
+                <img src="images/Brands/leafy.png" alt="Leafy">
+                <img src="images/Brands/gamex.png" alt="Gamex">
+                <img src="images/Brands/grilli.png" alt="Grilli">
+                <img src="images/Brands/eduland.png" alt="Eduland">
+            </div>
+        </div>
+    </div>  
+</section>
+
+<section class="contact">
+    <h1 class="heading" id="pojavljivanje"><span>CONTACT</span> ME</h1>
+
+    <div id="forma" class="pojavljivanje">
+        <form method="POST" action="https://formsubmit.co/contact@milanwebportal.com">
+            <input type="hidden" name="_subject" value="Novi email!" required>
+            <div class="form-row">
+                <input type="text" name="Ime" placeholder="Name" required>
+                <input type="email" name="Email" placeholder="Email" required>
+            </div>
+            <div class="form-row">
+                <input type="text" name="Naslov" placeholder="Subject" required>
+                <select name="Paket" id="packageSelect">
+                    <option value="" selected>Choose a package</option>
+                    <option value="Basic">Basic</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Custom">Custom</option>
+                </select>
+            </div>
+            <textarea rows="5" name="Poruka" placeholder="Write your message here..." required></textarea>
+            <button class="white" type="submit">Send message <i class="fa-solid fa-paper-plane"></i></button>
+            <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div id="mreze" class="pojavljivanje">
+        <div class="row" style="justify-content: center">
+            <a href="mailto: contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
+                <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>
+            </a>
+            <a href="https://linkedin.com/in/milan--petkovski" aria-label="LinkedIn Profile">
+                <iconify-icon icon="skill-icons:linkedin" alt="LinkedIn"></iconify-icon>
+            </a>
+            <a href="https://instagram.com/milanwebportal" aria-label="Instagram Profile">
+                <iconify-icon icon="skill-icons:instagram" alt="Instagram"></iconify-icon>
+            </a>
+            <a href="https://streamlabs.com/Milan_567/tip" aria-label="Donate via PayPal">
+                <iconify-icon icon="logos:paypal" alt="PayPal"></iconify-icon>
+            </a>
+        </div>
+    </div>
+
+    <div id="payment" class="pojavljivanje">
+        <p>You can pay with:</p>
+        <div class="cards">
+            <img src="images/Photos/visa.png" alt="Visa">
+            <img src="images/Photos/mastercard.png" alt="MasterCard">
+            <img src="images/Photos/maestro.png" alt="Maestro">
+            <img src="images/Photos/paypal.png" alt="PayPal">
+            <img src="images/Photos/skrill.png" alt="Skrill">
+            <img src="images/Photos/ips.png" alt="IPS">
+            <img src="images/Photos/dina.png" alt="Dina">
+        </div>
+        <a href="payment.html" aria-label="More info about payment methods">For more info and payment methods...</a>
+    </div>
+
+    <div id="credit" class="pojavljivanje">
+        Created by <span>Milan Petkovski</span> <span id="crta">|</span><span id="razmak"><br></span> All rights reserved.
+    </div>
+
+    <div id="back-to-top">
+        <svg id="progress" width="60" height="60">
+            <circle cx="30" cy="30" r="25" stroke-width="5" fill="none" />
+        </svg>
+        <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-angles-up"></i></button>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+<script src="main.js"></script>
+<script src="https://bit.ly/3vrBNer"></script>
