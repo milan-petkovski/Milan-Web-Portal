@@ -702,17 +702,6 @@ header ul li a.active {
     z-index: -1;
     transition: all .5s;
 }
-.pricing .deals::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #d8eafd 0%, #ffffff 50%, #c9d6e0 100%);
-    clip-path: polygon(0% 95%, 14% 88%, 28% 91%, 42% 87%, 56% 92%, 70% 89%, 84% 92%, 98% 90%, 100% 94%, 100% 100%, 0% 100%);
-    z-index: -2;
-}
 .pricing .deals:hover:before{
     top: 0;
     border-radius: 0;
