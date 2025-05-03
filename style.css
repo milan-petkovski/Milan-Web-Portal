@@ -741,8 +741,8 @@ header ul li a.active {
     }
 }
 
-/* ------------ PRICING ------------- */
 
+/* ------------ PRICING ------------- */
 .pricing {
     width: 100%;
     display: flex;
@@ -1100,7 +1100,8 @@ body.popup-active, html.popup-active {
     display: flex;
     overflow: hidden;
     position: relative;
-    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, #000 15%, #000 85%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 15%, #000 85%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 15%, #000 85%, rgba(0,0,0,0) 100%); 
 }
 .clients .card {
     max-width: 900px;
@@ -1115,11 +1116,14 @@ body.popup-active, html.popup-active {
 .clients .logoscontainer {
     display: flex;
     gap: 4rem;
-    animation: slide 20s linear infinite;
+    width: max-content;
+    animation: slide 30s linear infinite;
 }
 .clients .logoscontainer img {
     width: 120px;
     max-width: 100%;
+    object-fit: contain;
+    height: 60px;
 }
 @keyframes slide {
     0% {
@@ -1299,6 +1303,11 @@ footer {
     opacity: 0;
     pointer-events: none;
 }
+.cta-link {
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: bold;
+}
 #progress {
     position: absolute;
     top: 0;
@@ -1324,7 +1333,7 @@ footer {
     font-size: 20px;
     cursor: pointer;
     outline: none;
-    z-index: 10000;
+    z-index: 1000;
 }
 @media (max-width: 768px) {
     #mreze iconify-icon {
@@ -1338,13 +1347,19 @@ footer {
         font-size: 1.6rem;
     }
 }
-@media (max-width: 575px) {
+@media (max-width: 768px) {
+    #mreze {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
     #mreze iconify-icon {
-        color: var(--bela);
-        font-size: 50px;
-        margin-left: 10px;
-        margin-right: 10px;
-        transition: 0.4s;
+        font-size: 3.5rem;
+    }
+}
+@media (max-width: 480px) {
+    #mreze iconify-icon {
+        font-size: 3rem;
     }
 }
 
