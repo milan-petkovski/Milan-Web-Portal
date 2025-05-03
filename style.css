@@ -374,72 +374,160 @@ header ul li a.active {
 /* ------------ LANDING ------------- */
 .landing {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     height: 90vh;
     width: 100%;
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
 .landing h1 {
     font-size: 5.5vw;
     color: var(--bela);
     text-transform: capitalize;
-    margin-bottom: 20px;
     opacity: 0;
     animation: fadeIn 1.5s ease-out 0.5s forwards;
 }
-.landing .go {
-    background-color: var(--kafa);
-    color: var(--crna);
-    border: 2px solid var(--kafa);
+.landing .tagline {
+    font-size: 2rem;
+    color: var(--bela);
+    margin: 0 0 20px 0;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 0.6s forwards;
+}
+.landing .social-icons {
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out 0.8s forwards;
+}
+.landing .social-icons a {
+    color: var(--bela);
+    font-size: 4.5rem;
+    transition: 0.4s;
+}
+.landing .social-icons a:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+.landing .landBtn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.landing .go,
+.landing .portfolio-btn {
+    font-size: 1.8rem;
     padding: 12px 30px;
     border-radius: 30px;
-    font-size: 1.8rem;
+    border: 2px solid;
+    opacity: 0;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    margin-top: 10px;
-    opacity: 0;
+}
+.landing .go {
+    background-color: var(--kafa);
+    border-color: var(--kafa);
+    color: var(--crna);
     animation: fadeIn 1.5s ease-out 1s forwards;
 }
 .landing .go:hover {
-    color: var(--bela);
     background-color: transparent;
-    border-color: var(--kafa);
+    color: var(--bela);
+}
+.landing .portfolio-btn {
+    background-color: transparent;
+    border-color: var(--bela);
+    color: var(--bela);
+    animation: fadeIn 1.5s ease-out 1.2s forwards;
+}
+.landing .portfolio-btn:hover {
+    background-color: var(--bela);
+    color: var(--crna);
 }
 .landing .down {
     color: var(--bela);
     font-size: 3rem;
     margin-top: 20px;
-    transition: 0.3s;
     opacity: 0;
+    transition: 0.3s;
     animation: fadeIn 1.5s ease-out 1.5s forwards;
 }
 @media (max-width: 768px) {
     .landing h1 {
-        font-size: 8vw;
+        font-size: 7vw;
+        margin-bottom: 5px;
     }
-    .landing .go {
+
+    .landing .tagline {
+        font-size: 1.5rem;
+        margin: 10px 0 20px;
+    }
+
+    .landing .social-icons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .landing .social-icons a {
+        font-size: 3.5rem;
+    }
+
+    .landing .go,
+    .landing .portfolio-btn {
         font-size: 1.3rem;
-        padding: 10px 25px;
+        padding: 10px 20px;
+        min-width: 140px;
+        text-align: center;
     }
+
+    .landing .landBtn {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
     .landing .down {
         font-size: 2.5rem;
     }
 }
+
 @media (max-width: 480px) {
     .landing h1 {
-        font-size: 10vw;
+        font-size: 9vw;
     }
-    .landing .go {
+
+    .landing .tagline {
+        font-size: 1.2rem;
+        margin: 8px 0 20px;
+    }
+
+    .landing .social-icons a {
+        font-size: 3rem;
+    }
+
+    .landing .go,
+    .landing .portfolio-btn {
         font-size: 1.1rem;
-        padding: 8px 20px;
+        padding: 8px 16px;
+        width: 100%;
+        max-width: 250px;
     }
+
+    .landing .landBtn {
+        flex-direction: column;
+        gap: 10px;
+    }
+
     .landing .down {
         font-size: 2rem;
     }
 }
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -450,6 +538,7 @@ header ul li a.active {
         transform: translateY(0);
     }
 }
+
 
 /* ------------ SERVICES ------------ */
 .services {
@@ -1367,7 +1456,7 @@ footer {
     max-width: 900px;
     width: 100%;
     border: 1px solid #ffffff66;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(100px);
     opacity: 0;
     transform: scale(0.9);
 }
