@@ -1868,7 +1868,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
 }
 .linktree .container {
     background: #222;
@@ -1878,25 +1877,21 @@ footer {
     width: 100%;
     text-align: center;
     box-shadow: 0 0 25px rgba(0,0,0,0.6);
-    animation: fadeIn 1s ease-out;
     transform-style: preserve-3d;
     transition: transform 0.3s ease-out;
 }
 .linktree .container a img {
     width: 100px;
     border-radius: 50%;
-    animation: fadeIn 1.5s ease-out;
 }
 .linktree .container h1 {
     font-size: 2.5rem;
     color: var(--kafa);
-    animation: fadeIn 2s ease-out;
 }
 .linktree .container p {
     color: var(--siva);
     font-size: 1.2rem;
     margin-bottom: 30px;
-    animation: fadeIn 2.5s ease-out;
 }
 .linktree .container .links {
   display: flex;
@@ -1951,10 +1946,51 @@ footer {
     position: absolute;
     left: 18px;
 }
+.linktree .container .share-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border: none;
+    right: 30px;
+    font-size: 25px;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--bela);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.linktree .container .share-btn:hover {
+    transform: scale(1.02);
+    color: var(--kafa);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease;
+}
+.linktree .container .share-btn iconify-icon {
+    left: 0;
+}
 .linktree .container #credit{
     margin-top: 30px;
     font-size: 1.6rem;
     margin-bottom: 0;
+}
+#share-preview {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 9999;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+#share-preview img {
+    max-width: 100%;
+    border-radius: 15px;
 }
 
 

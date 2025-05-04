@@ -46,14 +46,23 @@
 </section>
 
 <section class="linktree">
-    <div class="container">
+    <div class="container">        
+        <button class="share-btn"><i class="fa-solid fa-share"></i></button>
+
+        <!-- Preview popup -->
+        <div id="share-preview">
+            <p>Ovo je pregled linka koji želiš da podeliš:</p>
+            <p><strong id="preview-url"></strong></p>
+            <button id="confirm-share">Podeli</button>
+        </div>
+        
         <a href="#"><img src="images/logo.jpg" alt="Milan Logo"></a>
         <h1>Milan Petkovski</h1>
         <p>Web Developer & Web Designer</p>
 
         <div class="links">
-            <a href="mailto:contact@milanwebportal.com">
-                <iconify-icon icon="skill-icons:gmail-light"></iconify-icon>Email
+            <a href="mailto: contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
+                <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>Gmail
             </a>
             <a href="https://linkedin.com/in/milan--petkovski" target="_blank">
                 <iconify-icon icon="skill-icons:linkedin"></iconify-icon>LinkedIn
@@ -75,9 +84,45 @@
     </div>
 </section>
 
+
 </body>
 </html>
 
+
+
+<script>
+document.querySelector('.share-btn').addEventListener('click', function(event) {
+    event.stopPropagation(); // Sprečava propagaciju klika
+
+    const linktreeSection = document.querySelector('.linktree');
+
+    // Osiguraj da sekcija bude u potpunosti vidljiva (ako je potrebno)
+    linktreeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Kreiraj screenshot sekcije koristeći html2canvas
+    html2canvas(linktreeSection, {
+        scale: 3,  // Povećava kvalitet slike
+        backgroundColor: null,  // Postavlja pozadinu kao transparentnu
+        useCORS: true,
+        logging: true,
+        allowTaint: true
+    }).then(function(canvas) {
+        // Pretvori canvas u blob
+        canvas.toBlob(function(blob) {
+            // Kopiraj sliku u clipboard
+            navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })])
+                .then(function() {
+                    alert('Slika je kopirana u clipboard!');
+                }).catch(function(err) {
+                    console.error('Greška pri kopiranju slike: ', err);
+                });
+        });
+    });
+});
+
+
+</script>
+    
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,24 +130,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.linktree .container');
 
     linktreeSection.addEventListener('mousemove', (e) => {
+        // Dobij dimenzije sekcije
         const rect = linktreeSection.getBoundingClientRect();
         
+        // Izračunaj centar sekcije
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
         
+        // Izračunaj poziciju miša u odnosu na centar
         const mouseX = e.clientX - rect.left - centerX;
         const mouseY = e.clientY - rect.top - centerY;
-
+        
+        // Izračunaj ugao rotacije (maksimalno 15 stepeni)
         const maxAngle = 5;
         const rotateY = (mouseX / centerX) * maxAngle;
-        const rotateX = -(mouseY / centerY) * maxAngle;
+        const rotateX = -(mouseY / centerY) * maxAngle; // Negativno za prirodniji efekat
         
+        // Primeni 3D transformaciju
         container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
 
+    // Resetuj transformaciju kada miš napusti sekciju
     linktreeSection.addEventListener('mouseleave', () => {
         container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
     });
 });
 </script>
+    
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
