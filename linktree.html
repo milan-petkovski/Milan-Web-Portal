@@ -94,6 +94,27 @@
 
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.linktree .container');
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
+        const mouseY = ((e.clientY - rect.top) / rect.height) * 100;
+
+        container.style.setProperty('--mouse-x', `${mouseX}%`);
+        container.style.setProperty('--mouse-y', `${mouseY}%`);
+    });
+
+    // Opcionalno: Sakrij efekat kada miš napusti kontejner
+    container.addEventListener('mouseleave', () => {
+        container.style.setProperty('--mouse-x', '50%');
+        container.style.setProperty('--mouse-y', '50%');
+    });
+});
+</script>
 <script src="main.js"></script>
  
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
