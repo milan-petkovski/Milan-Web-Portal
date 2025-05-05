@@ -111,7 +111,7 @@ function preventScroll(e) {
 //#endregion
 
 //#region - BACK TO TOP
-
+if (/projects|index|roadmap|payment|\/$/.test(window.location.href)) {
 const progressCircle = document.querySelector('#progress circle');
 const progressWrapper = document.querySelector('#back-to-top');
 const radius = progressCircle.r.baseVal.value;
@@ -134,7 +134,7 @@ window.onscroll = handleScroll;
 document.getElementById('backToTop').onclick = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
-
+}
 //#endregion
 
 //#region - SADRZAJ
@@ -148,6 +148,35 @@ document.querySelectorAll("#linkovi a").forEach(link => {
         document.getElementById("linkovi")?.classList.add("hidden");
     });
 });
+//#endregion
+
+//#region - LINKTREE
+if (/linktree|\/$/.test(window.location.href)) {
+document.addEventListener('DOMContentLoaded', () => {
+    const linktreeSection = document.querySelector('.linktree');
+    const container = document.querySelector('.linktree .container');
+
+    linktreeSection.addEventListener('mousemove', (e) => {
+        const rect = linktreeSection.getBoundingClientRect();
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const mouseX = e.clientX - rect.left - centerX;
+        const mouseY = e.clientY - rect.top - centerY;
+        
+        const maxAngle = 5;
+        const rotateY = (mouseX / centerX) * maxAngle;
+        const rotateX = -(mouseY / centerY) * maxAngle;
+
+        container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    linktreeSection.addEventListener('mouseleave', () => {
+        container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+    });
+});
+}
 //#endregion
 
 //#region - PRICING

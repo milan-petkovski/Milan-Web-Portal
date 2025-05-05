@@ -1870,13 +1870,13 @@ footer {
     align-items: center;
 }
 .linktree .container {
-    background: #222;
+    background: rgba(50, 50, 50, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     padding: 20px 30px;
     max-width: 500px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
     transform-style: preserve-3d;
     transition: transform 0.3s ease-out;
 }
@@ -1961,7 +1961,7 @@ footer {
     transition: all 0.5s ease;
 }
 .linktree .container .share-btn:hover {
-    transform: scale(1.02);
+    transform: scale(1.1);
     color: var(--kafa);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.5s ease;
@@ -1974,25 +1974,6 @@ footer {
     font-size: 1.6rem;
     margin-bottom: 0;
 }
-#share-preview {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    background: #1c1c1c;
-    padding: 20px;
-    border-radius: 15px;
-    z-index: 9999;
-    box-shadow: 0 0 20px rgba(0,0,0,0.7);
-}
-
-#share-preview img {
-    max-width: 100%;
-    border-radius: 15px;
-}
-
 
 /* ------------ RESPONSIVE ------------ */
 /* ------------ RESPONSIVE ------------ */
