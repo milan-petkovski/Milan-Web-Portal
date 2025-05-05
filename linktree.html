@@ -61,7 +61,7 @@
 
 <section class="linktree">
     <div class="container">        
-        <button class="share-btn"><i class="fa-solid fa-share"></i></button>
+        <button class="share-btn" onclick="toggleSharePreview()"><i class="fa-solid fa-share"></i></button>
         
         <a href="#"><img src="images/logo.jpg" alt="Milan Logo"></a>
         <h1>Milan Petkovski</h1>
@@ -85,6 +85,13 @@
             </a>
         </div>
 
+        <!-- Share Preview -->
+        <div id="share-preview" style="display: none;">
+            <button class="close-btn" onclick="toggleSharePreview()">X</button>
+            <img src="images/Brands/linktree.png" alt="Share Preview">
+            <button onclick="shareContent()">Share</button>
+        </div>
+
         <div id="credit">
             Created by <span>Milan Petkovski</span><br>All rights reserved.
         </div>
@@ -95,7 +102,41 @@
 </body>
 </html>
 
+
 <script>
+function toggleSharePreview() {
+    const preview = document.getElementById('share-preview');
+    preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
+}
+
+async function shareContent() {
+    const shareData = {
+        title: 'Milan Petkovski - Junior Full-Stack Web Developer',
+        text: 'Check out my Linktree!',
+        url: window.location.href,
+        files: []
+    };
+
+    try {
+        const response = await fetch('images/Brands/linktree.png');
+        const blob = await response.blob();
+        const file = new File([blob], 'linktree.png', { type: blob.type });
+        shareData.files.push(file);
+    } catch (err) {
+        console.error('Error fetching image:', err);
+    }
+
+    try {
+        if (navigator.canShare && navigator.canShare(shareData)) {
+            await navigator.share(shareData);
+        } else {
+            alert('Sharing is not supported on this device.');
+        }
+    } catch (err) {
+        console.error('Error sharing:', err);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.linktree .container');
 

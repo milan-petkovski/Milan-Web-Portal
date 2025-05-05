@@ -1986,6 +1986,83 @@ footer {
 .linktree .container .share-btn iconify-icon {
     left: 0;
 }
+#share-preview {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #202020;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 100px 50px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 0.4s;
+    transition: all 0.3s ease-out;
+}
+#share-preview img {
+    max-width: 100%;
+    border-radius: 15px;
+    height: auto;
+    margin-bottom: 15px;
+}
+#share-preview button {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(90deg, var(--kafa), #b5916a);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+#share-preview button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+#share-preview button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+#share-preview button:hover::before {
+    left: 100%;
+}
+#share-preview .close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    font-size: 18px;
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#share-preview .close-btn:hover {
+    background: linear-gradient(90deg, #b91c1c, #dc2626);
+    transform: scale(1.1);
+}
 .linktree .container #credit{
     margin-top: 30px;
     font-size: 1.6rem;
