@@ -152,31 +152,99 @@ document.querySelectorAll("#linkovi a").forEach(link => {
 
 //#region - LINKTREE
 if (/linktree|\/$/.test(window.location.href)) {
-document.addEventListener('DOMContentLoaded', () => {
-    const linktreeSection = document.querySelector('.linktree');
-    const container = document.querySelector('.linktree .container');
-
-    linktreeSection.addEventListener('mousemove', (e) => {
-        const rect = linktreeSection.getBoundingClientRect();
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const mouseX = e.clientX - rect.left - centerX;
-        const mouseY = e.clientY - rect.top - centerY;
-        
-        const maxAngle = 5;
-        const rotateY = (mouseX / centerX) * maxAngle;
-        const rotateX = -(mouseY / centerY) * maxAngle;
-
-        container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    document.addEventListener('DOMContentLoaded', () => {
+      const linktreeSection = document.querySelector('.linktree');
+      const container = document.querySelector('.linktree .container');
+      if (!linktreeSection || !container) return;
+  
+      // Provera da li je uređaj desktop (širina > 1024px)
+      const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
+  
+      // Debounce funkcija za optimizaciju mousemove događaja
+      const debounce = (func, wait) => {
+        let timeout;
+        return (...args) => {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func(...args), wait);
+        };
+      };
+  
+      // Obrada kretanja miša za rotaciju i gradient efekat
+      const handleMouseMove = debounce((e) => {
+        // Efekti se primenjuju samo na desktop uređajima
+        if (isDesktop()) {
+          const rect = linktreeSection.getBoundingClientRect();
+          const containerRect = container.getBoundingClientRect();
+  
+          // Proračuni za 3D rotaciju
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const mouseX = e.clientX - rect.left - centerX;
+          const mouseY = e.clientY - rect.top - centerY;
+          const maxAngle = 5;
+          const rotateY = (mouseX / centerX) * maxAngle;
+          const rotateX = -(mouseY / centerY) * maxAngle;
+  
+          container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  
+          // Proračuni za gradient efekat
+          const gradientX = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+          const gradientY = ((e.clientY - containerRect.top) / containerRect.height) * 100;
+          container.style.setProperty('--mouse-x', `${gradientX}%`);
+          container.style.setProperty('--mouse-y', `${gradientY}%`);
+        }
+      }, 10);
+  
+      // Reset na mouseleave
+      const handleMouseLeave = () => {
+        if (isDesktop()) {
+          container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+          container.style.setProperty('--mouse-x', '50%');
+          container.style.setProperty('--mouse-y', '50%');
+        }
+      };
+  
+      // Postavljanje slušalaca
+      linktreeSection.addEventListener('mousemove', handleMouseMove);
+      linktreeSection.addEventListener('mouseleave', handleMouseLeave);
     });
 
-    linktreeSection.addEventListener('mouseleave', () => {
-        container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-    });
-});
-}
+    function toggleSharePreview() {
+      const preview = document.getElementById('share-preview');
+      if (preview) {
+        preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
+      }
+    }
+
+    async function shareContent() {
+      const shareData = {
+        title: 'Milan Petkovski - Junior Full-Stack Web Developer',
+        text: 'Check out my Linktree!',
+        url: window.location.href,
+        files: [],
+      };
+  
+      try {
+        const response = await fetch('images/Brands/linktree.png');
+        if (!response.ok) throw new Error('Image fetch failed');
+        const blob = await response.blob();
+        const file = new File([blob], 'linktree.png', { type: blob.type });
+        shareData.files.push(file);
+      } catch (err) {
+        console.error('Error fetching image:', err);
+      }
+  
+      try {
+        if (navigator.canShare && navigator.canShare(shareData)) {
+          await navigator.share(shareData);
+        } else {
+          alert('Sharing is not supported on this device.');
+        }
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    }
+  }
 //#endregion
 
 //#region - PRICING

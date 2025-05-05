@@ -101,61 +101,6 @@
 
 </body>
 </html>
-
-
-<script>
-function toggleSharePreview() {
-    const preview = document.getElementById('share-preview');
-    preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
-}
-
-async function shareContent() {
-    const shareData = {
-        title: 'Milan Petkovski - Junior Full-Stack Web Developer',
-        text: 'Check out my Linktree!',
-        url: window.location.href,
-        files: []
-    };
-
-    try {
-        const response = await fetch('images/Brands/linktree.png');
-        const blob = await response.blob();
-        const file = new File([blob], 'linktree.png', { type: blob.type });
-        shareData.files.push(file);
-    } catch (err) {
-        console.error('Error fetching image:', err);
-    }
-
-    try {
-        if (navigator.canShare && navigator.canShare(shareData)) {
-            await navigator.share(shareData);
-        } else {
-            alert('Sharing is not supported on this device.');
-        }
-    } catch (err) {
-        console.error('Error sharing:', err);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.linktree .container');
-
-    container.addEventListener('mousemove', (e) => {
-        const rect = container.getBoundingClientRect();
-        const mouseX = ((e.clientX - rect.left) / rect.width) * 100;
-        const mouseY = ((e.clientY - rect.top) / rect.height) * 100;
-
-        container.style.setProperty('--mouse-x', `${mouseX}%`);
-        container.style.setProperty('--mouse-y', `${mouseY}%`);
-    });
-
-    // Opcionalno: Sakrij efekat kada miš napusti kontejner
-    container.addEventListener('mouseleave', () => {
-        container.style.setProperty('--mouse-x', '50%');
-        container.style.setProperty('--mouse-y', '50%');
-    });
-});
-</script>
 <script src="main.js"></script>
  
 <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
