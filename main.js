@@ -311,4 +311,37 @@ if (/projects|index|\/$/.test(window.location.href)) {
     }
 }
 
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+        const items = document.querySelectorAll(".portfolio-item");
+        const sections = document.querySelectorAll(".project h2");
+
+        items.forEach(item => {
+            const itemFilter = item.getAttribute("data-filter");
+            if (filter === "all" || itemFilter === filter) {
+                item.style.display = "block";
+                // Pronađi odgovarajući naslov za ovaj projekat
+                const section = item.closest(".row").previousElementSibling;
+                if (section && section.tagName === "H2") {
+                    section.style.display = "block";
+                }
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        sections.forEach(section => {
+            const relatedItems = Array.from(items).filter(item => 
+                item.closest(".row").previousElementSibling === section
+            );
+            const hasVisibleItems = relatedItems.some(item => item.style.display !== "none");
+            section.style.display = hasVisibleItems ? "block" : "none";
+        });
+    });
+});
 //#endregion

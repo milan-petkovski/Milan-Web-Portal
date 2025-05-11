@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" oncontextmenu="return false">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Milan Web Portal - Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Web-Author" content="Milan Petkovski">
     <meta name="copyright" content="Milan Petkovski">
-    <meta property="og:title" content="Milan Web Portal">
+    <meta name="description" content="Portfolio of modern web projects including HTML, Webflow, AI, and Shopify solutions.">
+    <meta name="keywords" content="web design, portfolio, HTML projects, Shopify, Webflow, AI">
+    <meta property="og:title" content="Milan Web Portal - Projects">
     <meta property="og:description" content="Milan Web Portal is a website where you can find my professional web design and development services. Visit my site for innovative solutions and unique projects!">
     <meta property="og:image" content="https://i.postimg.cc/YSvBg0Pw/mwp.jpg">
     <meta name="theme-color" content="#1C1C1C">
@@ -100,13 +102,25 @@
 
     </div>
 
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="html">
+            <i class="fa-brands fa-html5"></i> HTML</button>
+        <button class="filter-btn" data-filter="webflow">
+            <i class="fa-brands fa-webflow"></i> Webflow</button>
+        <button class="filter-btn" data-filter="ai">
+            <i class="fa-solid fa-robot"></i> AI</button>
+        <button class="filter-btn" data-filter="shopify">
+            <i class="fa-brands fa-shopify"></i> Shopify</button>
+    </div>
+
     <h2 id="pojavljivanje"><i class="fa-brands fa-html5"></i> Html <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
     <div class="row">
         <!-- Milan Web Portal -->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://milanwebportal.com" target="_blank">
-            <img src="images/Projects/website1.png" loading="lazy"></a>
+            <img src="images/Projects/website1.png" loading="lazy" alt="Milan Web Portal"></a>
         </div>
         <h3 class="portfolio-item-title">Milan Web Portal</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -129,10 +143,10 @@
         </div>
 
         <!---    CM AGENCY    --->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://cmagency.milanwebportal.com" target="_blank">
-            <img src="images/Projects/website7.png" loading="lazy"></a>
+            <img src="images/Projects/website7.png" loading="lazy" alt="CM AGENCY"></a>
         </div>
         <h3 class="portfolio-item-title">CM Agency</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -153,10 +167,10 @@
         </div>
 
         <!---  LEAFY WEBSITE ---->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://leafymindset.netlify.app" target="_blank">
-            <img src="images/Projects/website9.png" loading="lazy"></a>
+            <img src="images/Projects/website9.png" loading="lazy" alt="LEAFY WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">Leafy Mindset</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -177,10 +191,10 @@
         </div>
 
         <!--- GRILLI WEBSITE ---->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://grilli.milanwebportal.com" target="_blank">
-            <img src="images/Projects/website5.png" loading="lazy"></a>
+            <img src="images/Projects/website5.png" loading="lazy" alt="GRILLI WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">Grilli website</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -201,10 +215,10 @@
         </div>
 
         <!--- TOURLY WEBSITE ---->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://tourly.milanwebportal.com/" target="_blank">
-            <img src="images/Projects/website8.png" loading="lazy"></a>
+            <img src="images/Projects/website8.png" loading="lazy" alt="TOURLY WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">Tourly website</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -225,10 +239,10 @@
         </div>
 
         <!----- TUTZ WEBSITE ---->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://tutz.milanwebportal.com" target="_blank">
-            <img src="images/Projects/website2.png" loading="lazy"></a>
+            <img src="images/Projects/website2.png" loading="lazy" alt="TUTZ WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">Tutz website</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -249,10 +263,10 @@
         </div>
 
         <!---- GAMEX WEBSITE ---->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://gamex.milanwebportal.com/" target="_blank">
-            <img src="images/Projects/website3.png" loading="lazy"></a>
+            <img src="images/Projects/website3.png" loading="lazy" alt="GAMEX WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">GameX website</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -273,10 +287,10 @@
         </div>
 
         <!--- EDULAND WEBSITE --->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="html">
         <div class="portfolio-item-thumbnail">
             <a href="https://eduland.milanwebportal.com" target="_blank">
-            <img src="images/Projects/website4.png" loading="lazy"></a>
+            <img src="images/Projects/website4.png" loading="lazy" alt="EDULAND WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">Eduland website</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -298,14 +312,14 @@
 
     </div>
 
-    <h2 id="pojavljivanje"><i class="fa-solid fa-robot"></i> AI <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 id="pojavljivanje"><i class="fa-brands fa-webflow"></i> Webflow <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
     <div class="row">
 
-        <!------ AI WEBSITE ----->
-        <div class="portfolio-item" id="pojavljivanje">
+        <!--- WEBFLOW WEBSITE --->
+        <div class="portfolio-item" id="pojavljivanje" data-filter="webflow">
         <div class="portfolio-item-thumbnail">
             <a href="" target="_blank">
-            <img src="images/Projects/website.png" loading="lazy"></a>
+            <img src="images/Projects/website.png" loading="lazy" alt="WORKING"></a>
         </div>
         <h3 class="portfolio-item-title">Full AI website</h3>
         <button type="button" class="btn view-project-btn">Explore soon</button>
@@ -314,14 +328,14 @@
     </div>
 
     
-    <h2 id="pojavljivanje"><i class="fa-brands fa-wordpress"></i> Wordpress <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 id="pojavljivanje"><i class="fa-solid fa-robot"></i> AI <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
     <div class="row">
 
-        <!------ WORDPRESS ------>
-        <div class="portfolio-item" id="pojavljivanje">
+        <!---------- AI --------->
+        <div class="portfolio-item" id="pojavljivanje" data-filter="ai">
         <div class="portfolio-item-thumbnail">
             <a href="" target="_blank">
-            <img src="images/Projects/website.png" loading="lazy"></a>
+            <img src="images/Projects/website.png" loading="lazy" alt="WORKING"></a>
         </div>
         <h3 class="portfolio-item-title">Coming soon</h3>
         <button type="button" class="btn view-project-btn">Explore soon</button>
@@ -334,10 +348,10 @@
     <div class="row">
 
         <!---- LEAFY WEBSITE ---->
-        <div class="portfolio-item" id="pojavljivanje">
+        <div class="portfolio-item" id="pojavljivanje" data-filter="shopify">
         <div class="portfolio-item-thumbnail">
             <a href="https://leafymindset.com/pages/landing" target="_blank">
-            <img src="images/Projects/website6.png" loading="lazy"></a>
+            <img src="images/Projects/website6.png" loading="lazy" alt="LEAFY WEBSITE"></a>
         </div>
         <h3 class="portfolio-item-title">Leafy Mindset</h3>
         <button type="button" class="btn view-project-btn">Explore project</button>
@@ -364,7 +378,7 @@
         <div class="pp-content">
     
             <div class="pp-header">
-            <button type="button" class="btn pp-close"><i class="fa-solid fa-xmark"></i></button>
+            <button type="button" class="btn pp-close" aria-label="Close popup"><i class="fa-solid fa-xmark"></i></button>
             <div class="pp-thumbnail">
                 <img src="">
             </div>
@@ -383,38 +397,47 @@
 <footer>
     <div id="mreze" class="pojavljivanje">
         <div class="row" style="justify-content: center">
-        <a href="mailto: contact@milanwebportal.com" onclick="copyText()">
-            <iconify-icon icon="skill-icons:gmail-light"></iconify-icon></a>
-        <a href="https://linkedin.com/in/milan--petkovski">
-            <iconify-icon icon="skill-icons:linkedin"></iconify-icon></a>
-        <a href="https://instagram.com/milanwebportal">
-            <iconify-icon icon="skill-icons:instagram"></iconify-icon></a>
-        <a href="https://streamlabs.com/Milan_567/tip">
-            <iconify-icon icon="logos:paypal"></iconify-icon></a>
+            <a href="mailto:contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
+                <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>
+            </a>
+            <a href="https://linkedin.com/in/milan--petkovski" aria-label="LinkedIn Profile" target="_blank">
+                <iconify-icon icon="skill-icons:linkedin"></iconify-icon>
+            </a>
+            <a href="https://github.com/milan-petkovski" aria-label="Github"  target="_blank">
+                <iconify-icon icon="fa:github-square"></iconify-icon>
+            </a>
+            <a href="https://instagram.com/milanwebportal" aria-label="Instagram Profile" target="_blank">
+                <iconify-icon icon="skill-icons:instagram"></iconify-icon>
+            </a>
+            <a href="https://streamlabs.com/Milan_567/tip" aria-label="Donate via PayPal" target="_blank">
+                <iconify-icon icon="logos:paypal"></iconify-icon>
+            </a>
         </div>
     </div>
 
     <div id="payment" class="pojavljivanje">
         <p>You can pay with:</p>
         <div class="cards">
-            <img src="images/Photos/visa.png">
-            <img src="images/Photos/mastercard.png">
-            <img src="images/Photos/maestro.png">
-            <img src="images/Photos/paypal.png">
-            <img src="images/Photos/skrill.png">
-            <img src="images/Photos/ips.png">
-            <img src="images/Photos/dina.png">
+            <img src="images/Photos/visa.png" alt="Visa">
+            <img src="images/Photos/mastercard.png" alt="MasterCard">
+            <img src="images/Photos/maestro.png" alt="Maestro">
+            <img src="images/Photos/paypal.png" alt="PayPal">
+            <img src="images/Photos/skrill.png" alt="Skrill">
+            <img src="images/Photos/ips.png" alt="IPS">
+            <img src="images/Photos/dina.png" alt="Dina">
         </div>
-        <a href="payment.html">For more info and payment methods...</a> 
+        <a href="payment.html" class="cta-link">View all payment options</a>
     </div>
 
     <div id="credit" class="pojavljivanje">
-        Created by <span>Milan Petkovski</span> <span id="crta">|</span><span id="razmak"><br></span> All rights reserved.
+        Created by <span>Milan Petkovski</span><br> All rights reserved.
     </div>
 
     <div id="back-to-top">
-        <svg id="progress" width="60" height="60"><circle cx="30" cy="30" r="25" stroke-width="5" fill="none" /></svg>
-        <button id="backToTop"><i class="fa-solid fa-angles-up"></i></button>
+        <svg id="progress" width="60" height="60">
+            <circle cx="30" cy="30" r="25" stroke-width="5" fill="none" />
+        </svg>
+        <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-angles-up"></i></button>
     </div>
 </footer>
 
@@ -422,3 +445,4 @@
 </html>
 
 <script src="main.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>

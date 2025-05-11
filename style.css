@@ -1404,9 +1404,10 @@ footer {
     text-transform: uppercase;
     color:var(--bela);
     margin-top: 50px;
+    line-height: 1.4;
     margin-bottom: 25px;
     margin-left: 0.8%;
-    font-size: 40px;
+    font-size: 36px;
     justify-content: center;
 }
 .project #more{
@@ -1441,10 +1442,35 @@ footer {
 	cursor: pointer;
     transition: 0.5s;
 }
+.filter-container {
+    display: flex;
+    gap: 10px;
+    margin: 50px 0 0 0.8%;
+}
+.filter-btn {
+    background-color: var(--kafa);
+    color: var(--crni);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid var(--kafa);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: transparent;
+    color: #f5f5f5;
+    border: 2px solid var(--kafa);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 /* -- Portfolio -- */
 .portfolio-item{
     width: calc((100% / 5) - 30px);
     margin: 0 15px 30px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .portfolio-item-thumbnail{
     padding: 10px;
@@ -1634,6 +1660,9 @@ footer {
     }
     .roadmap {
         padding: 30px 0 100px 0;
+    }
+    .filter-container {
+        display: none;
     }
 }
 @media (max-width: 575px) {
