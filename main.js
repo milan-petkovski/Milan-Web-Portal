@@ -1,7 +1,6 @@
 //JAVASCRIPT
 
 //#region - HVATAC GRESAKA
-
 let hasError = false;
 window.onerror = function(message, source, lineno, colno, error) {
     hasError = true;
@@ -12,16 +11,13 @@ window.onerror = function(message, source, lineno, colno, error) {
     console.error("GREŠKA: " + error);
     return true;
 };
-
 //#endregion
 
 //#region - COPY TEXT
-
 function copyText() {
     navigator.clipboard.writeText("contact@milanwebportal.com");
     alert("The email has been copied to the temporary memory!");
 }
-
 //#endregion
 
 //#region - PRELOADER
@@ -30,58 +26,33 @@ const fadeOut = () => {
     preloader.classList.add("fade");
 };
 window.addEventListener("load", fadeOut);
-  
-//#endregion
-
-//#region - OFF F12
-document.onkeydown = function (e) {
-
-    if (e.key === 'F12') {
-        return false;
-    }
-    
-    if (e.ctrlKey && e.shiftKey && e.key === 'i') {
-        return false;
-    }
-    
-    if (e.ctrlKey && e.shiftKey && e.key === 'j') {
-        return false;
-    }
-    
-    if (e.ctrlKey && e.key === 'u') {
-        return false;
-    }
-}
-  
 //#endregion
 
 //#region - POJAVLJIVANJE
-
 document.addEventListener("DOMContentLoaded", () => {
-    const pojavljivanjeItems = document.querySelectorAll('.pojavljivanje, #pojavljivanje');
+  const pojavljivanjeItems = document.querySelectorAll('.pojavljivanje, #pojavljivanje');
 
-    const isElementInViewport = el => {
-        const rect = el.getBoundingClientRect();
-        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    };
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
 
-    const checkVisibility = () => {
-        pojavljivanjeItems.forEach(item => {
-            if (isElementInViewport(item)) {
-                item.classList.add('visible');
-            }
-        });
-    };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
+      }
+    });
+  }, observerOptions);
 
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('resize', checkVisibility);
-    checkVisibility();
+  pojavljivanjeItems.forEach(item => observer.observe(item));
 });
-
 //#endregion
 
 //#region - MOBILNI MENI
-
 const toggleNav = (add) => {
     const nav = document.getElementById('navbar');
     document.body.classList.toggle('no-scroll', add);
@@ -160,13 +131,7 @@ if (/linktree|\/$/.test(window.location.href)) {
       // Provera da li je uređaj desktop (širina > 1024px)
       const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
   
-      let mouseX = 50, mouseY = 50; // Početne vrednosti u procentima
-      let targetX = 50, targetY = 50; // Ciljane vrednosti
-      let rotateX = 0, rotateY = 0; // Rotacija
-      const lerpSpeed = 0.1; // Brzina interpolacije za glatko praćenje
-      const maxAngle = 5;
-
-      // Obrada kretanja miša
+      // Obrada kretanja miša za rotaciju i gradient efekat
       const handleMouseMove = (e) => {
         if (isDesktop()) {
           const rect = linktreeSection.getBoundingClientRect();
@@ -175,55 +140,44 @@ if (/linktree|\/$/.test(window.location.href)) {
           // Proračuni za 3D rotaciju
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
-          const mouseXPos = e.clientX - rect.left - centerX;
-          const mouseYPos = e.clientY - rect.top - centerY;
-          targetX = ((e.clientX - containerRect.left) / containerRect.width) * 100;
-          targetY = ((e.clientY - containerRect.top) / containerRect.height) * 100;
-          rotateY = (mouseXPos / centerX) * maxAngle;
-          rotateX = -(mouseYPos / centerY) * maxAngle;
-        }
-      };
-
-      // Animacija sa requestAnimationFrame
-      const updateAnimation = () => {
-        if (isDesktop()) {
-          // Linearno interpoliraj vrednosti
-          mouseX += (targetX - mouseX) * lerpSpeed;
-          mouseY += (targetY - mouseY) * lerpSpeed;
-          container.style.setProperty('--mouse-x', `${mouseX}%`);
-          container.style.setProperty('--mouse-y', `${mouseY}%`);
+          const mouseX = e.clientX - rect.left - centerX;
+          const mouseY = e.clientY - rect.top - centerY;
+          const maxAngle = 5;
+          const rotateY = (mouseX / centerX) * maxAngle;
+          const rotateX = -(mouseY / centerY) * maxAngle;
+  
           container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  
+          // Proračuni za gradient efekat
+          const gradientX = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+          const gradientY = ((e.clientY - containerRect.top) / containerRect.height) * 100;
+          container.style.setProperty('--mouse-x', `${gradientX}%`);
+          container.style.setProperty('--mouse-y', `${gradientY}%`);
         }
-        requestAnimationFrame(updateAnimation);
       };
-
+  
       // Reset na mouseleave
       const handleMouseLeave = () => {
         if (isDesktop()) {
-          targetX = 50;
-          targetY = 50;
-          rotateX = 0;
-          rotateY = 0;
           container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
           container.style.setProperty('--mouse-x', '50%');
           container.style.setProperty('--mouse-y', '50%');
         }
       };
-
+  
       // Postavljanje slušalaca
       linktreeSection.addEventListener('mousemove', handleMouseMove);
       linktreeSection.addEventListener('mouseleave', handleMouseLeave);
-      requestAnimationFrame(updateAnimation); // Pokreni animaciju
     });
 
-    function toggleSharePreview() {
+    window.toggleSharePreview = function() {
       const preview = document.getElementById('share-preview');
       if (preview) {
         preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
       }
-    }
+    };
 
-    async function shareContent() {
+    window.shareContent = async function() {
       const shareData = {
         title: 'Milan Petkovski - Junior Full-Stack Web Developer',
         text: 'Check out my Linktree!',
@@ -245,12 +199,12 @@ if (/linktree|\/$/.test(window.location.href)) {
         if (navigator.canShare && navigator.canShare(shareData)) {
           await navigator.share(shareData);
         } else {
-          alert('Sharing is not supported on this device.');
+          alert('Deljenje nije podržano na ovom uređaju.');
         }
       } catch (err) {
-        console.error('Error sharing:', err);
+        console.error('Greška prilikom deljenja:', err);
       }
-    }
+    };
 }
 //#endregion
 
@@ -283,18 +237,18 @@ document.addEventListener('keydown', function(event) {
         closePopup();
     }
 });
-
-
 //#endregion
 
 //#region - MY PROJECTS
-
 if (/projects|index|\/$/.test(window.location.href)) {
     document.addEventListener("click", (e) => {
         if (e.target.classList.contains("view-project-btn")) {
             togglePortfolioPopup();
             document.querySelector(".portfolio-popup").scrollTo(0, 0);
-            portfolioItemDetails(e.target.parentElement);
+            portfolioItemDetails(e.target.closest(".portfolio-item"));
+        } 
+        else if (e.target.classList.contains("pp-inner")) {
+            togglePortfolioPopup();
         }
     });
 
@@ -305,12 +259,6 @@ if (/projects|index|\/$/.test(window.location.href)) {
 
     document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup);
 
-    document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("pp-inner")) {
-            togglePortfolioPopup();
-        }
-    });
-
     function portfolioItemDetails(portfolioItem) {
         document.querySelector(".pp-thumbnail img").src = portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
         document.querySelector(".pp-header h3").innerHTML = portfolioItem.querySelector(".portfolio-item-title").innerHTML;
@@ -318,7 +266,7 @@ if (/projects|index|\/$/.test(window.location.href)) {
     }
 }
 
-
+if (/projects|\/$/.test(window.location.href)) {
 document.querySelectorAll(".filter-btn").forEach(button => {
     button.addEventListener("click", () => {
         document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
@@ -351,4 +299,5 @@ document.querySelectorAll(".filter-btn").forEach(button => {
         });
     });
 });
+}
 //#endregion
