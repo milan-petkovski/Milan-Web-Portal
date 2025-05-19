@@ -160,18 +160,14 @@ if (/linktree|\/$/.test(window.location.href)) {
       // Provera da li je uređaj desktop (širina > 1024px)
       const isDesktop = () => window.matchMedia('(min-width: 1024px)').matches;
   
-      // Debounce funkcija za optimizaciju mousemove događaja
-      const debounce = (func, wait) => {
-        let timeout;
-        return (...args) => {
-          clearTimeout(timeout);
-          timeout = setTimeout(() => func(...args), wait);
-        };
-      };
-  
-      // Obrada kretanja miša za rotaciju i gradient efekat
-      const handleMouseMove = debounce((e) => {
-        // Efekti se primenjuju samo na desktop uređajima
+      let mouseX = 50, mouseY = 50; // Početne vrednosti u procentima
+      let targetX = 50, targetY = 50; // Ciljane vrednosti
+      let rotateX = 0, rotateY = 0; // Rotacija
+      const lerpSpeed = 0.1; // Brzina interpolacije za glatko praćenje
+      const maxAngle = 5;
+
+      // Obrada kretanja miša
+      const handleMouseMove = (e) => {
         if (isDesktop()) {
           const rect = linktreeSection.getBoundingClientRect();
           const containerRect = container.getBoundingClientRect();
@@ -179,34 +175,45 @@ if (/linktree|\/$/.test(window.location.href)) {
           // Proračuni za 3D rotaciju
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
-          const mouseX = e.clientX - rect.left - centerX;
-          const mouseY = e.clientY - rect.top - centerY;
-          const maxAngle = 5;
-          const rotateY = (mouseX / centerX) * maxAngle;
-          const rotateX = -(mouseY / centerY) * maxAngle;
-  
-          container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  
-          // Proračuni za gradient efekat
-          const gradientX = ((e.clientX - containerRect.left) / containerRect.width) * 100;
-          const gradientY = ((e.clientY - containerRect.top) / containerRect.height) * 100;
-          container.style.setProperty('--mouse-x', `${gradientX}%`);
-          container.style.setProperty('--mouse-y', `${gradientY}%`);
+          const mouseXPos = e.clientX - rect.left - centerX;
+          const mouseYPos = e.clientY - rect.top - centerY;
+          targetX = ((e.clientX - containerRect.left) / containerRect.width) * 100;
+          targetY = ((e.clientY - containerRect.top) / containerRect.height) * 100;
+          rotateY = (mouseXPos / centerX) * maxAngle;
+          rotateX = -(mouseYPos / centerY) * maxAngle;
         }
-      }, 10);
-  
+      };
+
+      // Animacija sa requestAnimationFrame
+      const updateAnimation = () => {
+        if (isDesktop()) {
+          // Linearno interpoliraj vrednosti
+          mouseX += (targetX - mouseX) * lerpSpeed;
+          mouseY += (targetY - mouseY) * lerpSpeed;
+          container.style.setProperty('--mouse-x', `${mouseX}%`);
+          container.style.setProperty('--mouse-y', `${mouseY}%`);
+          container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+        requestAnimationFrame(updateAnimation);
+      };
+
       // Reset na mouseleave
       const handleMouseLeave = () => {
         if (isDesktop()) {
+          targetX = 50;
+          targetY = 50;
+          rotateX = 0;
+          rotateY = 0;
           container.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
           container.style.setProperty('--mouse-x', '50%');
           container.style.setProperty('--mouse-y', '50%');
         }
       };
-  
+
       // Postavljanje slušalaca
       linktreeSection.addEventListener('mousemove', handleMouseMove);
       linktreeSection.addEventListener('mouseleave', handleMouseLeave);
+      requestAnimationFrame(updateAnimation); // Pokreni animaciju
     });
 
     function toggleSharePreview() {
@@ -244,7 +251,7 @@ if (/linktree|\/$/.test(window.location.href)) {
         console.error('Error sharing:', err);
       }
     }
-  }
+}
 //#endregion
 
 //#region - PRICING
