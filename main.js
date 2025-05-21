@@ -210,6 +210,7 @@ if (/linktree|\/$/.test(window.location.href)) {
 
 //#region - PRICING
 function openPopup(packageName) {
+    event.preventDefault();
     const popup = document.getElementById('popupForm');
     const selectElement = document.getElementById('popupPackageSelect');
 
