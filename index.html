@@ -11,7 +11,6 @@
     <link rel="canonical" href="https://milanwebportal.com">
     <title>Milan Web Portal</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="preload" href="images/mwp.jpg" as="image">
     <link rel="stylesheet" href="https://bit.ly/3TlBnOO">
     <link rel="stylesheet" href="style.css" media="all" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
@@ -68,8 +67,8 @@
     <ul>
         <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
         <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
-        <li title="Roadmap"><a href="roadmap.html" id="icon"><i class="fa-solid fa-road"></i></a></li>
-        <li title="Linktree"><a href="linktree.html" id="icon"><i class="fa-solid fa-tree"></i></a></li>
+        <li title="Roadmap"><a href="roadmap.html" title="Roadmap" id="icon"><i class="fa-solid fa-road"></i></a></li>
+        <li title="Linktree"><a href="linktree.html" title="Linktree" id="icon"><i class="fa-solid fa-tree"></i></a></li>
     </ul>
 </header>
 
@@ -80,9 +79,9 @@
         <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
         <li><a href="roadmap.html"><i class="fa-solid fa-road"></i> Roadmap</a></li>
         <div class="ikone">
-            <li><a href="/plans/Custom" onclick="openPopup('Custom')"><i class="fa-solid fa-phone fa-bounce"></i></a></li>
-            <li title="Linktree"><a href="linktree.html" id="icon"><i class="fa-solid fa-tree"></i></a></li>
-            <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-sack-dollar fa-bounce"></i></a></li>
+            <li><a href="/plans/Custom" title="Order" onclick="openPopup('Custom')"><i class="fa-solid fa-phone fa-bounce"></i></a></li>
+            <li title="Linktree"><a href="linktree.html" title="Linktree" id="icon"><i class="fa-solid fa-tree"></i></a></li>
+            <li><a href="https://streamlabs.com/Milan_567/tip" title="Donate"><i class="fa-solid fa-sack-dollar fa-bounce"></i></a></li>
         </div>
         <iconify-icon icon="line-md:close" id="close"></iconify-icon>
     </ul>
@@ -118,7 +117,7 @@
     </div>
 
 
-    <a href="#start" class="down"><i class="fa-solid fa-chevron-down fa-bounce"></i></a>
+    <a href="#start" title="Scroll down" class="down"><i class="fa-solid fa-chevron-down fa-bounce"></i></a>
 </section>
 
 <section class="services" id="start">
@@ -127,7 +126,7 @@
     <div class="cards">
 
         <div class="card" id="pojavljivanje">
-            <h3>Web Design</h3>
+            <h2>Web Design</h2>
             <p>
             I create visually appealing and functional websites that will set you apart from the competition.
             <br><br>
@@ -144,7 +143,7 @@
         </div>
 
         <div class="card" id="pojavljivanje">
-            <h3>Website Maintenance</h3>
+            <h2>Website Maintenance</h2>
             <p>
             I provide comprehensive website maintenance services to keep your site running smoothly and securely.
             <br><br>
@@ -161,7 +160,7 @@
         </div>
 
         <div class="card" id="pojavljivanje">
-            <h3>Bug fixes</h3>
+            <h2>Bug fixes</h2>
             <p>
             I offer expert bug fixing services to ensure your website runs smoothly without any hiccups.
             <br><br>
@@ -496,7 +495,7 @@
             </div>
             <div class="form-row">
                 <input type="text" name="Naslov" placeholder="Subject" required>
-                <select name="Paket" id="packageSelect">
+                <select name="Paket" id="packageSelect" aria-label="Package select">
                     <option value="" selected>Choose a package</option>
                     <option value="Basic">Basic</option>
                     <option value="Standard">Standard</option>

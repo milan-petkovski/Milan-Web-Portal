@@ -577,7 +577,7 @@ header ul li a.active {
     top: 0;
     right: 0;
 }
-.services .cards .card h3 {
+.services .cards .card h2 {
     font-size: 2.5rem;
     letter-spacing: 1px;
     margin-bottom: 16px;
