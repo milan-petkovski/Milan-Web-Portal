@@ -2,18 +2,49 @@
 <html lang="en" oncontextmenu="return false">
 <head>
     <meta charset="UTF-8">
-    <title>Milan Web Portal - Payment</title>
-    <meta name="google-adsense-account" content="ca-pub-3826421240730412">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Web-Author" content="Milan Petkovski">
+    <meta name="description" content="Milan Web Portal offers professional web design and development services. Visit to explore unique projects and innovative solutions!">
+    <meta name="author" content="Milan Petkovski">
     <meta name="copyright" content="Milan Petkovski">
-    <meta property="og:title" content="Milan Web Portal">
-    <meta property="og:description" content="Milan Web Portal is a website where you can find my professional web design and development services. Visit my site for innovative solutions and unique projects!">
-    <meta property="og:image" content="https://i.postimg.cc/YSvBg0Pw/mwp.jpg">
+    <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#1C1C1C">
+    <link rel="canonical" href="https://milanwebportal.com/payment">
+    <title>Milan Web Portal - Payments</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://bit.ly/3TlBnOO">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" media="all" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <!-- Open Graph tags -->
+    <meta property="og:url" content="https://milanwebportal.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Milan Web Portal">
+    <meta property="og:description" content="Milan Web Portal offers professional web design and development services. Visit to explore unique projects and innovative solutions!">
+    <meta property="og:image" content="https://milanwebportal.com/images/mwp.jpg">
+    <meta property="og:image:alt" content="Milan Web Portal logo">
+    <meta property="og:site_name" content="Milan Web Portal">
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Milan Web Portal">
+    <meta name="twitter:description" content="Milan Web Portal offers professional web design and development services. Visit to explore unique projects and innovative solutions!">
+    <meta name="twitter:image" content="https://milanwebportal.com/images/mwp.jpg">
+    <meta name="twitter:site" content="@MilanWebPortal">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Milan Web Portal",
+        "url": "https://milanwebportal.com",
+        "description": "Milan Web Portal offers professional web design and development services. Visit to explore unique projects and innovative solutions!",
+        "logo": "https://milanwebportal.com/images/mwp.jpg",
+        "image": "https://milanwebportal.com/images/mwp.jpg",
+        "sameAs": [
+            "https://facebook.com/MilanWebPortal",
+            "https://twitter.com/MilanWebPortal",
+            "https://instagram.com/MilanWebPortal"
+        ]
+    }
+    </script>
 </head>
 <body class="unselectable">
 
@@ -35,31 +66,31 @@
 </div>
 
 <header>
-    <a href="index.html" class="logo"><img src="images/mwp.png"></a>
+    <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
     <ul>
         <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
         <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
-        <li title="Status"><a href="https://milanwebportal.instatus.com" id="icon" target="_blank"><i class="fa-solid fa-wifi"></i></a></li>
-        <li title="Roadmap"><a href="roadmap.html" id="icon"><i class="fa-solid fa-road"></i></a></li>
+        <li title="Roadmap"><a href="roadmap.html" title="Roadmap" id="icon"><i class="fa-solid fa-road"></i></a></li>
+        <li title="Linktree"><a href="linktree.html" title="Linktree" id="icon"><i class="fa-solid fa-tree"></i></a></li>
     </ul>
 </header>
 
 <section class="mobilni">
-    <a href="index.html" class="logo"><img src="images/mwp.png"></a>
-    
+    <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
     <ul id="navbar">
-      <li><a href="index.html"><i class="fa-solid fa-house"></i> | Home</a>
-      <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> | Projects</a></li>
-      <li><a href="roadmap.html"><i class="fa-solid fa-road"></i> | Roadmap</a></li>
-      <div class="ikone">
-          <li><a href="#forma"><i class="fa-solid fa-phone fa-bounce"></i></a></li>
-          <li><a href="https://milanwebportal.instatus.com/" target="_blank"><i class="fa-solid fa-wifi fa-bounce"></i></a></li>
-          <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-sack-dollar fa-bounce"></i></a></li>
-      </div>
-      <iconify-icon icon="line-md:close" id="close"></iconify-icon>
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
+        <li><a href="roadmap.html"><i class="fa-solid fa-road"></i> Roadmap</a></li>
+        <div class="ikone">
+            <li><a href="/plans/Custom" title="Order" onclick="openPopup('Custom')"><i class="fa-solid fa-phone fa-bounce"></i></a></li>
+            <li title="Linktree"><a href="linktree.html" title="Linktree" id="icon"><i class="fa-solid fa-tree"></i></a></li>
+            <li><a href="https://streamlabs.com/Milan_567/tip" title="Donate"><i class="fa-solid fa-sack-dollar fa-bounce"></i></a></li>
+        </div>
+        <iconify-icon icon="line-md:close" id="close"></iconify-icon>
     </ul>
     <div id="mobile">
-    <i id="bar" class="fa-solid fa-bars"></i></div>
+        <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
 </section>
 
 <section class="naslovi">
