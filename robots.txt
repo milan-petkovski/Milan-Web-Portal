@@ -42,7 +42,6 @@ Disallow: /*.ico$
 Disallow: /*.css$
 Disallow: /*.js$
 Disallow: /*.json$
-Disallow: /*.xml$
 Disallow: /*.rss$
 Disallow: /*.atom$
 Disallow: /*.txt$
