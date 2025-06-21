@@ -1444,27 +1444,58 @@ footer {
 }
 .filter-container {
     display: flex;
-    gap: 10px;
-    margin: 50px 0 0 0.8%;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 2%;
 }
 .filter-btn {
-    background-color: var(--kafa);
-    color: var(--crni);
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 2px solid var(--kafa);
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-.filter-btn.active,
-.filter-btn:hover {
     background-color: transparent;
-    color: #f5f5f5;
-    border: 2px solid var(--kafa);
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--siva);
+    border: 1px solid var(--border);
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.filter-btn:hover {
+    background-color: var(--crni);
+    color: var(--bela);
+    border-color: var(--crni);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.filter-btn.active {
+    background-color: var(--kafa);
+    color: var(--crna);
+    border-color: var(--kafa);
+    box-shadow: 0 5px 15px rgba(211, 173, 127, 0.3);
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    .filter-container {
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+}
+@media (max-width: 480px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
 /* -- Portfolio -- */
 .portfolio-item{
@@ -1498,6 +1529,7 @@ footer {
 .portfolio-item-details{
     display: none;
 }
+
 /* -- Portfolio Popup -- */
 .portfolio-popup{
     position: fixed;
@@ -1666,9 +1698,6 @@ footer {
     }
     .roadmap {
         padding: 30px 0 100px 0;
-    }
-    .filter-container {
-        display: none;
     }
 }
 @media (max-width: 575px) {
