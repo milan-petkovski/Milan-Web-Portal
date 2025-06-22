@@ -82,6 +82,26 @@ li{
     opacity: 1;
     transform: translateY(0);
 }
+.btn{
+	background-color:var(--kafa);
+	color: var(--crna);
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+    font-size: 14px;
+	padding: 9px 22px;
+	border-radius: 50px;
+	transition: 0.5s;
+    width: 100%;
+}
+.btn:hover{
+    color: var(--bela);
+    border: 2px solid var(--kafa);
+	background-color: transparent;
+	cursor: pointer;
+    transition: 0.5s;
+}
+
 /* ----------- PRELOADER ------------ */
 .preloader {
   position: fixed;
@@ -1403,10 +1423,9 @@ footer {
     text-align: left;
     text-transform: uppercase;
     color:var(--bela);
-    margin-top: 50px;
     line-height: 1.4;
     margin-bottom: 25px;
-    margin-left: 0.8%;
+    margin-left: 15px;
     font-size: 36px;
     justify-content: center;
 }
@@ -1423,30 +1442,71 @@ footer {
     color: var(--kafa);
     text-transform: capitalize;
 }
-.btn{
-	background-color:var(--kafa);
-	color: var(--crna);
-	text-decoration: none;
-	border: 2px solid transparent;
-	font-weight: bold;
-    font-size: 14px;
-	padding: 9px 22px;
-	border-radius: 50px;
-	transition: 0.5s;
-    width: 100%;
+
+/* CONTACT */
+.project #forma{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding-right: 0;
+    padding-left: 50px;
 }
-.btn:hover{
+.project #forma form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.project #forma h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.project #forma form input,
+.project #forma form textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 12px 15px;
     color: var(--bela);
+    background-color: transparent;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid var(--bela);
+    border-radius: 30px;
+    transition: all 0.5s;
+}
+.project #forma form input:focus,
+.project #forma form textarea:focus{
     border: 2px solid var(--kafa);
-	background-color: transparent;
-	cursor: pointer;
+    color: var(--bela);
+    transition: all 0.5s;
+}
+.project #forma form button {
+    background-color: var(--kafa);
+    color: var(--crna);
+    border: none;
+    padding: 12px 15px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 17px;
     transition: 0.5s;
 }
+.project #forma form button:hover {
+    background-color: #ce9c52;
+    color: var(--ljub);
+    transition: 0.5s;
+}
+
+/* FILTER */
 .filter-container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    margin-top: 2%;
+    margin: 2% 0 30px 15px;
 }
 .filter-btn {
     background-color: transparent;
@@ -1476,31 +1536,11 @@ footer {
     box-shadow: 0 5px 15px rgba(211, 173, 127, 0.3);
     pointer-events: none;
 }
-@media (max-width: 768px) {
-    .filter-container {
-        gap: 10px;
-        padding: 0 10px;
-    }
-    .filter-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 6px;
-    }
-}
-@media (max-width: 480px) {
-    .filter-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    .filter-btn {
-        width: 100%;
-        text-align: center;
-    }
-}
-/* -- Portfolio -- */
+
+/* SPOLJA */
 .portfolio-item{
     width: calc((100% / 5) - 30px);
-    margin: 0 15px 30px;
+    margin: 0 15px 30px 15px;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .portfolio-item-thumbnail{
@@ -1530,7 +1570,7 @@ footer {
     display: none;
 }
 
-/* -- Portfolio Popup -- */
+/* UNUTRA */
 .portfolio-popup{
     position: fixed;
     left: 0;
@@ -1616,58 +1656,16 @@ footer {
     color: ghostwhite;
     text-decoration: underline;   
 }
-.project #forma{
-    width: 50%;
-    padding-right: 0;
-    padding-left: 50px;
-}
-.project #forma form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.project #forma h2 {
-    font-size: 25px;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-}
-.project #forma form input,
-.project #forma form textarea {
-    width: 100%;
-    height: 100%;
-    resize: none;
-    padding: 12px 15px;
-    color: var(--bela);
+.btn.disabled {
     background-color: transparent;
-    outline: none;
-    margin-bottom: 20px;
-    border: 1px solid var(--bela);
-    border-radius: 30px;
-    transition: all 0.5s;
+    border: 2px dashed var(--kafa);
+    color: var(--kafa);
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.4;
+    font-style: italic;
 }
-.project #forma form input:focus,
-.project #forma form textarea:focus{
-    border: 2px solid var(--kafa);
-    color: var(--bela);
-    transition: all 0.5s;
-}
-.project #forma form button {
-    background-color: var(--kafa);
-    color: var(--crna);
-    border: none;
-    padding: 12px 15px;
-    width: 100%;
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: 17px;
-    transition: 0.5s;
-}
-.project #forma form button:hover {
-    background-color: #ce9c52;
-    color: var(--ljub);
-    transition: 0.5s;
-}
+
 @media (max-width: 1024px) {
     .project h2 {
         font-size: 30px;
@@ -1699,10 +1697,27 @@ footer {
     .roadmap {
         padding: 30px 0 100px 0;
     }
+    .filter-container {
+        gap: 10px;
+        margin-top: 10%;
+    }
+    .filter-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
 }
 @media (max-width: 575px) {
     .pp-header h3 {
         font-size: 20px;
+    }
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-btn {
+        width: 100%;
+        text-align: center;
     }
 }
 

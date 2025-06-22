@@ -243,10 +243,23 @@ document.addEventListener('keydown', function(event) {
 //#region - MY PROJECTS
 if (/projects|index|\/$/.test(window.location.href)) {
     document.addEventListener("click", (e) => {
-        if (e.target.classList.contains("view-project-btn")) {
+        const viewBtn = e.target.closest(".view-project-btn");
+
+        if (viewBtn) {
+            const allItems = document.querySelectorAll(".portfolio-item");
+            let clickedItem = null;
+
+            allItems.forEach(item => {
+                if (item.contains(viewBtn) && window.getComputedStyle(item).display !== "none") {
+                    clickedItem = item;
+                }
+            });
+
+            if (!clickedItem) return;
+
             togglePortfolioPopup();
             document.querySelector(".portfolio-popup").scrollTo(0, 0);
-            portfolioItemDetails(e.target.closest(".portfolio-item"));
+            portfolioItemDetails(clickedItem);
         } 
         else if (e.target.classList.contains("pp-inner")) {
             togglePortfolioPopup();
@@ -261,11 +274,17 @@ if (/projects|index|\/$/.test(window.location.href)) {
     document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup);
 
     function portfolioItemDetails(portfolioItem) {
-        document.querySelector(".pp-thumbnail img").src = portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
-        document.querySelector(".pp-header h3").innerHTML = portfolioItem.querySelector(".portfolio-item-title").innerHTML;
-        document.querySelector(".pp-body").innerHTML = portfolioItem.querySelector(".portfolio-item-details").innerHTML;
+        document.querySelector(".pp-thumbnail img").src =
+            portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
+
+        document.querySelector(".pp-header h3").innerHTML =
+            portfolioItem.querySelector(".portfolio-item-title").innerHTML;
+
+        document.querySelector(".pp-body").innerHTML =
+            portfolioItem.querySelector(".portfolio-item-details").innerHTML;
     }
 }
+
 
 if (/projects|\/$/.test(window.location.href)) {
 document.querySelectorAll(".filter-btn").forEach(button => {
@@ -302,3 +321,35 @@ document.querySelectorAll(".filter-btn").forEach(button => {
 });
 }
 //#endregion
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll(".portfolio-item");
+  const headings = [
+    "#html-projects-heading",
+    "#webflow-projects-heading",
+    "#ai-projects-heading",
+    "#shopify-projects-heading"
+  ].map(id => document.querySelector(id)).filter(Boolean);
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
+
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      if (filter === "all") {
+        projects.forEach(p => p.style.display = "block");
+        headings.forEach(h => h.style.display = "block");
+      } else {
+        projects.forEach(p => {
+          const type = p.getAttribute("data-filter");
+          p.style.display = (type === filter) ? "block" : "none";
+        });
+        headings.forEach(h => h.style.display = "none");
+      }
+    });
+  });
+});
