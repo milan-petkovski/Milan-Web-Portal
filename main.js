@@ -240,116 +240,105 @@ document.addEventListener('keydown', function(event) {
 });
 //#endregion
 
-//#region - MY PROJECTS
-if (/projects|index|\/$/.test(window.location.href)) {
-    document.addEventListener("click", (e) => {
-        const viewBtn = e.target.closest(".view-project-btn");
-
-        if (viewBtn) {
-            const allItems = document.querySelectorAll(".portfolio-item");
-            let clickedItem = null;
-
-            allItems.forEach(item => {
-                if (item.contains(viewBtn) && window.getComputedStyle(item).display !== "none") {
-                    clickedItem = item;
-                }
-            });
-
-            if (!clickedItem) return;
-
-            togglePortfolioPopup();
-            document.querySelector(".portfolio-popup").scrollTo(0, 0);
-            portfolioItemDetails(clickedItem);
-        } 
-        else if (e.target.classList.contains("pp-inner")) {
-            togglePortfolioPopup();
-        }
-    });
-
-    function togglePortfolioPopup() {
-        document.querySelector(".portfolio-popup").classList.toggle("open");
-        document.body.classList.toggle("hide-scrolling");
-    }
-
-    document.querySelector(".pp-close").addEventListener("click", togglePortfolioPopup);
-
-    function portfolioItemDetails(portfolioItem) {
-        document.querySelector(".pp-thumbnail img").src =
-            portfolioItem.querySelector(".portfolio-item-thumbnail img").src;
-
-        document.querySelector(".pp-header h3").innerHTML =
-            portfolioItem.querySelector(".portfolio-item-title").innerHTML;
-
-        document.querySelector(".pp-body").innerHTML =
-            portfolioItem.querySelector(".portfolio-item-details").innerHTML;
-    }
-}
-
-
+//#region - PROJECTS
 if (/projects|\/$/.test(window.location.href)) {
-document.querySelectorAll(".filter-btn").forEach(button => {
-    button.addEventListener("click", () => {
-        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".portfolio-item");
+    const headings = [
+      "#html-projects-heading",
+      "#webflow-projects-heading",
+      "#ai-projects-heading",
+      "#shopify-projects-heading"
+    ].map(id => document.querySelector(id)).filter(Boolean);
+
+    const projectReadmeUrls = {
+      'milan-web-portal-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/main/README.md',
+      'cmagency-project-button': 'https://raw.githubusercontent.com/milan-petkovski/cmagency/main/README.md',
+      'leafy-project-button': 'https://raw.githubusercontent.com/milan-petkovski/leafy/main/README.md',
+      'grilli-project-button': 'https://raw.githubusercontent.com/milan-petkovski/grilli/main/README.md',
+      'tourly-project-button': 'https://raw.githubusercontent.com/milan-petkovski/tourly/main/README.md',
+      'tutz-project-button': 'https://raw.githubusercontent.com/milan-petkovski/tutz/main/README.md',
+      'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/gamex/main/README.md',
+      'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/eduland/main/README.md',
+      'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/frosty/main/README.md',
+    };
+
+    const viewProjectButtons = document.querySelectorAll('.view-project-btn');
+    const projectPopup = document.getElementById('project-popup');
+    const closeButton = projectPopup.querySelector('.close-button');
+    const projectPopupContent = document.getElementById('project-popup-content');
+
+    function loadReadmeContent(readmeUrl) {
+      projectPopupContent.innerHTML = '<p>Loading data...</p>';
+
+      fetch(readmeUrl)
+        .then(response => {
+          if (!response.ok) throw new Error('The network response was incorrect: ' + response.statusText);
+          return response.text();
+        })
+        .then(markdownContent => {
+          const htmlContent = marked.parse(markdownContent);
+          projectPopupContent.innerHTML = htmlContent;
+          projectPopup.classList.add('open');
+        })
+        .catch(error => {
+          console.error('Error loading file:', error);
+          projectPopupContent.innerHTML = '<p style="color: red;">Error: Unable to load file.</p>';
+          projectPopup.classList.add('open');
+        });
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
         button.classList.add("active");
 
-        const filter = button.getAttribute("data-filter");
-        const items = document.querySelectorAll(".portfolio-item");
-        const sections = document.querySelectorAll(".project h2");
-
-        items.forEach(item => {
-            const itemFilter = item.getAttribute("data-filter");
-            if (filter === "all" || itemFilter === filter) {
-                item.style.display = "block";
-                // Pronađi odgovarajući naslov za ovaj projekat
-                const section = item.closest(".row").previousElementSibling;
-                if (section && section.tagName === "H2") {
-                    section.style.display = "block";
-                }
-            } else {
-                item.style.display = "none";
-            }
-        });
-
-        sections.forEach(section => {
-            const relatedItems = Array.from(items).filter(item => 
-                item.closest(".row").previousElementSibling === section
-            );
-            const hasVisibleItems = relatedItems.some(item => item.style.display !== "none");
-            section.style.display = hasVisibleItems ? "block" : "none";
-        });
+        if (filter === "all") {
+          projects.forEach(p => p.style.display = "block");
+          headings.forEach(h => h.style.display = "block");
+        } else {
+          projects.forEach(p => {
+            const type = p.getAttribute("data-filter");
+            p.style.display = (type === filter) ? "block" : "none";
+          });
+          headings.forEach(h => h.style.display = "none");
+        }
+      });
     });
-});
+
+    viewProjectButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const buttonId = button.id;
+        const readmeUrl = projectReadmeUrls[buttonId];
+
+        if (readmeUrl) {
+          loadReadmeContent(readmeUrl);
+        } else {
+          console.error(`URL for README not found for button with id: ${buttonId}`);
+          projectPopupContent.innerHTML = '<p style="color: red;">Error: Project URL not defined.</p>';
+          projectPopup.classList.add('open');
+        }
+      });
+    });
+
+    if (closeButton) {
+      closeButton.addEventListener('click', () => {
+        projectPopup.classList.remove('open');
+        projectPopupContent.innerHTML = '';
+      });
+    }
+
+    if (projectPopup) {
+      projectPopup.addEventListener('click', (event) => {
+        if (event.target === projectPopup) {
+          projectPopup.classList.remove('open');
+          projectPopupContent.innerHTML = '';
+        }
+      });
+    }
+  });
 }
 //#endregion
-
-
-document.addEventListener("DOMContentLoaded", function () {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projects = document.querySelectorAll(".portfolio-item");
-  const headings = [
-    "#html-projects-heading",
-    "#webflow-projects-heading",
-    "#ai-projects-heading",
-    "#shopify-projects-heading"
-  ].map(id => document.querySelector(id)).filter(Boolean);
-
-  filterButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const filter = button.getAttribute("data-filter");
-
-      filterButtons.forEach(btn => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      if (filter === "all") {
-        projects.forEach(p => p.style.display = "block");
-        headings.forEach(h => h.style.display = "block");
-      } else {
-        projects.forEach(p => {
-          const type = p.getAttribute("data-filter");
-          p.style.display = (type === filter) ? "block" : "none";
-        });
-        headings.forEach(h => h.style.display = "none");
-      }
-    });
-  });
-});
