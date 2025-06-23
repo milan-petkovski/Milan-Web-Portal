@@ -1392,6 +1392,12 @@ footer {
 .hide-scrolling{
     overflow: hidden !important;
 }
+html.popup-open,
+body.popup-open {
+    height: 100%;
+    overflow: hidden !important;
+    touch-action: none;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -1673,6 +1679,41 @@ footer {
     visibility: visible;
     opacity: 1;
 }
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px rgba(255,255,255,0.1);
+  z-index: 1000;
+}
+.close-button svg {
+  transition: stroke 0.3s ease, transform 0.3s ease;
+  stroke: var(--bela);
+}
+.close-button:hover {
+  background: var(--kafa);
+  border-color: var(--kafa);
+  box-shadow: 0 0 15px var(--kafa);
+}
+.close-button:hover svg {
+  stroke: var(--bela);
+  transform: rotate(90deg) scale(1.2);
+}
+.close-button:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 10px var(--kafa);
+}
 @keyframes popupEnter {
     to {
         transform: scale(1);
@@ -1785,52 +1826,34 @@ footer {
     width: 3px;
     background: transparent !important;
 }
-@media (max-width: 1024px) {
-    .project h2 {
-        font-size: 30px;
-    }
+
+@media (max-width: 1500px) {
     .portfolio-item {
-        width: calc(50% - 30px);
-    }
-    .heading {
-        font-size: 30px;
+        width: calc((100% / 4) - 30px);
     }
 }
-@media (max-width: 768px) {
-    .project h2 {
-        font-size: 25px;
-    }
+@media (max-width: 1200px) {
     .portfolio-item {
-        width: calc(100% - 30px);
+        width: calc((100% / 3) - 30px);
     }
-    .pp-inner {
-        padding: 30px 15px;
-    }
-    .project .vrh {
-        flex-direction: column;
+}
+@media (max-width: 992px) {
+    .portfolio-item {
+        width: calc((100% / 2) - 30px);
     }
     .project #forma {
         width: 100%;
-        padding: 0;
-    }
-    .roadmap {
-        padding: 30px 0 100px 0;
-    }
-    .filter-container {
-        gap: 10px;
-        margin-top: 10%;
-    }
-    .filter-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-        border-radius: 6px;
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: column;
     }
 }
-@media (max-width: 575px) {
-    .pp-header h3 {
-        font-size: 20px;
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: calc(50% - 30px);
     }
     .filter-container {
+        margin-top: 25px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -1841,9 +1864,81 @@ footer {
         text-align: center;
         justify-content: center;
     }
-
     .filter-btn:first-child {
         flex: 1 1 100%;
+    }
+    .project h2 {
+        font-size: 28px;
+        margin-left: 0;
+        text-align: center;
+    }
+    .project .vrh {
+        flex-direction: column;
+    }
+    .project #forma h1 {
+        font-size: 22px;
+    }
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    #project-popup-content table {
+        font-size: 12px;
+    }
+    #project-popup-content th,
+    #project-popup-content td {
+        padding: 8px;
+    }
+    .project #contact {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    .close-button {
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
+        border-width: 1.5px;
+    }
+    .close-button svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+@media (max-width: 576px) {
+    .portfolio-item {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    .project #more {
+        font-size: 20px;
+    }
+    .project h2 {
+        font-size: 23px;
+        border-bottom: 1px solid white;
+    }
+    .project #forma form input,
+    .project #forma form textarea,
+    .project #forma form button {
+        font-size: 15px;
+    }
+    .filter-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .modal-content {
+        padding: 15px;
+    }
+    .close-button {
+        top: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        border-width: 1px;
+    }
+   .close-button svg {
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -1914,6 +2009,9 @@ footer {
     letter-spacing: 2px;
 }
 @media only screen and (min-width: 768px) {
+    .roadmap {
+        padding: 30px 0 100px 0;
+    }
     .roadmap .timeline:before {
       content: "";
       position: absolute;
