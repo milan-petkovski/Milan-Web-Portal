@@ -1658,6 +1658,7 @@ body.popup-open {
     animation: popupEnter 0.4s ease forwards;
     transform: scale(0.95);
     opacity: 0;
+    z-index: 1001 !important;
 }
 #project-popup {    
     display: flex;
@@ -1881,6 +1882,7 @@ body.popup-open {
     .modal-content {
         width: 90%;
         padding: 20px;
+        border-radius: 10px;
     }
     #project-popup-content table {
         font-size: 12px;
