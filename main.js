@@ -241,7 +241,7 @@ document.addEventListener('keydown', function(event) {
 //#endregion
 
 //#region - PROJECTS
-if (/projects|\/$/.test(window.location.href)) {
+if (/index|projects|\/$/.test(window.location.href)) {
   document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".filter-btn");
     const projects = document.querySelectorAll(".portfolio-item");
