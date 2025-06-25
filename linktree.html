@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://milanwebportal.com/linktree">
     <title>Milan Web Portal - Linktree</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="https://bit.ly/3TlBnOO">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css" media="all" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <!-- Open Graph tags -->
@@ -71,30 +71,36 @@
 
 <header>
     <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
-    <ul>
-        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
-        <li title="Roadmap"><a href="roadmap.html" title="Roadmap" id="icon"><i class="fa-solid fa-road"></i></a></li>
-        <li title="Linktree"><a href="linktree.html" title="Linktree" id="icon" class="active"><i class="fa-solid fa-tree"></i></a></li>
+
+    <ul class="nav-menu">
+        <li><a href="index.html">
+            <i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="projects.html">
+            <i class="fa-solid fa-code"></i><span>Projects</span></a></li>
+        <li><a href="roadmap.html" id="icon" data-tooltip="Roadmap">
+            <i class="fa-solid fa-route"></i></a></li>
+        <li><a href="linktree.html" id="icon" data-tooltip="Linktree">
+            <i class="fa-solid fa-tree"></i></a></li>
     </ul>
 </header>
 
 <section class="mobilni">
-    <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
-    <ul id="navbar">
-        <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="projects.html"><i class="fa-solid fa-hammer"></i> Projects</a></li>
-        <li><a href="roadmap.html"><i class="fa-solid fa-road"></i> Roadmap</a></li>
-        <div class="ikone">
-            <li><a href="projects.html#forma" title="Order"><i class="fa-solid fa-phone fa-bounce"></i></a></li>
-            <li title="Linktree"><a href="linktree.html" title="Linktree" id="icon"  class="active"><i class="fa-solid fa-tree fa-bounce"></i></a></li>
-            <li><a href="https://streamlabs.com/Milan_567/tip" title="Donate"><i class="fa-solid fa-sack-dollar fa-bounce"></i></a></li>
-        </div>
-        <i class="fa-solid fa-xmark" id="close"></i>
-    </ul>
-    <div id="mobile">
-        <i id="bar" class="fa-solid fa-bars"></i>
-    </div>
+  <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
+  <div id="mobile"><i id="bar" class="fa-solid fa-bars"></i></div>
+
+  <ul id="navbar">
+    <i class="fa-solid fa-xmark" id="close"></i>
+
+    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+    <li><a href="projects.html"><i class="fa-solid fa-code"></i><span>Projects</span></a></li>
+    <li><a href="roadmap.html"><i class="fa-solid fa-route"></i><span>Roadmap</span></a></li>
+    <li><a href="linktree.html"><i class="fa-solid fa-tree"></i><span>Linktree</span></a></li>
+
+    <hr class="divider"/>
+
+    <li><a href="projects.html#forma"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
+    <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i><span>Support me</span></a></li>
+  </ul>
 </section>
 
 <section class="linktree">

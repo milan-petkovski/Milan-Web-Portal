@@ -53,32 +53,78 @@ document.addEventListener("DOMContentLoaded", () => {
 //#endregion
 
 //#region - MOBILNI MENI
-const toggleNav = (add) => {
+(() => {
     const nav = document.getElementById('navbar');
-    document.body.classList.toggle('no-scroll', add);
-    nav.classList.toggle('active', add);
-    document[add ? 'addEventListener' : 'removeEventListener']('touchmove', preventScroll, { passive: false });
-};
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const allNavLinks = document.querySelectorAll('.nav-menu a, #navbar a');
 
-document.getElementById('bar')?.addEventListener('click', () => toggleNav(true));
-document.getElementById('close')?.addEventListener('click', () => toggleNav(false));
+    let isOpen = false;
+    const preventScroll = (e) => e.preventDefault();
 
-document.addEventListener('click', (e) => {
-    const nav = document.getElementById('navbar');
-    if (!nav.contains(e.target) && !document.getElementById('bar').contains(e.target) && nav.classList.contains('active')) {
-        toggleNav(false);
-    }
-});
+    const openNav = () => {
+        if (isOpen || !nav) return;
+        isOpen = true;
+        nav.classList.add('active');
+        document.body.classList.add('no-scroll');
+        document.addEventListener('touchmove', preventScroll, { passive: false });
+    };
 
-const voidLinks = document.querySelectorAll('#navbar a[href="javascript:void(0)"]');
-voidLinks.forEach(link => {
-    link.addEventListener('click', () => toggleNav(false));
-});
+    const closeNav = () => {
+        if (!isOpen || !nav) return;
+        isOpen = false;
+        nav.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        document.removeEventListener('touchmove', preventScroll);
+    };
 
-// Function to prevent scrolling
-function preventScroll(e) {
-    e.preventDefault();
-}
+    bar?.addEventListener('click', openNav);
+    close?.addEventListener('click', closeNav);
+
+    document.addEventListener('click', (e) => {
+        const target = e.target;
+        if (isOpen && nav && !nav.contains(target) && !bar.contains(target)) {
+            closeNav();
+        }
+    });
+
+    nav?.querySelectorAll('a')?.forEach(link => {
+        link.addEventListener('click', () => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#' || href.startsWith('javascript')) return;
+            closeNav();
+        });
+    });
+
+    // Automatski dodaj .active
+    const currentPath = location.pathname.replace(/\/$/, '');
+
+    allNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (
+            !href ||
+            href === '#' ||
+            href.startsWith('javascript') ||
+            href.startsWith('http') ||
+            href.includes('#forma') ||
+            href.includes('streamlabs.com')
+        ) {
+            return;
+        }
+
+        const linkPath = href.split('#')[0].replace(/\/$/, '');
+
+        if (
+            linkPath === currentPath ||
+            (currentPath.endsWith(linkPath) && linkPath !== '')
+        ) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+})();
+
 //#endregion
 
 //#region - BACK TO TOP
