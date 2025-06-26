@@ -541,147 +541,93 @@ header ul li a#icon i {
 
 
 /* ------------ SERVICES ------------ */
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 8%;
-    color: var(--bela);
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-.services .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+.service-box {
+  background: linear-gradient(135deg, #ffffff0d, #ffffff05);
+  border: 1px solid #ffffff2e;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
-.services .cards .card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    border-radius: 28px;
-    padding: 3rem 8%;
-    position: relative;
-    overflow: hidden;
-    transition: .5s;
-    margin: 0 auto;
+.service-box:hover {
+  border-color: var(--kafa);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.4);
 }
-.services .cards .card::after {
-    content: "";
-    position: absolute;
-    height: 40%;
-    width: 8%;
-    top: 30%;
-    right: -4%;
-    background-color: var(--bela);
-    z-index: -1;
-    border-radius: 28px;
-    transition: 0.5s;
+.service-box h2 {
+  font-size: 2rem;
+  color: var(--kafa);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.services .cards .card:hover {
-    color: var(--bela);
+.service-box p {
+  font-size: 1.4rem;
+  color: var(--siva);
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
-.services .cards .card:hover::after {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
+.service-box .btn {
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 12px 0;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--kafa);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.services .cards .card h2 {
-    font-size: 2.5rem;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
+.service-box .btn:hover {
+  background-color: #d19d5d;
 }
-.services .cards .card p {
-    font-size: 1.5rem;
-    line-height: 1.6;
+.email-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: var(--siva);
+  opacity: 0.8;
+  word-break: break-word;
 }
-.card-button {
-    position: absolute;
-    height: 220px;
-    width: 100%;
-    max-width: 420px;
-    border-radius: 28px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%, -50%);
-    background-color: transparent;
-    color: #000;
-    border: none;
-    font-size: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.5s, transform 0.5s;
-    z-index: 2;
+.includes {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 24px;
 }
-.card-button span {
-    font-size: 15px;
+.includes li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: var(--siva);
 }
-.services .cards .card:hover .card-button,
-.services .cards .card:active .card-button {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.05);
+.includes li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: var(--kafa);
 }
-@media (max-width: 1024px) {
-    .services .cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .project h2 {
-        font-size: 30px;
-    }
-    .portfolio-item {
-        width: calc(50% - 30px);
-    }
-    .heading {
-        font-size: 30px;
-    }
+.includes-title {
+  font-weight: 600;
+  margin-bottom: 0 !important;
+  font-size: 1.1rem;
 }
-@media (max-width: 768px) {
-    .services .cards {
-        grid-template-columns: 1fr;
-    }
-    .services .cards .card h3 {
-        font-size: 1.8rem;
-    }
-    .project h2 {
-        font-size: 25px;
-    }
-    .portfolio-item {
-        width: calc(100% - 30px);
-    }
-    .pp-inner {
-        padding: 30px 15px;
-    }
-    .project .vrh {
-        flex-direction: column;
-    }
-    .project #forma {
-        width: 100%;
-        padding: 0;
-    }
+.btn-link {
+  text-decoration: none;
+  display: block;
 }
-@media (max-width: 480px) {
-    .services .cards .card h3 {
-        font-size: 1.6rem;
-    }
-
-    .services .cards .card p {
-        font-size: 1.2rem;
-    }
-
-    .card-button {
-        font-size: 1.3rem;
-        padding: 15px;
-    }
-
-    .card-button span {
-        font-size: 0.9rem;
-    }
-}
-
 
 /* ----------- MY SKILLS ------------ */
 .skills {
