@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0.2
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             href === '#' ||
             href.startsWith('javascript') ||
             href.startsWith('http') ||
-            href.includes('#forma') ||
+            href.includes('#contact') ||
             href.includes('streamlabs.com')
         ) {
             return;
@@ -254,36 +254,36 @@ if (/linktree|\/$/.test(window.location.href)) {
 }
 //#endregion
 
-//#region - PRICING
-function openPopup(packageName) {
-    event.preventDefault();
-    const popup = document.getElementById('popupForm');
-    const selectElement = document.getElementById('popupPackageSelect');
+//#region - CONTACT
+const popup = document.getElementById('popupForm');
+const popupContainer = popup.querySelector('.popup-form-container');
+const packageSelect = popup.querySelector('select[name="Package"]');
 
-    popup.style.display = 'flex';
-    selectElement.value = packageName;
-    document.body.classList.add('popup-active');
-    document.documentElement.classList.add('popup-active');
+function openPopup(plan) {
+  popup.style.display = 'flex';
+  popupContainer.style.display = 'block';
+  if (packageSelect) {
+    packageSelect.value = plan;
+    packageSelect.dispatchEvent(new Event('change'));
+  }
 }
 
 function closePopup() {
-    const popup = document.getElementById('popupForm');
-    popup.style.display = 'none';
-    document.body.classList.remove('popup-active');
-    document.documentElement.classList.remove('popup-active');
+  popup.style.display = 'none';
+  popupContainer.style.display = 'none';
 }
-
-window.onclick = function(event) {
-    const popup = document.getElementById('popupForm');
-    if (event.target === popup) {
-        closePopup();
-    }
-}
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        closePopup();
-    }
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) closePopup();
 });
+
+document.querySelectorAll('.order').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const plan = link.getAttribute('data-plan') || '';
+    openPopup(plan);
+  });
+});
+
 //#endregion
 
 //#region - PROJECTS
