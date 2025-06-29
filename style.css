@@ -107,12 +107,9 @@ li{
     background: var(--kafa);
     margin: 3px auto 0;
     border-radius: 10px;
-    transform: scaleX(0);
+    transform: scaleX(1);
     transition: transform 0.3s ease-out;
     transform-origin: center;
-}
-.section-title:hover::after {
-    transform: scaleX(1);
 }
 .section-title i {
     color: var(--kafa);
@@ -1255,6 +1252,13 @@ header ul li a#icon i {
 }
 
 /* Popup */
+#popupForm {
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+#popupForm.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
 .popup-overlay {
   display: none;
   position: fixed;
@@ -1594,6 +1598,10 @@ body.popup-open {
   padding: 0 12px;
   border-radius: 12px;
   color: var(--bela);
+  display: inline-block;
+  line-height: 1.5;
+  white-space: normal;
+  vertical-align: middle; 
 }
 .about .opis {
   background: rgba(28, 28, 28, 0.95);
@@ -1627,7 +1635,6 @@ body.popup-open {
   background: linear-gradient(145deg, #1c1c1c, #141414);
   border-radius: 18px;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   border: 2px solid transparent;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -1685,12 +1692,23 @@ body.popup-open {
 @media (max-width: 768px) {
   .about h1 {
     font-size: 2.6em;
+    text-align: center;
+  }  
+  .about h1 .highlight {
+    font-size: 1.2em;
+    padding: 0 8px;
   }
   .about .opis p {
     font-size: 1.2em;
   }
   .about .zavrsni {
     font-size: 1.5em;
+  }
+}
+@media (max-width: 480px) {
+  .about h1 .highlight {
+    font-size: 1em;
+    padding: 0 6px;
   }
 }
 
