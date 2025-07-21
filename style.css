@@ -720,27 +720,45 @@ header ul li a#icon i {
     align-items: center;
     justify-content: center;
 }
+.skills .logo:hover {
+    transform: scale(1.03);
+}
 .skills p {
     color: #fff;
-    font-size: 17px;
-    font-weight: 700;
-    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
 }
 .skills iconify-icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
     border-radius: 28px;
     width: 100%;
     height: 100px;
     font-size: 55px;
     margin: 0 auto;
     padding: 10px;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s;
+}
+.skill-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffffdd;
+    margin: 40px 0 10px 0;
+    letter-spacing: 1px;
+}
+.logo.plava iconify-icon {
+  color: #1E90FF;
+}
+.logo.bela iconify-icon {
+  color: #fff;
 }
 @media (max-width: 768px) {
     .skills .logos {
@@ -761,17 +779,17 @@ header ul li a#icon i {
         grid-template-columns: 1fr 1fr;
         gap: 16px;
     }
-
     .skills iconify-icon {
         font-size: 38px;
         height: 70px;
     }
-
     .skills p {
         font-size: 15px;
     }
+    .skill-title {
+        font-size: 18px;
+    }
 }
-
 
 /* ------------ PRICING ------------- */
 .pricing {
