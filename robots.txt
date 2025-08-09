@@ -6,9 +6,4 @@ Disallow: /private/
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /test/
-Disallow: /search
-Disallow: /login
-Disallow: /register
-Disallow: /cart
-Disallow: /checkout
-Disallow: /thank-you
+Disallow: /thanks/
