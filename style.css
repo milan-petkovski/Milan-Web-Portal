@@ -628,7 +628,7 @@ header ul li a#icon i {
   border-radius: 20px;
   padding: 30px;
   text-align: center;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -636,7 +636,6 @@ header ul li a#icon i {
 }
 .service-box:hover {
   border-color: var(--kafa);
-  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.4);
 }
 .service-box h2 {
   font-size: 2rem;
@@ -665,6 +664,11 @@ header ul li a#icon i {
 }
 .service-box .btn:hover {
   background-color: #d19d5d;
+}
+.service-box iconify-icon {
+  display: flex;
+  justify-content: center;  
+  margin-bottom: 15px;
 }
 .email-text {
   margin-top: 10px;
@@ -1013,65 +1017,65 @@ header ul li a#icon i {
 }
 .testimonials .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 .testimonials .card {
+    background: linear-gradient(135deg, #ffffff0d, #ffffff05);
+    border: 1px solid #ffffff2e;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(135deg, #ffffff1a, #ffffff00);
-    backdrop-filter: blur(10px);
-    border: 1px solid #ffffff2e;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-    border-radius: 28px;
-    padding: 2rem;
-    position: relative;
-    z-index: 1;
-    background-color: transparent;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+.testimonials .card:hover {
+    border-color: var(--kafa);
 }
 .testimonials .testimonial-content {
     flex-grow: 1;
-    text-align: left;
+    text-align: center;
 }
 .testimonials h3 {
-    font-size: 2.3rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
     color: var(--kafa);
-}
-.testimonials h3 i {
-    font-size: 1.5rem;
-    color: var(--kafa);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .testimonials p {
     font-size: 1.4rem;
-    line-height: 1.6;
+    color: var(--siva);
+    line-height: 1.8;
 }
 .testimonials .stars {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--kafa);
     text-align: center;
+    margin-top: 25px;
 }
 .testimonials .user-info {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    justify-content: center;
+    margin-top: 15px;
 }
 .testimonials .user-info img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     margin-right: 10px;
     object-fit: cover;
 }
 .testimonials .user-info p {
     font-size: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--kafa);
 }
 @media (max-width: 1024px) {
@@ -1098,6 +1102,10 @@ header ul li a#icon i {
     .testimonials h3 {
         font-size: 1.6rem;
     }
+}.card iconify-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 /* ------------- CLIENTS ------------ */
@@ -1586,7 +1594,7 @@ body.popup-open {
     display: block;
     width: fit-content;
     margin: 0 auto;
-    color: var(--bela);
+    color: var(--siva);
     font-size: 25px;
     font-weight: 700;
     text-decoration: none;
@@ -1705,7 +1713,6 @@ body.popup-open {
   max-width: 900px;
   font-weight: 600;
   text-shadow: 0 0 15px rgba(211, 173, 127, 0.4);
-  margin-bottom: 60px;
 }
 @media (max-width: 768px) {
   .about h1 {

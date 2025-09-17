@@ -130,93 +130,140 @@
     <a href="#start" title="Scroll down" class="down"><i class="fa-solid fa-chevron-down fa-bounce"></i></a>
 </section>
 
-<section class="services" id="start">
+<section class="about" id="start">
+    <h1>Who am I? <br><span class="highlight">Your partner for digital success.</span></h1>
+
+    <div class="opis">
+        <p>In a world of constant digital change, I am your steady partner. With a passion for design and precision in code, I transform ideas into real, functional, and beautiful projects that leave a lasting impression.</p>
+    </div>
+
+    <div class="box">
+        <div class="item"><i class="fas fa-gem"></i>
+            <div class="sadrzaj">
+                <h3>Every Project is a Partnership</h3>
+                <p>We build the foundation for your brand, turning your vision into a beautiful and functional reality.</p>
+            </div>
+        </div>
+
+        <div class="item"><i class="fas fa-bolt"></i>
+            <div class="sadrzaj">
+                <h3>Focused on Your Success</h3>
+                <p>We deliver tailored solutions that drive results, from bookings to boosting your brand.</p>
+            </div>
+        </div>
+
+        <div class="item"><i class="fas fa-layer-group"></i>
+            <div class="sadrzaj">
+                <h3>More Than Just a Website</h3>
+                <p>We provide reliable support and optimization to keep your online presence at its best.</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="zavrsni">Ready to transform your vision into a stunning website? Let's connect.</p>
+</section>
+
+<section class="services">
   <h1 class="section-title" id="pojavljivanje">MY SERVICES</h1>
 
   <div class="service-grid">
 
     <div class="service-box" id="pojavljivanje">
-      <h2>Web Design</h2>
-      <p>Modern and original designs tailored to your brand, audience and goals. Fully responsive, clean and conversion-focused.</p>
-      <p class="includes-title">Includes:</p>
+      <iconify-icon icon="mdi:web" width="48" height="48" style="color: var(--kafa);"></iconify-icon>
+      <h2>Building Your Website</h2>
+      <p>We create a modern and elegant website that will elevate your brand`s online presence. Our sites are optimized to attract new guests and make it easy for them to find and contact you, allowing you to focus on your business.</p>
+      <p class="includes-title">What You Get:</p>
       <ul class="includes">
-        <li>Unique custom design</li>
-        <li>Mobile-first layout</li>
-        <li>Focus on UX/UI & CTA</li>
-        <li><em>and more...</em></li>
+        <li>Professional Design</li>
+        <li>Complete Functionality</li>
+        <li>Responsive Design</li>
+        <li>Ease of Use</li>
       </ul>
-      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Contact me</a>
+      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Let's Get Started</a>
       <div class="email-text">Email: contact@milanwebportal.com</div>
     </div>
 
     <div class="service-box" id="pojavljivanje">
-      <h2>Website Development</h2>
-      <p>Clean, fast and scalable websites built from scratch using HTML, CSS, JS, Node. Fully SEO-optimized and structured.</p>
-      <p class="includes-title">Includes:</p>
+      <iconify-icon icon="mdi:rocket-launch" width="48" height="48" style="color: var(--kafa);"></iconify-icon>
+      <h2>Boost Your Business</h2>
+      <p>These powerful options transform your website into an effective tool for communicating with guests, increasing reservations, and driving more traffic to your restaurant.</p>
+      <p class="includes-title">Connect with Guests:</p>
       <ul class="includes">
-        <li>Semantic HTML structure</li>
-        <li>Modular, maintainable code</li>
-        <li>SEO & speed best practices</li>
-        <li><em>and more...</em></li>
+        <li>Online Reservations</li>
+        <li>Digital Menu with QR Codes</li>
+        <li>News & Events Section</li>
+        <li>Social Media Integration</li>
       </ul>
-      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Contact me</a>
+      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Let's Get Started</a>
       <div class="email-text">Email: contact@milanwebportal.com</div>
     </div>
 
     <div class="service-box" id="pojavljivanje">
-      <h2>Website Maintenance</h2>
-      <p>Keep your site running smoothly with regular updates, backups, monitoring and support.</p>
-      <p class="includes-title">Includes:</p>
+      <iconify-icon icon="mdi:tools" width="48" height="48" style="color: var(--kafa);"></iconify-icon>
+      <h2>Additional Services for Long-Term Success</h2>
+      <p>Beyond website creation, we offer ongoing support services to ensure your online presence remains professional, secure, and consistently attracts new customers over time.</p>
+      <p class="includes-title">What We Offer:</p>
       <ul class="includes">
-        <li>Updates & fixes</li>
-        <li>Uptime & speed check</li>
-        <li>Backup system setup</li>
+        <li>Website Maintenance</li>
+        <li>SEO Optimization</li>
+        <li>Social Media Marketing</li>
         <li><em>and more...</em></li>
       </ul>
-      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Contact me</a>
+      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Let's Get Started</a>
       <div class="email-text">Email: contact@milanwebportal.com</div>
     </div>
 
-    <div class="service-box" id="pojavljivanje">
-      <h2>Bug Fixing</h2>
-      <p>I fix bugs and errors quickly and reliably. From visual issues to broken functionality.</p>
-      <p class="includes-title">Includes:</p>
-      <ul class="includes">
-        <li>Debugging & testing</li>
-        <li>JS/CSS fixes</li>
-        <li>Cross-browser compatibility</li>
-        <li><em>and more...</em></li>
-      </ul>
-      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Contact me</a>
-      <div class="email-text">Email: contact@milanwebportal.com</div>
-    </div>
+    <div id="popupForm" class="popup-overlay">
+    <div class="popup-form-container">
+        <button class="popup-close" onclick="closePopup()">
+            <iconify-icon icon="line-md:close"></iconify-icon>
+        </button>
 
-    <div class="service-box" id="pojavljivanje">
-      <h2>SEO Optimization</h2>
-      <p>Improve your Google ranking and load speed with optimized structure, keywords and performance.</p>
-      <p class="includes-title">Includes:</p>
-      <ul class="includes">
-        <li>On-page SEO setup</li>
-        <li>Speed improvements</li>
-        <li>Meta & alt tags</li>
-        <li><em>and more...</em></li>
-      </ul>
-      <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Contact me</a>
-      <div class="email-text">Email: contact@milanwebportal.com</div>
-    </div>
+        <div class="popup-header">
+            <h2>Let's create something great</h2>
+            <p>Fill out the form below and I'll get back to you soon.</p>
+        </div>
 
-    <div class="service-box" id="pojavljivanje">
-      <h2>Digital Marketing</h2>
-      <p>Build your online presence through social media, ads and strong, consistent branding.</p>
-      <p class="includes-title">Includes:</p>
-      <ul class="includes">
-        <li>Basic social media setup</li>
-        <li>Branding guidance</li>
-        <li>Ad strategy & reach</li>
-        <li><em>and more...</em></li>
-      </ul>
-        <a href="#" class="btn" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Contact me</a>
-      <div class="email-text">Email: contact@milanwebportal.com</div>
+        <form method="POST" action="https://formsubmit.co/contact@milanwebportal.com" class="form-common">
+        <input type="hidden" name="_subject" value="Novi email!">
+        <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
+        <input type="hidden" name="_template" value="box">
+
+        <div class="input-wrap ime">
+            <input type="text" name="Name" required placeholder=" ">
+            <span>Name</span>
+        </div>
+
+        <div class="input-wrap naslov">
+            <input type="text" name="Subject" required placeholder=" ">
+            <span>Subject</span>
+        </div>
+
+        <div class="input-wrap email">
+            <input type="email" name="Email" required placeholder=" ">
+            <span>Email</span>
+        </div>
+
+        <div class="input-wrap paket">
+            <select name="Package" required>
+            <option value="" disabled selected>Choose a package</option>
+            <option value="Basic">Basic</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+            <option value="Custom">Custom</option>
+            </select>
+        </div>
+
+        <div class="input-wrap poruka">
+            <textarea name="Message" rows="5" required placeholder=""></textarea>
+            <span>Message</span>
+        </div>
+
+        <button type="submit" class="popup-submit">Order 
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+        </form>
+    </div>
     </div>
 
   </div>
@@ -280,7 +327,7 @@
 </section>
 
 <section class="project">
-    <a href="projects.html" class="projects-link" id="pojavljivanje"><h1 class="section-title">MY WORK <i class="fa-solid fa-arrow-right"></i></h1></a>
+    <a href="projects.html#projekti" class="projects-link" id="pojavljivanje"><h1 class="section-title">MY WORK <i class="fa-solid fa-arrow-right"></i></h1></a>
 
     <div class="row" style="justify-content: center;">
         <!-- Milan Web Portal -->
@@ -337,155 +384,52 @@
         </div>
     </div>
 
-    <a href="projects.html" class="pojavljivanje" id="more">And more...</a>
+    <a href="projects.html#projekti" class="pojavljivanje" id="more">View Full Portfolio</a>
 </section>
-<!--
-<section class="pricing">
-    <h1 class="section-title" id="pojavljivanje">PRICING LIST</h1>
 
-    <div class="cards">
-        <div class="box" id="pojavljivanje">
-            <ul class="deals">
-                <li class="plans">Basic</li>
-                <li style="font-size: 0.9rem;"><span style="font-size: 3rem">$100</span>/ Website</li>
-                <li>One-page design</li>
-                <li>Basic SEO</li>
-                <li>1 revision</li>
-                <li>Responsive Layout</li>
-                <li>Mobile responsive design</li>
-                <li><a href="#" class="order" data-plan="Basic" onclick="event.preventDefault(); openPopup('Basic')">Order now</a></li>
-            </ul>
-        </div>
-
-        <div class="box" id="pojavljivanje">
-            <ul class="deals">
-                <li class="plans">Standard</li>
-                <li style="font-size: 0.9rem; line-height: 30px;"><span style="font-size: 3rem">$150</span>/ Website <br>Everything in Basic &</li>
-                <li>Up to 5 pages design</li>
-                <li>Advanced SEO</li>
-                <li>3 revisions</li>
-                <li>Contact form integration</li>
-                <li>Ongoing support for 1 month</li>
-                <li><a href="#" class="order" data-plan="Standard" onclick="event.preventDefault(); openPopup('Standard')">Order now</a></li>
-            </ul>
-        </div>
-
-        <div class="box" id="pojavljivanje">
-            <ul class="deals">
-                <li class="plans">Premium</li>
-                <li style="font-size: 0.9rem; line-height: 30px;"><span style="font-size: 3rem">$200</span>/ Website <br>Everything in Standard &</li>
-                <li>Up to 10 pages design</li>
-                <li>Premium SEO</li>
-                <li>Unlimited revisions</li>
-                <li>E-commerce integration</li>
-                <li>Ongoing support for 3 months</li>
-                <li><a href="#" class="order" data-plan="Premium" onclick="event.preventDefault(); openPopup('Premium')">Order now</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="custom" id="pojavljivanje">
-        <h2>Want a Custom Solution?</h2>
-        <p>Looking for something unique and tailored just for your business? Let's make it happen! <br>Contact me today for a custom project that meets all your needs.</p>
-        <a href="#" class="order" data-plan="Custom" onclick="event.preventDefault(); openPopup('Custom')">Order now</a>
-    </div>
-
-    <div id="popupForm" class="popup-overlay">
-    <div class="popup-form-container">
-        <button class="popup-close" onclick="closePopup()">
-            <iconify-icon icon="line-md:close"></iconify-icon>
-        </button>
-
-        <div class="popup-header">
-            <h2>Let's create something great</h2>
-            <p>Fill out the form below and I'll get back to you soon.</p>
-        </div>
-
-        <form method="POST" action="https://formsubmit.co/contact@milanwebportal.com" class="form-common">
-        <input type="hidden" name="_subject" value="Novi email!">
-        <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
-        <input type="hidden" name="_template" value="box">
-
-        <div class="input-wrap ime">
-            <input type="text" name="Name" required placeholder=" ">
-            <span>Name</span>
-        </div>
-
-        <div class="input-wrap naslov">
-            <input type="text" name="Subject" required placeholder=" ">
-            <span>Subject</span>
-        </div>
-
-        <div class="input-wrap email">
-            <input type="email" name="Email" required placeholder=" ">
-            <span>Email</span>
-        </div>
-
-        <div class="input-wrap paket">
-            <select name="Package" required>
-            <option value="" disabled selected>Choose a package</option>
-            <option value="Basic">Basic</option>
-            <option value="Standard">Standard</option>
-            <option value="Premium">Premium</option>
-            <option value="Custom">Custom</option>
-            </select>
-        </div>
-
-        <div class="input-wrap poruka">
-            <textarea name="Message" rows="5" required placeholder=""></textarea>
-            <span>Message</span>
-        </div>
-
-        <button type="submit" class="popup-submit">Order 
-            <i class="fa-solid fa-paper-plane"></i>
-        </button>
-        </form>
-    </div>
-    </div> 
-</section>
--->
 <section class="testimonials">
-    <h1 class="section-title" id="pojavljivanje">TESTIMONIALS</h1>
+  <h1 class="section-title" id="pojavljivanje">TESTIMONIALS</h1>
 
-    <div class="cards">
-
-        <div class="card" id="pojavljivanje">
-            <div class="testimonial-content">
-                <h3><i class="fa-solid fa-quote-left"></i> Stellar Web Design</h3>
-                <p>I am happy with the new website, especially the design and functionality. Maybe we could tweak a few things, but overall, great job! Thank you for your effort and professionalism! I look forward to further cooperation and possible improvements.</p>
-            </div>
-            <div class="stars">★★★★★</div>
-            <div class="user-info">
-                <img src="images/Photos/andrea.jpg" alt="Andrea Ilic">
-                <p>Andrea Ilic</p>
-            </div>
-        </div>
-
-        <div class="card" id="pojavljivanje">
-            <div class="testimonial-content">
-                <h3><i class="fa-solid fa-quote-left"></i> Exceptional Service</h3>
-                <p>I am delighted with the website! The design is fantastic, the functionality works great and everything is exactly as I wanted. Everything was done even before the deadline, which I really like. I look forward to further cooperation!</p>
-            </div>
-            <div class="stars">★★★★★</div>
-            <div class="user-info">
-                <img src="images/Photos/tutz.jpg" alt="Tutz">
-                <p>Tutz</p>
-            </div>
-        </div>
-
-        <div class="card" id="pojavljivanje">
-            <div class="testimonial-content">
-                <h3><i class="fa-solid fa-quote-left"></i> Outstanding Performance</h3>
-                <p>Working with this man has been a wonderful experience. They understood my requirements perfectly and delivered a website that exceeded my expectations. I highly recommend their services to anyone looking for top web development.</p>
-            </div>
-            <div class="stars">★★★★★</div>
-            <div class="user-info">
-                <img src="images/Photos/brown.jpg" alt="Michael Brown">
-                <p>Michael Brown</p>
-            </div>
-        </div>
-        
+  <div class="cards">
+    <div class="card" id="pojavljivanje">
+      <iconify-icon icon="mdi:rocket-launch" width="48" height="48" style="color: var(--kafa);"></iconify-icon>
+      <div class="testimonial-content">
+        <h3>Business Boost</h3>
+        <p>The new website is a game-changer! My clients can now easily book online and see my work, saving me so much time. It's exactly what I needed.</p>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="user-info">
+        <img src="images/Photos/selena.jpg" alt="Selena">
+        <p>Nails by Selena</p>
+      </div>
     </div>
+
+    <div class="card" id="pojavljivanje">
+      <iconify-icon icon="mdi:speedometer" width="48" height="48" style="color: var(--kafa);"></iconify-icon>
+      <div class="testimonial-content">
+        <h3>Flawless Performance</h3>
+        <p>Our old site was so slow. This new one is incredibly fast and works flawlessly. Milan delivered a high-performing site ahead of schedule. Highly recommend!</p>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="user-info">
+        <img src="images/Photos/tutz.jpg" alt="Tutz">
+        <p>Tutz</p>
+      </div>
+    </div>
+
+    <div class="card" id="pojavljivanje">
+      <iconify-icon icon="mdi:palette" width="48" height="48" style="color: var(--kafa);"></iconify-icon>
+      <div class="testimonial-content">
+        <h3>Beautiful & Functional</h3>
+        <p>"I wanted a beautiful and easy-to-use website. Milan delivered a stunning design that perfectly captures my brand and helped me reach a wider audience.</p>
+      </div>
+      <div class="stars">★★★★★</div>
+      <div class="user-info">
+        <img src="images/Photos/andrea.jpg" alt="Andrea Ilić">
+        <p>Andrea Ilić</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="clients">
