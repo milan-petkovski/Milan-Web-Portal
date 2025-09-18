@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2
+    threshold: 0.3
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -400,4 +400,50 @@ if (closePopupBtn) {
     closePopupBtn.addEventListener('click', closePopup);
 }
 }
+//#endregion
+
+//#region - ROADMAP
+async function fetchCommits(username, repo) {
+    const url = `https://api.github.com/repos/${username}/${repo}/commits?per_page=40&page=1`;
+    const response = await fetch(url);
+
+    if (!response.ok) {
+        throw new Error('Error loading commits');
+    }
+
+    const commits = await response.json();
+    return commits;
+}
+
+function displayRoadmap(commits) {
+    const list = document.getElementById('timeline-list');
+
+    list.innerHTML = commits.map((commit, index) => `
+        <li class="${index % 2 === 0 ? 'odd' : 'even'}">
+            <div class="timeline-content">
+                <span class="date">
+                  ${new Date(commit.commit.author.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }).replace(/(\d{2}) (\w+) (\d{4})/, '$1. $2 $3.')}
+                </span>
+                <h1>${commit.commit.message.split('\n')[0]}</h1>
+                <p>Autor: ${commit.commit.author.name}</p>
+                <div class="github-link-container">
+                    <iconify-icon icon="skill-icons:github-dark" class="github-icon"></iconify-icon>
+                    <a href="${commit.html_url}" target="_blank" class="github-link">Pogledaj na GitHub-u</a>
+                </div>
+            </div>
+        </li>
+    `).join('');
+}
+
+// Tvoj GitHub repo
+const username = 'milan-petkovski';
+const repo = 'Milan-Web-Portal';
+
+fetchCommits(username, repo)
+    .then(displayRoadmap)
+    .catch(err => {
+        document.getElementById('timeline-list').innerHTML =
+            '<li>Greška pri učitavanju komitova.</li>';
+        console.error(err);
+    });
 //#endregion
