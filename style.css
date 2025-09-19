@@ -357,6 +357,29 @@ header ul li a#icon i {
     pointer-events: none;
     z-index: 100;
 }
+.lang-switch button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 2px solid var(--bela);
+  color: var(--bela);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.lang-switch button:hover {
+  background: var(--bela);
+  color: var(--crna);
+  box-shadow: 0 0 8px var(--bela);
+}
+.lang-switch .flag {
+  font-size: 18px;
+}
+
 @media (max-width: 1024px) {
     header {
         display: none;

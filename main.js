@@ -447,3 +447,25 @@ fetchCommits(username, repo)
         console.error(err);
     });
 //#endregion
+
+//#region - PREVOD
+let currentLang = "rs";
+
+document.getElementById("langToggle").addEventListener("click", () => {
+  currentLang = currentLang === "rs" ? "en" : "rs";
+  setLanguage(currentLang);
+
+  const btn = document.getElementById("langToggle");
+  if (currentLang === "en") {
+    btn.innerHTML = '<iconify-icon icon="twemoji:flag-united-kingdom" class="flag"></iconify-icon><span>EN</span>';
+  } else {
+    btn.innerHTML = '<iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>SR</span>';
+  }
+});
+
+function setLanguage(lang) {
+  document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.' + lang).forEach(el => el.style.display = 'block');
+}
+
+//#endregion

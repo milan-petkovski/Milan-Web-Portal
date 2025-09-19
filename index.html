@@ -71,14 +71,22 @@
     <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
 
     <ul class="nav-menu">
-        <li><a href="index.html">
+        <li class="lang rs"><a href="index.html">
+            <i class="fa-solid fa-house"></i><span>Početna</span></a></li>
+        <li class="lang en" style="display: none;"><a href="index.html">
             <i class="fa-solid fa-house"></i><span>Home</span></a></li>
-        <li><a href="projects.html">
+        <li class="lang rs"><a href="projects.html">
+            <i class="fa-solid fa-code"></i><span>Projekti</span></a></li>
+        <li class="lang en" style="display: none;"><a href="projects.html">
             <i class="fa-solid fa-code"></i><span>Projects</span></a></li>
         <li><a href="roadmap.html" id="icon" data-tooltip="Roadmap">
             <i class="fa-solid fa-route"></i></a></li>
         <li><a href="linktree.html" id="icon" data-tooltip="Linktree">
-            <i class="fa-solid fa-tree"></i></a></li>
+            <i class="fa-solid fa-tree"></i></a></li>    
+        <li class="lang-switch">
+            <button id="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span></button>
+        </li>
+
     </ul>
 </header>
 
@@ -103,7 +111,8 @@
 
 <section class="landing">
     <h1>Milan Web Portal</h1>
-    <p class="tagline">I create modern websites and digital solutions for your business.</p>
+    <p class="tagline lang rs">Pravim moderne sajtove i digitalna rešenja za vaš biznis.</p>
+    <p class="tagline lang en" style="display:none">I create modern websites and digital solutions for your business.</p>
     <div class="social-icons">
         <a href="mailto: contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
             <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>
@@ -123,8 +132,10 @@
     </div>
 
     <div class="landBtn">
-        <a href="#start" class="go">Get started</a>
-        <a href="projects.html#projekti" class="portfolio-btn">My Projects</a>
+        <a href="#start" class="go lang rs">Započnite</a>
+        <a href="#start" class="go lang en" style="display: none;">Get started</a>
+        <a href="projects.html#projekti" class="portfolio-btn lang rs">Moji Projekti</a>
+        <a href="projects.html#projekti" class="portfolio-btn lang en" style="display: none;">My Projects</a>
     </div>
 
     <a href="#start" title="Scroll down" class="down"><i class="fa-solid fa-chevron-down fa-bounce"></i></a>
