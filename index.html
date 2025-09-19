@@ -84,9 +84,11 @@
         <li><a href="linktree.html" id="icon" data-tooltip="Linktree">
             <i class="fa-solid fa-tree"></i></a></li>    
         <li class="lang-switch">
-            <button id="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span></button>
+          <button class="langToggle">
+          <iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon>
+          <span>RS</span>
+          </button>
         </li>
-
     </ul>
 </header>
 
@@ -123,6 +125,11 @@
     </li>
 
     <hr class="divider"/>
+
+    <li class="lang-switch">
+      <button class="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span>
+      </button>
+    </li>
 
     <li>
       <a href="index.html#contact"><i class="fa-solid fa-envelope"></i>
@@ -295,58 +302,68 @@
 
   </div>
 
-    <div id="popupForm" class="popup-overlay">
-    <div class="popup-form-container">
-        <button class="popup-close" onclick="closePopup()">
-            <iconify-icon icon="line-md:close"></iconify-icon>
-        </button>
+  <div id="popupForm" class="popup-overlay">
+  <div class="popup-form-container">
+    <button class="popup-close" onclick="closePopup()">
+      <iconify-icon icon="line-md:close"></iconify-icon>
+    </button>
 
-        <div class="popup-header">
-            <h2>Let's create something great</h2>
-            <p>Fill out the form below and I'll get back to you soon.</p>
-        </div>
+    <div class="popup-header">
+      <h2 class="lang rs">Hajde da stvorimo nešto sjajno</h2>
+      <h2 class="lang en" style="display: none;">Let's create something great</h2>
 
-        <form method="POST" action="https://formsubmit.co/contact@milanwebportal.com" class="form-common">
-        <input type="hidden" name="_subject" value="Novi email!">
-        <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
-        <input type="hidden" name="_template" value="box">
-
-        <div class="input-wrap ime">
-            <input type="text" name="Name" required placeholder=" ">
-            <span>Name</span>
-        </div>
-
-        <div class="input-wrap naslov">
-            <input type="text" name="Subject" required placeholder=" ">
-            <span>Subject</span>
-        </div>
-
-        <div class="input-wrap email">
-            <input type="email" name="Email" required placeholder=" ">
-            <span>Email</span>
-        </div>
-
-        <div class="input-wrap paket">
-            <select name="Package" required>
-            <option value="" disabled selected>Choose a package</option>
-            <option value="Basic">Basic</option>
-            <option value="Standard">Standard</option>
-            <option value="Premium">Premium</option>
-            <option value="Custom">Custom</option>
-            </select>
-        </div>
-
-        <div class="input-wrap poruka">
-            <textarea name="Message" rows="5" required placeholder=""></textarea>
-            <span>Message</span>
-        </div>
-
-        <button type="submit" class="popup-submit">Order 
-            <i class="fa-solid fa-paper-plane"></i>
-        </button>
-        </form>
+      <p class="lang rs">Popunite formu ispod i bićete kontaktirani u najkraćem mogućem roku.</p>
+      <p class="lang en" style="display: none;">Fill out the form below and I'll get back to you soon.</p>
     </div>
-    </div>
+
+    <form method="POST" action="https://formsubmit.co/contact@milanwebportal.com" class="form-common">
+      <input type="hidden" name="_subject" value="Novi email!">
+      <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
+      <input type="hidden" name="_template" value="box">
+
+      <div class="input-wrap ime">
+        <input type="text" name="Name" required placeholder=" " autocomplete="name">
+        <span class="lang rs">Ime</span>
+        <span class="lang en" style="display: none;">Name</span>
+      </div>
+
+      <div class="input-wrap naslov">
+        <input type="text" name="Subject" required placeholder=" ">
+        <span class="lang rs">Naslov</span>
+        <span class="lang en" style="display: none;">Subject</span>
+      </div>
+
+      <div class="input-wrap email">
+        <input type="email" name="Email" required placeholder=" " autocomplete="email">
+        <span class="lang rs">Email</span>
+        <span class="lang en" style="display: none;">Email</span>
+      </div>
+
+      <div class="input-wrap paket">
+        <select name="Package" required>
+          <option value="" disabled selected class="lang rs">Izaberite paket</option>
+          <option value="" disabled selected class="lang en" style="display: none;">Choose a package</option>
+          <option value="Basic">Basic</option>
+          <option value="Standard">Standard</option>
+          <option value="Premium">Premium</option>
+          <option value="Custom">Custom</option>
+        </select>
+      </div>
+
+      <div class="input-wrap poruka">
+        <textarea name="Message" rows="5" required placeholder=""></textarea>
+        <span class="lang rs">Poruka</span>
+        <span class="lang en" style="display: none;">Message</span>
+      </div>
+
+      <button type="submit" class="popup-submit">
+        <span class="lang rs">Pošalji upit</span>
+        <span class="lang en" style="display: none;">Send query</span>
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+  </div>
 
   </div>
 </section>
@@ -441,7 +458,7 @@
 <section class="project">
   <a href="projects.html#projekti" class="projects-link" id="pojavljivanje">
     <h1 class="section-title lang rs">MOJI RADOVI <i class="fa-solid fa-arrow-right"></i></h1>
-    <h1 class="section-title lang en" style="display: none;">MOJI RADOVI <i class="fa-solid fa-arrow-right"></i></h1>
+    <h1 class="section-title lang en" style="display: none;">MY PROJECTS <i class="fa-solid fa-arrow-right"></i></h1>
   </a>
 
   <div class="row" style="justify-content: center;">
@@ -454,7 +471,7 @@
       </div>
       <h3 class="portfolio-item-title">Milan Web Portal</h3>
       <button type="button" class="btn view-project-btn lang rs" id="milan-web-portal-button">Pogledaj projekat</button>
-      <button type="button" class="btn view-project-btn lang en" id="milan-web-portal-button" style="display: none;">Pogledaj projekat</button>
+      <button type="button" class="btn view-project-btn lang en" id="milan-web-portal-button" style="display: none;">Explore project</button>
     </div>
 
     <!-- CM Agency -->
@@ -620,7 +637,7 @@
       <input type="hidden" name="_template" value="box">
 
       <div class="input-wrap ime" id="pojavljivanje">
-        <input type="text" name="Name" required placeholder=" ">
+        <input type="text" name="Name" required placeholder=" " autocomplete="name">
         <span class="lang rs">Ime</span>
         <span class="lang en" style="display:none;">Name</span>
       </div>
@@ -632,7 +649,7 @@
       </div>
 
       <div class="input-wrap email" id="pojavljivanje">
-        <input type="email" name="Email" required placeholder=" ">
+        <input type="email" name="Email" required placeholder=" " autocomplete="email">
         <span class="lang rs">Email</span>
         <span class="lang en" style="display:none;">Email</span>
       </div>
@@ -703,7 +720,7 @@
     </a>
   </div>
 
-  <div id="credit" class="lang rs pojavljivanje"> Created by <span>Milan Petkovski</span><br> All rights reserved. </div>
+  <div id="credit" class="lang rs pojavljivanje"> Napravio <span>Milan Petkovski</span><br> Sva prava zadržana. </div>
   <div id="credit" class="lang en pojavljivanje" style="display: none;"> Created by <span>Milan Petkovski</span><br> All rights reserved. </div>
 
   <div id="back-to-top">

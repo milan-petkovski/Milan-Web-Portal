@@ -99,15 +99,50 @@
   <ul id="navbar">
     <i class="fa-solid fa-xmark" id="close"></i>
 
-    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-    <li><a href="projects.html"><i class="fa-solid fa-code"></i><span>Projects</span></a></li>
-    <li><a href="roadmap.html"><i class="fa-solid fa-route"></i><span>Roadmap</span></a></li>
-    <li><a href="linktree.html"><i class="fa-solid fa-tree"></i><span>Linktree</span></a></li>
+    <li>
+      <a href="index.html"><i class="fa-solid fa-house"></i>
+        <span class="lang rs">Početna</span>
+        <span class="lang en" style="display:none;">Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="projects.html"><i class="fa-solid fa-code"></i>
+        <span class="lang rs">Projekti</span>
+        <span class="lang en" style="display:none;">Projects</span>
+      </a>
+    </li>
+    <li>
+      <a href="roadmap.html"><i class="fa-solid fa-route"></i>
+        <span class="lang rs">Roadmap</span>
+        <span class="lang en" style="display:none;">Roadmap</span>
+      </a>
+    </li>
+    <li>
+      <a href="linktree.html"><i class="fa-solid fa-tree"></i>
+        <span class="lang rs">Linktree</span>
+        <span class="lang en" style="display:none;">Linktree</span>
+      </a>
+    </li>
 
     <hr class="divider"/>
 
-    <li><a href="index.html#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
-    <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i><span>Support me</span></a></li>
+    <li class="lang-switch">
+      <button class="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span>
+      </button>
+    </li>
+
+    <li>
+      <a href="index.html#contact"><i class="fa-solid fa-envelope"></i>
+        <span class="lang rs">Kontakt</span>
+        <span class="lang en" style="display:none;">Contact</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i>
+        <span class="lang rs">Podrži me</span>
+        <span class="lang en" style="display:none;">Support me</span>
+      </a>
+    </li>
   </ul>
 </section>
 
@@ -133,7 +168,9 @@
                 <iconify-icon icon="skill-icons:instagram"></iconify-icon>Instagram
             </a>
             <a href="https://streamlabs.com/Milan_567/tip" class="donate" target="_blank">
-                <iconify-icon icon="logos:paypal"></iconify-icon>Support Me
+                <iconify-icon icon="logos:paypal"></iconify-icon>
+                <span class="lang rs">Podrži me</span>
+                <span class="lang en" style="display: none;">Support Me</span>
             </a>
         </div>
 
@@ -141,12 +178,12 @@
         <div id="share-preview" style="display: none;">
             <button class="close-btn" title="Close" onclick="toggleSharePreview()">X</button>
             <img src="images/Brands/linktree.png" alt="Share Preview">
-            <button onclick="shareContent()">Share</button>
+            <button class="lang rs" onclick="shareContent()">Podeli</button>
+            <button class="lang en" style="display: none;" onclick="shareContent()">Share</button>
         </div>
 
-        <div id="credit">
-            Created by <span>Milan Petkovski</span><br>All rights reserved.
-        </div>
+        <div id="credit" class="lang rs pojavljivanje"> Napravio <span>Milan Petkovski</span><br> Sva prava zadržana. </div>
+        <div id="credit" class="lang en pojavljivanje" style="display: none;"> Created by <span>Milan Petkovski</span><br> All rights reserved. </div>
     </div>
 </section>
 

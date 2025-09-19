@@ -63,19 +63,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const preventScroll = (e) => e.preventDefault();
 
     const openNav = () => {
-        if (isOpen || !nav) return;
-        isOpen = true;
-        nav.classList.add('active');
-        document.body.classList.add('no-scroll');
+    if (isOpen || !nav) return;
+    isOpen = true;
+    nav.classList.add('active');
+    if (window.innerWidth < 1024) {
         document.addEventListener('touchmove', preventScroll, { passive: false });
+    }
     };
 
     const closeNav = () => {
-        if (!isOpen || !nav) return;
-        isOpen = false;
-        nav.classList.remove('active');
-        document.body.classList.remove('no-scroll');
+    if (!isOpen || !nav) return;
+    isOpen = false;
+    nav.classList.remove('active');
+    if (window.innerWidth < 1024) {
         document.removeEventListener('touchmove', preventScroll);
+    }
     };
 
     bar?.addEventListener('click', openNav);
@@ -451,23 +453,50 @@ fetchCommits(username, repo)
 //#endregion
 
 //#region - PREVOD
-let currentLang = "rs";
+document.addEventListener('DOMContentLoaded', () => {
+    const langToggles = document.querySelectorAll('.langToggle');
 
-document.getElementById("langToggle").addEventListener("click", () => {
-  currentLang = currentLang === "rs" ? "en" : "rs";
-  setLanguage(currentLang);
+    function showLanguage(lang) {
+        document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.' + lang).forEach(el => el.style.display = 'block');
 
-  const btn = document.getElementById("langToggle");
-  if (currentLang === "en") {
-    btn.innerHTML = '<iconify-icon icon="twemoji:flag-united-kingdom" class="flag"></iconify-icon><span>EN</span>';
-  } else {
-    btn.innerHTML = '<iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>SR</span>';
-  }
+        const isMobile = window.innerWidth <= 1024;
+
+        langToggles.forEach(btn => {
+            const icon = btn.querySelector('iconify-icon');
+            const text = btn.querySelector('span');
+
+            if (lang === 'en') {
+                icon.setAttribute('icon', 'twemoji:flag-united-kingdom');
+                text.textContent = isMobile ? 'English' : 'EN';
+            } else {
+                icon.setAttribute('icon', 'twemoji:flag-serbia');
+                text.textContent = isMobile ? 'Srpski' : 'RS';
+            }
+        });
+    }
+
+    let currentLang = localStorage.getItem('selectedLang');
+    if (!currentLang) {
+        const userLang = navigator.language || navigator.userLanguage;
+        currentLang = userLang.startsWith('sr') ? 'rs' : 'en';
+    }
+
+    showLanguage(currentLang);
+    localStorage.setItem('selectedLang', currentLang);
+
+    langToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLang = currentLang === 'rs' ? 'en' : 'rs';
+            showLanguage(currentLang);
+            localStorage.setItem('selectedLang', currentLang);
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        showLanguage(currentLang);
+    });
 });
 
-function setLanguage(lang) {
-  document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.' + lang).forEach(el => el.style.display = 'block');
-}
 
 //#endregion

@@ -102,15 +102,50 @@
   <ul id="navbar">
     <i class="fa-solid fa-xmark" id="close"></i>
 
-    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-    <li><a href="projects.html"><i class="fa-solid fa-code"></i><span>Projects</span></a></li>
-    <li><a href="roadmap.html"><i class="fa-solid fa-route"></i><span>Roadmap</span></a></li>
-    <li><a href="linktree.html"><i class="fa-solid fa-tree"></i><span>Linktree</span></a></li>
+    <li>
+      <a href="index.html"><i class="fa-solid fa-house"></i>
+        <span class="lang rs">Početna</span>
+        <span class="lang en" style="display:none;">Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="projects.html"><i class="fa-solid fa-code"></i>
+        <span class="lang rs">Projekti</span>
+        <span class="lang en" style="display:none;">Projects</span>
+      </a>
+    </li>
+    <li>
+      <a href="roadmap.html"><i class="fa-solid fa-route"></i>
+        <span class="lang rs">Roadmap</span>
+        <span class="lang en" style="display:none;">Roadmap</span>
+      </a>
+    </li>
+    <li>
+      <a href="linktree.html"><i class="fa-solid fa-tree"></i>
+        <span class="lang rs">Linktree</span>
+        <span class="lang en" style="display:none;">Linktree</span>
+      </a>
+    </li>
 
     <hr class="divider"/>
 
-    <li><a href="index.html#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
-    <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i><span>Support me</span></a></li>
+    <li class="lang-switch">
+      <button class="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span>
+      </button>
+    </li>
+
+    <li>
+      <a href="index.html#contact"><i class="fa-solid fa-envelope"></i>
+        <span class="lang rs">Kontakt</span>
+        <span class="lang en" style="display:none;">Contact</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i>
+        <span class="lang rs">Podrži me</span>
+        <span class="lang en" style="display:none;">Support me</span>
+      </a>
+    </li>
   </ul>
 </section>
 
@@ -123,41 +158,55 @@
 </div>
 
 <footer>
-    <div id="mreze" class="pojavljivanje">
-        <div class="row" style="justify-content: center">
-        <a href="mailto:contact@milanwebportal.com" onclick="copyText()">
-            <iconify-icon icon="skill-icons:gmail-light"></iconify-icon></a>
-        <a href="https://linkedin.com/in/milan---petkovski">
-            <iconify-icon icon="skill-icons:linkedin"></iconify-icon></a>
-        <a href="https://instagram.com/milanwebportal">
-            <iconify-icon icon="skill-icons:instagram"></iconify-icon></a>
-        <a href="https://streamlabs.com/Milan_567/tip">
-            <iconify-icon icon="logos:paypal"></iconify-icon></a>
-        </div>
+  <div id="mreze" class="pojavljivanje">
+    <div class="row" style="justify-content: center">
+      <a href="mailto:contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
+        <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>
+      </a>
+      <a href="https://linkedin.com/in/milan---petkovski" aria-label="LinkedIn Profile" target="_blank">
+        <iconify-icon icon="skill-icons:linkedin"></iconify-icon>
+      </a>
+      <a href="https://github.com/milan-petkovski" aria-label="Github"  target="_blank">
+        <iconify-icon icon="fa:github-square"></iconify-icon>
+      </a>
+      <a href="https://instagram.com/milanwebportal" aria-label="Instagram Profile" target="_blank">
+        <iconify-icon icon="skill-icons:instagram"></iconify-icon>
+      </a>
+      <a href="https://streamlabs.com/Milan_567/tip" aria-label="Donate via PayPal" target="_blank">
+        <iconify-icon icon="logos:paypal"></iconify-icon>
+      </a>
     </div>
+  </div>
 
-    <div id="payment" class="pojavljivanje">
-        <p>You can pay with:</p>
-        <div class="cards">
-            <img src="images/Photos/visa.png">
-            <img src="images/Photos/mastercard.png">
-            <img src="images/Photos/maestro.png">
-            <img src="images/Photos/paypal.png">
-            <img src="images/Photos/skrill.png">
-            <img src="images/Photos/ips.png">
-            <img src="images/Photos/dina.png">
-        </div>
-        <a href="payment.html">For more info and payment methods...</a> 
+  <div id="payment" class="pojavljivanje">
+    <p>
+      <span class="lang rs">Možete plaćati sa:</span>
+      <span class="lang en" style="display:none;">You can pay with:</span>
+    </p>
+    <div class="cards">
+      <img src="images/Photos/visa.png" alt="Visa">
+      <img src="images/Photos/mastercard.png" alt="MasterCard">
+      <img src="images/Photos/maestro.png" alt="Maestro">
+      <img src="images/Photos/paypal.png" alt="PayPal">
+      <img src="images/Photos/skrill.png" alt="Skrill">
+      <img src="images/Photos/ips.png" alt="IPS">
+      <img src="images/Photos/dina.png" alt="Dina">
     </div>
+    <a href="payment.html" class="cta-link">
+      <span class="lang rs">Pogledaj sve opcije plaćanja</span>
+      <span class="lang en" style="display:none;">View all payment options</span>
+    </a>
+  </div>
 
-    <div id="credit" class="pojavljivanje">
-        Created by <span>Milan Petkovski</span> <span id="crta">|</span><span id="razmak"><br></span> All rights reserved.
-    </div>
+  <div id="credit" class="lang rs pojavljivanje"> Napravio <span>Milan Petkovski</span><br> Sva prava zadržana. </div>
+  <div id="credit" class="lang en pojavljivanje" style="display: none;"> Created by <span>Milan Petkovski</span><br> All rights reserved. </div>
 
-    <div id="back-to-top">
-        <svg id="progress" width="60" height="60"><circle cx="30" cy="30" r="25" stroke-width="5" fill="none" /></svg>
-        <button id="backToTop"><i class="fa-solid fa-angles-up"></i></button>
-    </div>
+  <div id="back-to-top">
+    <svg id="progress" width="60" height="60">
+      <circle cx="30" cy="30" r="25" stroke-width="5" fill="none" />
+    </svg>
+    <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-angles-up"></i></button>
+  </div>
 </footer>
 
 </body>

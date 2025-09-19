@@ -99,33 +99,74 @@
   <ul id="navbar">
     <i class="fa-solid fa-xmark" id="close"></i>
 
-    <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
-    <li><a href="projects.html"><i class="fa-solid fa-code"></i><span>Projects</span></a></li>
-    <li><a href="roadmap.html"><i class="fa-solid fa-route"></i><span>Roadmap</span></a></li>
-    <li><a href="linktree.html"><i class="fa-solid fa-tree"></i><span>Linktree</span></a></li>
+    <li>
+      <a href="index.html"><i class="fa-solid fa-house"></i>
+        <span class="lang rs">Početna</span>
+        <span class="lang en" style="display:none;">Home</span>
+      </a>
+    </li>
+    <li>
+      <a href="projects.html"><i class="fa-solid fa-code"></i>
+        <span class="lang rs">Projekti</span>
+        <span class="lang en" style="display:none;">Projects</span>
+      </a>
+    </li>
+    <li>
+      <a href="roadmap.html"><i class="fa-solid fa-route"></i>
+        <span class="lang rs">Roadmap</span>
+        <span class="lang en" style="display:none;">Roadmap</span>
+      </a>
+    </li>
+    <li>
+      <a href="linktree.html"><i class="fa-solid fa-tree"></i>
+        <span class="lang rs">Linktree</span>
+        <span class="lang en" style="display:none;">Linktree</span>
+      </a>
+    </li>
 
     <hr class="divider"/>
 
-    <li><a href="index.html#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a></li>
-    <li><a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i><span>Support me</span></a></li>
+    <li class="lang-switch">
+      <button class="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span>
+      </button>
+    </li>
+
+    <li>
+      <a href="index.html#contact"><i class="fa-solid fa-envelope"></i>
+        <span class="lang rs">Kontakt</span>
+        <span class="lang en" style="display:none;">Contact</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://streamlabs.com/Milan_567/tip"><i class="fa-solid fa-heart" style="color: red;"></i>
+        <span class="lang rs">Podrži me</span>
+        <span class="lang en" style="display:none;">Support me</span>
+      </a>
+    </li>
   </ul>
 </section>
 
 <section class="project">
 
     <div class="filter-container pojavljivanje" id="projekti">
-        <button class="filter-btn active" data-filter="all">ALL</button>
-        <button class="filter-btn" data-filter="html">
-            <i class="fa-brands fa-html5"></i> HTML</button>
-        <button class="filter-btn" data-filter="webflow">
-            <i class="fa-brands fa-webflow"></i> Webflow</button>
-        <button class="filter-btn" data-filter="ai">
-            <i class="fa-solid fa-robot"></i> AI</button>
-        <button class="filter-btn" data-filter="shopify">
-            <i class="fa-brands fa-shopify"></i> Shopify</button>
+    <button class="filter-btn active lang rs" data-filter="all">SVE</button>
+    <button class="filter-btn active lang en" data-filter="all" style="display: none;">ALL</button>
+
+    <button class="filter-btn" data-filter="html">
+        <i class="fa-brands fa-html5"></i> HTML</button>
+
+    <button class="filter-btn" data-filter="webflow">
+        <i class="fa-brands fa-webflow"></i> Webflow</button>
+
+    <button class="filter-btn" data-filter="ai">
+        <i class="fa-solid fa-robot"></i> AI</button>
+
+    <button class="filter-btn" data-filter="shopify">
+        <i class="fa-brands fa-shopify"></i> Shopify</button>
     </div>
 
-    <h2 class="section-heading pojavljivanje html" id="html-projects-heading"><i class="fa-brands fa-html5"></i> HTML <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje html lang rs" id="html-projects-heading"><i class="fa-brands fa-html5"></i> HTML <span>Projekti</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje html lang en" style="display: none;" id="html-projects-heading-en"><i class="fa-brands fa-html5"></i> HTML <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
 
     <div class="row">
         <!-- Milan Web Portal -->
@@ -135,7 +176,8 @@
             <img src="images/Projects/website1.png" loading="lazy" alt="Milan Web Portal"></a>
         </div>
         <h3 class="portfolio-item-title">Milan Web Portal</h3>
-        <button type="button" class="btn view-project-btn" id="milan-web-portal-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="milan-web-portal-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="milan-web-portal-button" style="display: none">Explore project</button>
         </div>
 
         <!------ CM Agency ----->
@@ -145,7 +187,8 @@
             <img src="images/Projects/website7.png" loading="lazy" alt="CM Agency"></a>
         </div>
         <h3 class="portfolio-item-title">CM Agency</h3>
-        <button type="button" class="btn view-project-btn" id="cmagency-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="cmagency-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="cmagency-project-button" style="display: none">Explore project</button>
         </div>
 
         <!-------- Leafy ------->
@@ -155,7 +198,8 @@
             <img src="images/Projects/website9.png" loading="lazy" alt="Leafy Mindset"></a>
         </div>
         <h3 class="portfolio-item-title">Leafy Mindset</h3>
-        <button type="button" class="btn view-project-btn" id="leafy-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="leafy-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="leafy-project-button" style="display: none">Explore project</button>
         </div>
 
         <!------- Grilli ------->
@@ -164,8 +208,9 @@
             <a href="https://grilli.milanwebportal.com" target="_blank">
             <img src="images/Projects/website5.png" loading="lazy" alt="Grilli"></a>
         </div>
-        <h3 class="portfolio-item-title">Grilli restaurant</h3>
-        <button type="button" class="btn view-project-btn" id="grilli-project-button">Explore project</button>
+        <h3 class="portfolio-item-title">Grilli</h3>
+        <button type="button" class="btn view-project-btn lang rs" id="grilli-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="grilli-project-button" style="display: none">Explore project</button>
         </div>        
         
         <!------- Tourly ------->
@@ -175,7 +220,8 @@
             <img src="images/Projects/website8.png" loading="lazy" alt="Tourly"></a>
         </div>
         <h3 class="portfolio-item-title">Tourly</h3>
-        <button type="button" class="btn view-project-btn" id="tourly-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="tourly-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="tourly-project-button" style="display: none">Explore project</button>
         </div>
 
         <!-------- TUTZ -------->
@@ -185,7 +231,8 @@
             <img src="images/Projects/website2.png" loading="lazy" alt="Tutz"></a>
         </div>
         <h3 class="portfolio-item-title">Tutz</h3>
-        <button type="button" class="btn view-project-btn" id="tutz-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="tutz-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="tutz-project-button" style="display: none">Explore project</button>
         </div>
 
         <!-------- Gamex ------->
@@ -195,7 +242,8 @@
             <img src="images/Projects/website3.png" loading="lazy" alt="Gamex"></a>
         </div>
         <h3 class="portfolio-item-title">Gamex</h3>
-        <button type="button" class="btn view-project-btn" id="gamex-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="gamex-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="gamex-project-button" style="display: none">Explore project</button>
         </div>
 
         <!------- Eduland ------>
@@ -205,12 +253,14 @@
             <img src="images/Projects/website4.png" loading="lazy" alt="Gamex"></a>
         </div>
         <h3 class="portfolio-item-title">Eduland</h3>
-        <button type="button" class="btn view-project-btn" id="eduland-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="eduland-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="eduland-project-button" style="display: none">Explore project</button>
         </div>
 
     </div>
 
-    <h2 class="section-heading pojavljivanje webflow" id="webflow-projects-heading"><i class="fa-brands fa-webflow"></i> Webflow <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje webflow lang rs" id="webflow-projects-heading"><i class="fa-brands fa-webflow"></i> Webflow <span>Projekti</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje webflow lang en" style="display: none;" id="webflow-projects-heading-en"><i class="fa-brands fa-webflow"></i> Webflow <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
 
     <div class="row">
         <!-------- CFC -------->
@@ -221,9 +271,11 @@
         </div>
         <h3 class="portfolio-item-title">CFC</h3>
         <a href="https://cfc-milanwebportal.webflow.io" target="_blank">
-            <button type="button" class="btn">Explore project</button>
+            <button type="button" class="btn lang rs">Pogledaj projekat</button>
+            <button type="button" class="btn lang en" style="display: none">Explore project</button>
         </a>
         </div>
+
         <!------- ZENN -------->
         <div class="portfolio-item" id="pojavljivanje" data-filter="webflow">
         <div class="portfolio-item-thumbnail">
@@ -232,22 +284,29 @@
         </div>
         <h3 class="portfolio-item-title">Zenn</h3>
         <a href="https://zenn-milanwebportal.webflow.io" target="_blank">
-            <button type="button" class="btn">Explore project</button>
+            <button type="button" class="btn lang rs">Pogledaj projekat</button>
+            <button type="button" class="btn lang en" style="display: none">Explore project</button>
         </a>
         </div>
+
         <!------- Coming ------->
         <div class="portfolio-item" id="pojavljivanje" data-filter="webflow">
         <div class="portfolio-item-thumbnail disabled">
-            <img src="images/Projects/website.png" loading="lazy" alt="coming"></a>
+            <img src="images/Projects/website.png" loading="lazy" alt="coming">
         </div>
-        <h3 class="portfolio-item-title">Coming soon</h3>
-        <button type="button" class="btn disabled">Explore soon</button>
+        <h3 class="portfolio-item-title lang rs">Uskoro</h3>
+        <h3 class="portfolio-item-title lang en" style="display: none;">Coming soon</h3>
+        
+        <button type="button" class="btn disabled lang rs">Pogledaj uskoro</button>
+        <button type="button" class="btn disabled lang en" style="display: none">Explore soon</button>
         </div>
 
     </div>
 
-
-    <h2 class="section-heading pojavljivanje ai" id="ai-projects-heading"><i class="fa-solid fa-robot"></i> AI <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje ai lang rs" id="ai-projects-heading">
+    <i class="fa-solid fa-robot"></i> AI <span>Projekti</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje ai lang en" style="display: none;" id="ai-projects-heading-en">
+    <i class="fa-solid fa-robot"></i> AI <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
     
     <div class="row">
         <!------- Frosty ------->
@@ -257,7 +316,8 @@
             <img src="images/Projects/website10.png" loading="lazy" alt="Frosty"></a>
         </div>
         <h3 class="portfolio-item-title">Frosty</h3>
-        <button type="button" class="btn view-project-btn" id="frosty-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="frosty-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="frosty-project-button" style="display: none">Explore project</button>
         </div>
 
         <!------- Przionica ------->
@@ -267,12 +327,14 @@
             <img src="images/Projects/website13.png" loading="lazy" alt="Przionica"></a>
         </div>
         <h3 class="portfolio-item-title">Pržionica</h3>
-        <button type="button" class="btn view-project-btn" id="przionica-project-button">Explore project</button>
+        <button type="button" class="btn view-project-btn lang rs" id="przionica-project-button">Pogledaj projekat</button>
+        <button type="button" class="btn view-project-btn lang en" id="przionica-project-button" style="display: none">Explore project</button>
         </div>
 
     </div>
     
-    <h2 class="section-heading pojavljivanje" id="shopify-projects-heading"><i class="fa-brands fa-shopify"></i> Shopify <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje shopify lang rs" id="shopify-projects-heading"><i class="fa-brands fa-shopify"></i> Shopify <span>Projekti</span> <i class="fa-solid fa-right-long"></i></h2>
+    <h2 class="section-heading pojavljivanje shopify lang en" style="display: none;" id="shopify-projects-heading-en"><i class="fa-brands fa-shopify"></i> Shopify <span>Projects</span> <i class="fa-solid fa-right-long"></i></h2>
 
     <div class="row">
         <!------- Leafy ------->
@@ -281,7 +343,8 @@
             <img src="images/Projects/website6.png" loading="lazy" alt="leafy mindset"></a>
         </div>
         <h3 class="portfolio-item-title">Leafy Mindset</h3>
-        <button type="button" class="btn disabled">Temporarily unavailable</button>
+        <button type="button" class="btn disabled lang rs">Privremeno nedostupno</button>
+        <button type="button" class="btn disabled lang en" style="display: none">Temporarily unavailable</button>
         </div>
 
     </div>
@@ -301,50 +364,55 @@
 </section>
 
 <footer>
-    <div id="mreze" class="pojavljivanje">
-        <div class="row" style="justify-content: center">
-            <a href="mailto:contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
-                <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>
-            </a>
-            <a href="https://linkedin.com/in/milan---petkovski" aria-label="LinkedIn Profile" target="_blank">
-                <iconify-icon icon="skill-icons:linkedin"></iconify-icon>
-            </a>
-            <a href="https://github.com/milan-petkovski" aria-label="Github"  target="_blank">
-                <iconify-icon icon="fa:github-square"></iconify-icon>
-            </a>
-            <a href="https://instagram.com/milanwebportal" aria-label="Instagram Profile" target="_blank">
-                <iconify-icon icon="skill-icons:instagram"></iconify-icon>
-            </a>
-            <a href="https://streamlabs.com/Milan_567/tip" aria-label="Donate via PayPal" target="_blank">
-                <iconify-icon icon="logos:paypal"></iconify-icon>
-            </a>
-        </div>
+  <div id="mreze" class="pojavljivanje">
+    <div class="row" style="justify-content: center">
+      <a href="mailto:contact@milanwebportal.com" onclick="copyText()" aria-label="Send Email">
+        <iconify-icon icon="skill-icons:gmail-light" alt="Gmail"></iconify-icon>
+      </a>
+      <a href="https://linkedin.com/in/milan---petkovski" aria-label="LinkedIn Profile" target="_blank">
+        <iconify-icon icon="skill-icons:linkedin"></iconify-icon>
+      </a>
+      <a href="https://github.com/milan-petkovski" aria-label="Github"  target="_blank">
+        <iconify-icon icon="fa:github-square"></iconify-icon>
+      </a>
+      <a href="https://instagram.com/milanwebportal" aria-label="Instagram Profile" target="_blank">
+        <iconify-icon icon="skill-icons:instagram"></iconify-icon>
+      </a>
+      <a href="https://streamlabs.com/Milan_567/tip" aria-label="Donate via PayPal" target="_blank">
+        <iconify-icon icon="logos:paypal"></iconify-icon>
+      </a>
     </div>
+  </div>
 
-    <div id="payment" class="pojavljivanje">
-        <p>You can pay with:</p>
-        <div class="cards">
-            <img src="images/Photos/visa.png" alt="Visa">
-            <img src="images/Photos/mastercard.png" alt="MasterCard">
-            <img src="images/Photos/maestro.png" alt="Maestro">
-            <img src="images/Photos/paypal.png" alt="PayPal">
-            <img src="images/Photos/skrill.png" alt="Skrill">
-            <img src="images/Photos/ips.png" alt="IPS">
-            <img src="images/Photos/dina.png" alt="Dina">
-        </div>
-        <a href="payment.html" class="cta-link">View all payment options</a>
+  <div id="payment" class="pojavljivanje">
+    <p>
+      <span class="lang rs">Možete plaćati sa:</span>
+      <span class="lang en" style="display:none;">You can pay with:</span>
+    </p>
+    <div class="cards">
+      <img src="images/Photos/visa.png" alt="Visa">
+      <img src="images/Photos/mastercard.png" alt="MasterCard">
+      <img src="images/Photos/maestro.png" alt="Maestro">
+      <img src="images/Photos/paypal.png" alt="PayPal">
+      <img src="images/Photos/skrill.png" alt="Skrill">
+      <img src="images/Photos/ips.png" alt="IPS">
+      <img src="images/Photos/dina.png" alt="Dina">
     </div>
+    <a href="payment.html" class="cta-link">
+      <span class="lang rs">Pogledaj sve opcije plaćanja</span>
+      <span class="lang en" style="display:none;">View all payment options</span>
+    </a>
+  </div>
 
-    <div id="credit" class="pojavljivanje">
-        Created by <span>Milan Petkovski</span><br> All rights reserved.
-    </div>
+  <div id="credit" class="lang rs pojavljivanje"> Napravio <span>Milan Petkovski</span><br> Sva prava zadržana. </div>
+  <div id="credit" class="lang en pojavljivanje" style="display: none;"> Created by <span>Milan Petkovski</span><br> All rights reserved. </div>
 
-    <div id="back-to-top">
-        <svg id="progress" width="60" height="60">
-            <circle cx="30" cy="30" r="25" stroke-width="5" fill="none" />
-        </svg>
-        <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-angles-up"></i></button>
-    </div>
+  <div id="back-to-top">
+    <svg id="progress" width="60" height="60">
+      <circle cx="30" cy="30" r="25" stroke-width="5" fill="none" />
+    </svg>
+    <button id="backToTop" aria-label="Back to top"><i class="fa-solid fa-angles-up"></i></button>
+  </div>
 </footer>
 
 </body>

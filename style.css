@@ -341,29 +341,36 @@ header ul li a i {
 header ul li a#icon i {
     margin-right: 0;
 }
+.nav-menu a[data-tooltip] {
+  position: relative;
+}
+.nav-menu a[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--bela);
+  color: var(--crna);
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
 .nav-menu a[data-tooltip]:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -34px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--bela);
-    color: var(--crna);
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 8px;
-    white-space: nowrap;
-    box-shadow: 0 0 6px var(--bela);
-    opacity: 1;
-    pointer-events: none;
-    z-index: 100;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 .lang-switch button {
   display: flex;
-  align-items: center;
   gap: 6px;
   background: transparent;
-  border: 2px solid var(--bela);
+  border: 2px solid #fff;
   color: var(--bela);
   padding: 5px 12px;
   border-radius: 20px;
@@ -463,6 +470,36 @@ header ul li a#icon i {
   text-align: center;
 }
 #navbar li a span {
+  font-size: 15px;
+}
+#navbar .lang-switch {
+  padding-left: 3px;
+}
+#navbar .langToggle {
+  background: transparent;
+  border: none;
+  color: var(--bela);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+#navbar .langToggle:hover {
+  background: var(--bela);
+  color: var(--crna);
+  box-shadow: 0 0 10px var(--bela);
+}
+#navbar .langToggle iconify-icon.flag {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+#navbar .langToggle span {
   font-size: 15px;
 }
 .divider {
@@ -727,6 +764,11 @@ header ul li a#icon i {
 .btn-link {
   text-decoration: none;
   display: block;
+}
+@media (max-width: 768px) {
+    .service-grid {
+        gap: 20px;
+    }
 }
 
 /* ----------- MY SKILLS ------------ */
@@ -1123,7 +1165,7 @@ header ul li a#icon i {
 @media (max-width: 900px) {
     .testimonials .cards {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 20px;
     }
 }
 @media (max-width: 768px) {
@@ -1251,7 +1293,7 @@ header ul li a#icon i {
 }
 .input-wrap span {
   position: absolute;
-  top: 1.5rem;
+  top: 1.7rem;
   left: 1.2rem;
   font-size: 1.15rem;
   color: #aaa;
@@ -1410,7 +1452,7 @@ header ul li a#icon i {
   }
   .input-wrap span {
     font-size: 1rem;
-    top: 1.3rem;
+    top: 1.5rem;
     left: 1rem;
   }
   .popup-header h2 {
@@ -1746,13 +1788,25 @@ body.popup-open {
   text-shadow: 0 0 15px rgba(211, 173, 127, 0.4);
 }
 @media (max-width: 768px) {
+  .about .box{
+    gap: 20px !important;
+    margin-bottom: 0;
+  }
   .about h1 {
     font-size: 2.6em;
     text-align: center;
+    margin-bottom: 20px;
   }  
   .about h1 .highlight {
     font-size: 1.2em;
     padding: 0 8px;
+  }
+  .about .item{
+    padding: 40px 20px;
+  }
+  .about .opis {
+    padding: 20px;
+    margin-bottom: 20px;
   }
   .about .opis p {
     font-size: 1.2em;
@@ -1956,7 +2010,10 @@ body.popup-open {
 .portfolio-item h3{
     font-size: 23px;
     color: var(--bela);
-    margin: 10px 0 20px;
+    margin: 10px 0;
+}
+.portfolio-item .btn{
+    text-transform: capitalize;
 }
 .portfolio-item-details{
     display: none;
