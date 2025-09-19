@@ -73,14 +73,22 @@
     <a href="index.html" class="logo"><img src="images/mwp.png" alt="Logo"></a>
 
     <ul class="nav-menu">
-        <li><a href="index.html">
+        <li class="lang rs"><a href="index.html">
+            <i class="fa-solid fa-house"></i><span>Početna</span></a></li>
+        <li class="lang en" style="display: none;"><a href="index.html">
             <i class="fa-solid fa-house"></i><span>Home</span></a></li>
-        <li><a href="projects.html">
+        <li class="lang rs"><a href="projects.html">
+            <i class="fa-solid fa-code"></i><span>Projekti</span></a></li>
+        <li class="lang en" style="display: none;"><a href="projects.html">
             <i class="fa-solid fa-code"></i><span>Projects</span></a></li>
         <li><a href="roadmap.html" id="icon" data-tooltip="Roadmap">
             <i class="fa-solid fa-route"></i></a></li>
         <li><a href="linktree.html" id="icon" data-tooltip="Linktree">
-            <i class="fa-solid fa-tree"></i></a></li>
+            <i class="fa-solid fa-tree"></i></a></li>    
+        <li class="lang-switch">
+            <button id="langToggle"><iconify-icon icon="twemoji:flag-serbia" class="flag"></iconify-icon><span>RS</span></button>
+        </li>
+
     </ul>
 </header>
 

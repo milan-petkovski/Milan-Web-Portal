@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.3
+    threshold: 0.1
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -403,6 +403,7 @@ if (closePopupBtn) {
 //#endregion
 
 //#region - ROADMAP
+if (/roadmap|\/$/.test(window.location.href)) {
 async function fetchCommits(username, repo) {
     const url = `https://api.github.com/repos/${username}/${repo}/commits?per_page=40&page=1`;
     const response = await fetch(url);
@@ -446,6 +447,7 @@ fetchCommits(username, repo)
             '<li>Greška pri učitavanju komitova.</li>';
         console.error(err);
     });
+}
 //#endregion
 
 //#region - PREVOD
