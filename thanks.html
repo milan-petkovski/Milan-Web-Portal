@@ -206,3 +206,50 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelector('section').classList.add('fade-in');
 });
 </script>
+<!-----PREVOD----->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const langToggles = document.querySelectorAll('.langToggle');
+
+    function showLanguage(lang) {
+        document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.' + lang).forEach(el => el.style.display = 'block');
+
+        const isMobile = window.innerWidth <= 1024;
+
+        langToggles.forEach(btn => {
+            const icon = btn.querySelector('iconify-icon');
+            const text = btn.querySelector('span');
+
+            if (lang === 'en') {
+                icon.setAttribute('icon', 'twemoji:flag-united-kingdom');
+                text.textContent = isMobile ? 'English' : 'EN';
+            } else {
+                icon.setAttribute('icon', 'twemoji:flag-serbia');
+                text.textContent = isMobile ? 'Srpski' : 'RS';
+            }
+        });
+    }
+
+    let currentLang = localStorage.getItem('selectedLang');
+    if (!currentLang) {
+        const userLang = navigator.language || navigator.userLanguage;
+        currentLang = userLang.startsWith('sr') ? 'rs' : 'en';
+    }
+
+    showLanguage(currentLang);
+    localStorage.setItem('selectedLang', currentLang);
+
+    langToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentLang = currentLang === 'rs' ? 'en' : 'rs';
+            showLanguage(currentLang);
+            localStorage.setItem('selectedLang', currentLang);
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        showLanguage(currentLang);
+    });
+});
+</script>
