@@ -52,7 +52,23 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //#endregion
 
-//#region - MOBILNI MENI
+//#region - HEADER
+if (/projects|index|roadmap|payment|\/$/.test(window.location.href)) {
+const header = document.querySelector("header");
+const placeholder = document.getElementById("header-placeholder");
+const headerHeight = header.offsetHeight;
+placeholder.style.height = "0px";
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 50){
+        header.classList.add("scrolled");
+        placeholder.style.height = headerHeight + "px";
+    } else {
+        header.classList.remove("scrolled");
+        placeholder.style.height = "0px";
+    }
+});
+//Mobilni header
 (() => {
     const nav = document.getElementById('navbar');
     const bar = document.getElementById('bar');
@@ -126,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 })();
-
+}
 //#endregion
 
 //#region - BACK TO TOP
@@ -500,3 +516,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //#endregion
+
