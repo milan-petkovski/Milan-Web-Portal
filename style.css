@@ -284,17 +284,22 @@ li{
 }
 
 /* ------------- HEADER ------------- */
-header {
-    position: relative;
-    width: 100%;
-    padding: 32px 7%;
+header {    
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;    
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 7%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 100;
     font-size: 14px;
     background: transparent;
-    transition: all 0.5s ease-in-out;
+    interpolate-size: allow-keywords;
+    transition: all 0.4s ease-in-out;
 }
 header.scrolled {
     position: fixed;
@@ -303,13 +308,17 @@ header.scrolled {
     transform: translateX(-50%) translateY(0);
     max-width: 1200px;
     width: auto;
-    padding: 14px 50px;
+    padding: 14px 40px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     border-radius: 18px;
+    transition: all 0.4s ease-in-out;
+}
+header.scrolled .logo{
+    display: flex;
 }
 header .logo img {
     width: 20%;
@@ -319,7 +328,7 @@ header .logo img {
 header.scrolled .logo img {
     width: 50%;
 }
-.logo img:hover {
+header .logo img:hover {
     transform: scale(1.02);
 }
 header ul {
@@ -495,6 +504,7 @@ header ul li a#icon i {
   padding-left: 3px;
 }
 #navbar .langToggle {
+    width: 100%;
   background: transparent;
   border: none;
   color: var(--bela);
@@ -504,7 +514,7 @@ header ul li a#icon i {
   border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
 }
