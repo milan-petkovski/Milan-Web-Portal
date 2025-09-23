@@ -68,6 +68,7 @@ window.addEventListener("scroll", () => {
         placeholder.style.height = "0px";
     }
 });
+}
 //Mobilni header
 (() => {
     const nav = document.getElementById('navbar');
@@ -142,7 +143,6 @@ window.addEventListener("scroll", () => {
         }
     });
 })();
-}
 //#endregion
 
 //#region - BACK TO TOP
@@ -277,6 +277,7 @@ if (/index|projects|\/$/.test(window.location.href)) {
 //#endregion
 
 //#region - PAYMENT
+if (/payment|\/$/.test(window.location.href)) {
 function sadrzaj() {
     const linkovi = document.getElementById("linkovi");
     linkovi.classList.toggle("hidden");
@@ -287,6 +288,7 @@ document.querySelectorAll("#linkovi a").forEach(link => {
         document.getElementById("linkovi")?.classList.add("hidden");
     });
 });
+}
 //#endregion
 
 //#region - LINKTREE
