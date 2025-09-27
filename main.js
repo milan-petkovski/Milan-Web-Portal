@@ -382,16 +382,11 @@ if (/linktree|\/$/.test(window.location.href)) {
 if (/index|\/$/.test(window.location.href)) {
 const popup = document.getElementById('popupForm');
 const popupContainer = popup.querySelector('.popup-form-container');
-const packageSelect = popup.querySelector('select[name=\"Package\"]');
 
-function openPopup(plan) {
+function openPopup() {
   popup.style.display = 'flex';
   popup.classList.remove('fade-out');
   popupContainer.style.display = 'block';
-  if (packageSelect) {
-    packageSelect.value = plan;
-    packageSelect.dispatchEvent(new Event('change'));
-  }
 }
 function closePopup() {
   popup.classList.add('fade-out');
@@ -412,12 +407,21 @@ popup.addEventListener('click', (e) => {
 
 const openContactBtn = document.getElementById('open-contact-btn');
 if (openContactBtn) {
-    openContactBtn.addEventListener('click', () => openPopup(''));
+    openContactBtn.addEventListener('click', () => openPopup());
 }
 
 const closePopupBtn = document.getElementById('close-popup-btn');
 if (closePopupBtn) {
     closePopupBtn.addEventListener('click', closePopup);
+}
+
+const budgetInput = document.querySelector('input[name="Budget"]');
+if (budgetInput) {
+  budgetInput.addEventListener('input', () => {
+    if (budgetInput.value < 0) {
+      budgetInput.value = 0;
+    }
+  });
 }
 }
 //#endregion

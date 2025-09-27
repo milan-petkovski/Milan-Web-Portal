@@ -328,46 +328,39 @@
       <input type="hidden" name="_next" value="https://milanwebportal.com/thanks">
       <input type="hidden" name="_template" value="box">
 
-      <div class="input-wrap ime">
+      <div class="input-wrap ime" id="pojavljivanje">
         <input type="text" name="Name" required placeholder=" " autocomplete="name">
         <span class="lang rs">Ime</span>
-        <span class="lang en" style="display: none;">Name</span>
+        <span class="lang en" style="display:none;">Name</span>
       </div>
 
-      <div class="input-wrap naslov">
+      <div class="input-wrap naslov" id="pojavljivanje">
         <input type="text" name="Subject" required placeholder=" ">
         <span class="lang rs">Naslov</span>
-        <span class="lang en" style="display: none;">Subject</span>
+        <span class="lang en" style="display:none;">Subject</span>
       </div>
 
-      <div class="input-wrap email">
+      <div class="input-wrap email" id="pojavljivanje">
         <input type="email" name="Email" required placeholder=" " autocomplete="email">
         <span class="lang rs">Email</span>
-        <span class="lang en" style="display: none;">Email</span>
+        <span class="lang en" style="display:none;">Email</span>
       </div>
 
-      <div class="input-wrap paket">
-        <select name="Package" required>
-          <option value="" disabled selected class="lang rs">Izaberite paket</option>
-          <option value="" disabled selected class="lang en" style="display: none;">Choose a package</option>
-          <option value="Basic">Basic</option>
-          <option value="Standard">Standard</option>
-          <option value="Premium">Premium</option>
-          <option value="Custom">Custom</option>
-        </select>
+      <div class="input-wrap budzet" id="pojavljivanje">
+        <input type="number" name="Budget" required placeholder=" " min="0">
+        <span class="lang rs">Budžet</span>
+        <span class="lang en" style="display:none;">Budget</span>
       </div>
 
-      <div class="input-wrap poruka">
+      <div class="input-wrap poruka" id="pojavljivanje">
         <textarea name="Message" rows="5" required placeholder=""></textarea>
         <span class="lang rs">Poruka</span>
-        <span class="lang en" style="display: none;">Message</span>
+        <span class="lang en" style="display:none;">Message</span>
       </div>
 
-      <button type="submit" class="popup-submit">
-        <span class="lang rs">Pošalji upit</span>
-        <span class="lang en" style="display: none;">Send query</span>
-        <i class="fa-solid fa-paper-plane"></i>
-      </button>
+      <button type="submit" class="popup-submit lang rs" id="pojavljivanje">Pošalji upit <i class="fa-solid fa-paper-plane"></i></button>
+      <button type="submit" class="popup-submit lang en" id="pojavljivanje" style="display: none;">Send query <i class="fa-solid fa-paper-plane"></i></button>
+      
     </form>
   </div>
   </div>
@@ -661,16 +654,10 @@
         <span class="lang en" style="display:none;">Email</span>
       </div>
 
-      <div class="input-wrap paket" id="pojavljivanje">
-        <select name="Package" required>
-          <option value="" disabled selected>
-            <span class="lang en" style="display:none;">Choose a package</span>
-          </option>
-          <option value="Basic">Basic</option>
-          <option value="Standard">Standard</option>
-          <option value="Premium">Premium</option>
-          <option value="Custom">Custom</option>
-        </select>
+      <div class="input-wrap budzet" id="pojavljivanje">
+        <input type="number" name="Budget" required placeholder=" " min="0">
+        <span class="lang rs">Budžet</span>
+        <span class="lang en" style="display:none;">Budget</span>
       </div>
 
       <div class="input-wrap poruka" id="pojavljivanje">

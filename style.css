@@ -1278,7 +1278,7 @@ header ul li a#icon i {
   gap: 2rem;
   grid-template-areas:
     "Name Subject"
-    "Email Package"
+    "Email Budget"
     "Message Message"
     "submit submit";
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1294,11 +1294,11 @@ header ul li a#icon i {
 .input-wrap.ime { grid-area: Name; }
 .input-wrap.naslov { grid-area: Subject; }
 .input-wrap.email { grid-area: Email; }
+.input-wrap.budzet { grid-area: Budget; }
 .input-wrap.poruka { grid-area: Message; }
 
 .input-wrap input,
-.input-wrap textarea,
-.input-wrap select {
+.input-wrap textarea{
   width: 100%;
   padding: 1.5rem 1.2rem 1.2rem;
   background: transparent;
@@ -1312,8 +1312,7 @@ header ul li a#icon i {
   box-sizing: border-box;
 }
 .input-wrap input:is(:focus, :hover),
-.input-wrap textarea:is(:focus, :hover),
-.input-wrap select:is(:focus, :hover) {
+.input-wrap textarea:is(:focus, :hover){
     border: 2px solid var(--kafa);
 }
 .input-wrap textarea {
@@ -1332,17 +1331,18 @@ header ul li a#icon i {
   user-select: none;
   background: transparent;
 }
-.input-wrap select option {
-  background-color: #1c1c1c;
-  color: var(--bela);
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  background: #d3ad7f;
+  border-left: 2px solid rgba(255,255,255,0.4);
+  cursor: pointer;
 }
+
 /* Lebdeći label */
 .input-wrap input:focus + span,
 .input-wrap input:not(:placeholder-shown) + span,
 .input-wrap textarea:focus + span,
-.input-wrap textarea:not(:placeholder-shown) + span,
-.input-wrap select:focus + span,
-.input-wrap select:not([value=""]) + span {
+.input-wrap textarea:not(:placeholder-shown) + span {
   top: -1rem;
   left: 1rem;
   font-size: 1.1rem;
@@ -1373,7 +1373,6 @@ header ul li a#icon i {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
-
 /* Popup */
 #popupForm {
     transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
@@ -1465,7 +1464,7 @@ header ul li a#icon i {
       "Name"
       "Subject"
       "Email"
-      "Package"
+      "Budget"
       "Message"
       "submit";
     gap: 1.5rem 0;
@@ -1474,8 +1473,7 @@ header ul li a#icon i {
     grid-column: span 1 !important;
   }
   .input-wrap input,
-  .input-wrap textarea,
-  .input-wrap select {
+  .input-wrap textarea{
     font-size: 1.2rem;
     padding: 1.3rem 1rem 1rem;
   }
