@@ -465,8 +465,7 @@ const repo = 'Milan-Web-Portal';
 fetchCommits(username, repo)
     .then(displayRoadmap)
     .catch(err => {
-        document.getElementById('timeline-list').innerHTML =
-            '<li>Greška pri učitavanju komitova.</li>';
+        document.getElementById('timeline-list').innerHTML ='<li>Greška pri učitavanju komitova.</li>';
         console.error(err);
     });
 }
