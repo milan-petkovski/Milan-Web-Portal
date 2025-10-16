@@ -427,7 +427,7 @@ if (budgetInput) {
 //#endregion
 
 //#region - ROADMAP
-if (/roadmap|\/$/.test(window.location.href)) {
+if (/roadmap/.test(window.location.pathname)) {
 async function fetchCommits(username, repo) {
     const url = `https://api.github.com/repos/${username}/${repo}/commits?per_page=40&page=1`;
     const response = await fetch(url);
