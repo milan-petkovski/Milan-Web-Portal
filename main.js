@@ -446,15 +446,13 @@ function displayRoadmap(commits) {
     list.innerHTML = commits.map((commit, index) => `
         <li class="${index % 2 === 0 ? 'odd' : 'even'}">
             <div class="timeline-content">
-                <span class="date">
-                  ${new Date(commit.commit.author.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }).replace(/(\d{2}) (\w+) (\d{4})/, '$1. $2 $3.')}
-                </span>
-                <h1>${commit.commit.message.split('\n')[0]}</h1>
-                <p>Autor: ${commit.commit.author.name}</p>
-                <div class="github-link-container">
-                    <iconify-icon icon="skill-icons:github-dark" class="github-icon"></iconify-icon>
-                    <a href="${commit.html_url}" target="_blank" class="github-link">Pogledaj na GitHub-u</a>
-                </div>
+              <span class="date">${new Date(commit.commit.author.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).replace(/(\d{2}) (\w+) (\d{4})/, '$1. $2 $3.')}</span>
+              <h1>${commit.commit.message.split('\n')[0]}</h1>
+              <p>Autor: ${commit.commit.author.name}</p>
+              <div class="github-link-container">
+                <iconify-icon icon="skill-icons:github-dark" class="github-icon"></iconify-icon>
+                <a href="${commit.html_url}" target="_blank" class="github-link">Pogledaj na GitHub-u</a>
+              </div>
             </div>
         </li>
     `).join('');
