@@ -523,3 +523,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //#endregion
 
+//#region - BEFORE-AFTER
+if (/projects|\/$/.test(window.location.href)) {
+document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.getElementById('comparison-frame');
+    const toggleOld = document.getElementById('toggle-old');
+    const toggleNew = document.getElementById('toggle-new');
+    const toggleOldEn = document.getElementById('toggle-old-en');
+    const toggleNewEn = document.getElementById('toggle-new-en');
+    const allButtons = [toggleOld, toggleNew, toggleOldEn, toggleNewEn];
+    const urlOld = 'https://demo-grilli.netlify.app';
+    const urlNew = 'https://grilli.milanwebportal.com';
+
+    function setActive(activeButtonId) {
+        allButtons.forEach(btn => {
+            if (btn) btn.classList.remove('active-toggle');
+        });
+        if (activeButtonId === 'old') {
+            if (toggleOld) toggleOld.classList.add('active-toggle');
+            if (toggleOldEn) toggleOldEn.classList.add('active-toggle');
+        } else {
+            if (toggleNew) toggleNew.classList.add('active-toggle');
+            if (toggleNewEn) toggleNewEn.classList.add('active-toggle');
+        }
+    }
+
+    function swapIframeContent(newUrl, activeButtonId) {
+        if (!iframe) return;
+        iframe.src = newUrl;
+        setActive(activeButtonId);
+    }
+
+    if (iframe) {
+        iframe.src = urlOld;
+        setActive('old');
+    }
+
+    [toggleOld, toggleOldEn].forEach(btn => {
+        if (btn) btn.addEventListener('click', () => {
+            if (btn.classList.contains('active-toggle')) return;
+            swapIframeContent(urlOld, 'old');
+        });
+    });
+
+    [toggleNew, toggleNewEn].forEach(btn => {
+        if (btn) btn.addEventListener('click', () => {
+            if (btn.classList.contains('active-toggle')) return;
+            swapIframeContent(urlNew, 'new');
+        });
+    });
+});
+
+}
+//#endregion
