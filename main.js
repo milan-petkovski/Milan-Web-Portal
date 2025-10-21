@@ -570,34 +570,35 @@ document.addEventListener('DOMContentLoaded', () => {
 //#region - GOOGLE ANALYTICS
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookie");
-  const button = document.getElementById("accept-cookies");
+  const btn = document.getElementById("accept-cookies");
 
   if (localStorage.getItem("cookiesAccepted") === "true") {
-    loadGoogleAnalytics();
+    banner.style.display = "none";
+    loadGA();
   } else {
     banner.style.display = "flex";
   }
 
-  button.addEventListener("click", () => {
+  btn.onclick = function() {
     localStorage.setItem("cookiesAccepted", "true");
     banner.style.display = "none";
-    loadGoogleAnalytics();
-  });
+    loadGA();
+  }
+
+  function loadGA() {
+    if (window.gaLoaded) return;
+    const s = document.createElement("script");
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-DM9Y5RBBK2";
+    s.async = true;
+    document.head.appendChild(s);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-DM9Y5RBBK2');
+
+    window.gaLoaded = true;
+  }
 });
-
-// Funkcija koja učitava GA skriptu
-function loadGoogleAnalytics() {
-  if (window.gaLoaded) return;
-  window.gaLoaded = true;
-
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-DM9Y5RBBK2";
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DM9Y5RBBK2');
-}
 //#endregion
