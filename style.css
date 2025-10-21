@@ -30,7 +30,7 @@
 body{
     min-height: 100vh;
     overflow-x: hidden;
-    background-image: var(--pozadina);
+    background: var(--pozadina);
 }
 html{
     font-size: 62.5%;
@@ -61,14 +61,14 @@ li{
 }
 .pojavljivanje,
 #pojavljivanje {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 .pojavljivanje.visible,
 #pojavljivanje.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 .btn{
 	background-color:var(--kafa);
@@ -717,14 +717,25 @@ header ul li a#icon i {
   border-radius: 20px;
   padding: 30px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.5s;
   display: flex;
   flex-direction: column;
+  height: 100%; 
   justify-content: space-between;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 .service-box:hover {
   border-color: var(--kafa);
+  box-shadow: 0 15px 30px rgb(211, 173, 127, 0.3);
+  background: #17110a;
+}
+.service-box .content {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+.service-box .content p {
+  flex-grow: 1;
 }
 .service-box h2 {
   font-size: 2rem;
@@ -738,6 +749,8 @@ header ul li a#icon i {
   color: var(--siva);
   line-height: 1.8;
   margin-bottom: 25px;
+    align-self: stretch;
+  margin-top: auto;
 }
 .service-box .btn {
   width: 100%;
@@ -825,9 +838,12 @@ header ul li a#icon i {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .skills .box:hover {
     border-color: var(--kafa);
+    box-shadow: 0 15px 30px rgb(211, 173, 127, 0.3);
+    background: #17110a;
 }
 .skills h2{
     font-size: 1.8rem;
@@ -862,7 +878,7 @@ header ul li a#icon i {
     font-size: 40px;
     color: var(--bela);
     margin-bottom: 1rem;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 .skills .icon:hover iconify-icon {
     color: var(--kafa, #d3ad7f);
@@ -1136,9 +1152,12 @@ header ul li a#icon i {
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
 }
 .testimonials .card:hover {
     border-color: var(--kafa);
+    box-shadow: 0 15px 30px rgb(211, 173, 127, 0.3);
+    background: #17110a;
 }
 .testimonials .card iconify-icon {
     display: flex;
@@ -1628,6 +1647,36 @@ footer {
     outline: none;
     z-index: 1000;
 }
+footer .cookie {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffffff0d, #ffffff05);
+  border: 1px solid #ffffff2e;
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  font-size: 1.4rem;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease forwards;
+}
+footer .cookie p {
+  margin: 0;
+  line-height: 1.4;
+}
+footer .cookie button:hover {
+  background: #d19d5d;
+}
+footer .cookie button{
+    width: auto;
+    padding: 8px 16px;
+}
 @media (max-width: 768px) {
     #mreze iconify-icon {
         font-size: 40px;
@@ -1730,11 +1779,12 @@ body.popup-open {
   vertical-align: middle; 
 }
 .about .opis {
-  background: rgba(28, 28, 28, 0.95);
   padding: 50px;
+  background: linear-gradient(135deg, #ffffff0d, #ffffff05);
+  border: 1px solid #ffffff2e;
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(211, 173, 127, 0.4);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
   max-width: 900px;
   margin-bottom: 30px;
@@ -1757,18 +1807,20 @@ body.popup-open {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 40px;
-  background: linear-gradient(145deg, #1c1c1c, #141414);
-  border-radius: 18px;
+  padding: 30px;
+  background: linear-gradient(135deg, #ffffff0d, #ffffff05);
+  border: 1px solid #ffffff2e;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
-  border: 2px solid transparent;
   transition: all 0.5s ease;
   cursor: pointer;
 }
 .about .item:hover {
-  border-color: rgba(255, 169, 10, 0.85);
-  box-shadow: 0 15px 30px rgba(255, 169, 10, 0.3);
-  background: linear-gradient(145deg, #201a0f, #17110a);
+  border-color: var(--kafa);
+  box-shadow: 0 15px 30px rgb(211, 173, 127, 0.3);
+  background: #17110a;
 }
 .about .item i {
   font-size: 4.5em;

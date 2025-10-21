@@ -30,25 +30,18 @@ window.addEventListener("load", fadeOut);
 
 //#region - POJAVLJIVANJE
 document.addEventListener("DOMContentLoaded", () => {
-  const pojavljivanjeItems = document.querySelectorAll('.pojavljivanje, #pojavljivanje');
+  const items = document.querySelectorAll('.pojavljivanje, #pojavljivanje');
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-      } else {
-        entry.target.classList.remove('visible');
+        obs.unobserve(entry.target); 
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.2 });
 
-  pojavljivanjeItems.forEach(item => observer.observe(item));
+  items.forEach(item => observer.observe(item));
 });
 //#endregion
 
@@ -571,5 +564,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+}
+//#endregion
+
+//#region - GOOGLE ANALYTICS
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookie");
+  const button = document.getElementById("accept-cookies");
+
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    loadGoogleAnalytics();
+  } else {
+    banner.style.display = "flex";
+  }
+
+  button.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner.style.display = "none";
+    loadGoogleAnalytics();
+  });
+});
+
+// Funkcija koja učitava GA skriptu
+function loadGoogleAnalytics() {
+  if (window.gaLoaded) return;
+  window.gaLoaded = true;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-DM9Y5RBBK2";
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DM9Y5RBBK2');
 }
 //#endregion
