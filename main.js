@@ -187,7 +187,8 @@ if (/index|projects|\/$/.test(window.location.href)) {
       'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/gamex/main/README.md',
       'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/eduland/main/README.md',
       'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/frosty/main/README.md',
-      'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Przionica/refs/heads/main/README.md'
+      'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Przionica/refs/heads/main/README.md',
+      'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Nexus/refs/heads/main/README.md'
     };
 
     const viewProjectButtons = document.querySelectorAll('.view-project-btn');
