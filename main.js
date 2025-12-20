@@ -178,16 +178,16 @@ if (/index|projects|\/$/.test(window.location.href)) {
     ].map(id => document.querySelector(id)).filter(Boolean);
 
     const projectReadmeUrls = {
-      'milan-web-portal-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/main/README.md',
+      'milan-web-portal-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/README.md',
       'cmagency-project-button': 'https://raw.githubusercontent.com/milan-petkovski/cmagency/main/README.md',
       'leafy-project-button': 'https://raw.githubusercontent.com/milan-petkovski/leafy/main/README.md',
-      'grilli-project-button': 'https://raw.githubusercontent.com/milan-petkovski/grilli/main/README.md',
-      'tourly-project-button': 'https://raw.githubusercontent.com/milan-petkovski/tourly/main/README.md',
+      'grilli-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Grilli/README.md',
+      'tourly-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Tourly/README.md',
       'tutz-project-button': 'https://raw.githubusercontent.com/milan-petkovski/tutz/main/README.md',
-      'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/gamex/main/README.md',
-      'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/eduland/main/README.md',
-      'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/frosty/main/README.md',
-      'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Przionica/refs/heads/main/README.md',
+      'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/GameX/README.md',
+      'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Eduland/README.md',
+      'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Frosty/README.md',
+      'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Przionica/README.md',
       'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Nexus/refs/heads/main/README.md'
     };
 
