@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Web-Author" content="Milan Petkovski">
+  <meta name="copyright" content="Milan Petkovski">
+  <meta name=“description” content="Grilli je potpuno odzivan restoranski veb sajt, izgrađen koristeći HTML, CSS i JavaScript.">
+  <meta name=“keywords” content="grilli, restaurant, restoran, grilli restoran, grilli restaurant, grili, grill, hrana, website"> 
+  <meta name="theme-color" content="#212121">
+  <title>Milan Web Portal - Grilli</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://bit.ly/3TlBnOO">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PRELOADER -->
+<section class="preload" data-preload>
+  <div class="circle"></div>
+  <p>Restaurant<br>website</p>
+</section>
+
+<!--- TOP BAR --->
+<section class="topbar">
+  <div class="container">
+
+  <div class="topbar-item">
+    <i class="fa-solid fa-location-dot"></i>
+    <span class="span">Restoran, lokacija</span>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="topbar-item item-2">
+    <i class="fa-regular fa-clock"></i>
+    <span class="span">Svakim danom: 8:00 do 22:00</span>
+  </div>
+
+  <div class="topbar-item link">
+    <i class="fa-solid fa-phone-volume"></i>
+    <span class="span">+1 123 456 789</span>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="topbar-item link">
+    <i class="fa-regular fa-envelope"></i>
+    <span class="span">email@vasrestoran.com</span>
+  </div>
+
+  </div>
+</section>
+
+<!---- HEADER --->
+<header class="header" data-header>
+  <div class="container">
+
+  <a href="#" class="logo"><img src="images/logo.png"></a>
+
+  <nav class="navbar" data-navbar>
+
+    <button class="close-btn" data-nav-toggler><i class="fa-solid fa-xmark"></i></button>
+    <a href="#"class="logo"><img src="images/logo.png"></a>
+
+    <ul class="navbar-list">
+
+      <li class="navbar-item" aria-label="Pocetna">
+        <a href="#home" class="navbar-link hover-underline active"  data-nav-toggler>
+          <div class="separator"></div>
+          <span class="span">Pocetna</span>
+        </a>
+      </li>
+
+      <li class="navbar-item" aria-label="O nama">
+        <a href="#o-nama" class="navbar-link hover-underline" data-nav-toggler>
+          <div class="separator"></div>
+          <span class="span">O nama</span>
+        </a>
+      </li>
+
+      <li class="navbar-item" aria-label="Meni">
+        <a href="#menu" class="navbar-link hover-underline" data-nav-toggler>
+          <div class="separator"></div>
+          <span class="span">Meni</span>
+        </a>
+      </li>
+
+      <li class="navbar-item" aria-label="Nasi kuvari">
+        <a href="#review" class="navbar-link hover-underline" data-nav-toggler>
+          <div class="separator"></div>
+          <span class="span">Nasi kuvari</span>
+        </a>
+      </li>
+
+      <li class="navbar-item" aria-label="Kontakt">
+        <a href="#rezervacija" class="navbar-link hover-underline" data-nav-toggler>
+          <div class="separator"></div>
+          <span class="span">Kontakt</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="text-center">
+      <p class="headline-1 navbar-title">Poseti nas</p>
+      <div class="body-4">Restaurant, location</div>
+      <p class="body-4 navbar-text">Otvoreni od 8:00 do 22:00</p>
+      <div class="body-4 sidebar-link">email@vasrestoran.com</div>
+      <div class="separator"></div>
+      <p class="contact-label">Zahtev za rezervaciju</p>
+      <div class="body-1 contact-number hover-underline">+1 123 456 789</div>
+    </div>
+
+  </nav>
+
+  <a href="#rezervacija" class="btn btn-secondary">
+    <span class="text text-1">Rezervisi sto</span>
+    <span class="text text-2" aria-hidden="true">Rezervisi sto</span>
+  </a>
+
+  <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+    <span class="line line-1"></span>
+    <span class="line line-2"></span>
+    <span class="line line-3"></span>
+  </button>
+
+  <div class="overlay" data-nav-toggler data-overlay></div>
+
+  </div>
+</header>
+
+<main>
+<article>
+
+<section class="hero" id="home">
+
+  <ul class="hero-slider" data-hero-slider>
+
+    <li class="slider-item active" data-hero-slider-item>
+      <div class="slider-bg">
+      <img src="images/hero-slider-1.jpg" width="1880" height="950" class="img-cover">
+      </div>
+      <p class="label-2 section-subtitle slider-reveal">Tradicionalno</p>
+      <h1 class="display-1 hero-title slider-reveal">
+        Za ljubav prema <br> ukusnoj hrani
+      </h1>
+      <p class="body-2 hero-text slider-reveal">
+        Dođite sa porodicom i osetite radost ukusne hrane
+      </p>
+      <a href="#menu" class="btn btn-primary slider-reveal">
+        <span class="text text-1">Pogledajte nas menu</span>
+        <span class="text text-2" aria-hidden="true">Pogledajte nas menu</span>
+      </a>
+    </li>
+
+    <li class="slider-item active" data-hero-slider-item>
+      <div class="slider-bg">
+      <img src="images/hero-slider-2.jpg" width="1880" height="950"class="img-cover">
+      </div>
+      <p class="label-2 section-subtitle slider-reveal">Tradicionalno</p>
+      <h1 class="display-1 hero-title slider-reveal">
+        Ukusi inspirisani <br> godisnjim dobima
+      </h1>
+      <p class="body-2 hero-text slider-reveal">
+        Dođite sa porodicom i osetite radost ukusne hrane
+      </p>
+      <a href="#menu" class="btn btn-primary slider-reveal">
+        <span class="text text-1">Pogledajte nas menu</span>
+        <span class="text text-2" aria-hidden="true">Pogledajte nas menu</span>
+      </a>
+    </li>
+
+    <li class="slider-item active" data-hero-slider-item>
+      <div class="slider-bg">
+      <img src="images/hero-slider-3.jpg" width="1880" height="950"class="img-cover">
+      </div>
+      <p class="label-2 section-subtitle slider-reveal">Neverovatno i ukusno</p>
+      <h1 class="display-1 hero-title slider-reveal">
+        Gde svaki ukus <br> prica pricu
+      </h1>
+      <p class="body-2 hero-text slider-reveal">
+        Dođite sa porodicom i osetite radost ukusne hrane
+      </p>
+      <a href="#menu" class="btn btn-primary slider-reveal">
+        <span class="text text-1">Pogledajte nas menu</span>
+        <span class="text text-2" aria-hidden="true">Pogledajte nas menu</span>
+      </a>
+    </li>
+
+  </ul>
+
+  <button class="slider-btn prev" data-prev-btn>
+    <i class="fa-solid fa-chevron-left fa-fade"></i>
+  </button>
+
+  <button class="slider-btn next" data-next-btn>
+    <i class="fa-solid fa-chevron-right fa-fade"></i>
+  </button>
+
+  <a href="#rezervacija" class="hero-btn has-after">
+    <img src="images/hero-icon.png" width="48" height="48">
+    <span class="label-2 text-center span">Rezervisi sto</span>
+  </a>
+
+</section>
+
+<section class="service" id="service">
+  <div class="container">
+
+  <p class="section-subtitle label-2">Ukusi za kraljevstvo</p>
+  <h2 class="headline-1 section-title">Nudimo vrhunski</h2>
+  <p class="section-text"></p>
+
+  <ul class="grid-list">
+
+    <li aria-label="dorucak">
+      <div class="service-card">
+        <a href="#" class="has-before hover:shine">
+        <div class="card-banner img-holder" style="--width: 285; --height: 336;">
+        <img src="images/service-1.jpg" width="285" height="336" loading="lazy" alt="Breakfast" class="img-cover">
+        </div>
+        </a>
+
+        <div class="card-content">
+            <h3 class="title-4 card-title"><a href="#">Dezert</a></h3>
+            <a href="#menu" class="btn-text hover-underline label-2">Pogledaj menu</a>
+        </div>
+      </div>
+    </li>
+
+    <li aria-label="Rucak">
+        <div class="service-card">
+          <a href="#" class="has-before hover:shine">
+          <div class="card-banner img-holder" style="--width: 285; --height: 336;">
+          <img src="images/service-2.jpg" width="285" height="336" loading="lazy" class="img-cover">
+          </div>
+          </a>
+  
+          <div class="card-content">
+              <h3 class="title-4 card-title"><a href="#">Rucak</a></h3>
+              <a href="#menu" class="btn-text hover-underline label-2">Pogledaj menu</a>
+          </div>
+        </div>
+    </li>
+
+    <li aria-label="Pica">
+        <div class="service-card">
+          <a href="#" class="has-before hover:shine">
+          <div class="card-banner img-holder" style="--width: 285; --height: 336;">
+          <img src="images/service-3.jpg" width="285" height="336" loading="lazy" class="img-cover">
+          </div>
+          </a>
+  
+          <div class="card-content">
+              <h3 class="title-4 card-title"><a href="#">Pica</a></h3>
+              <a href="#menu" class="btn-text hover-underline label-2">Pogledaj menu</a>
+          </div>
+        </div>
+    </li>
+
+  </ul>
+
+  <img src="images/shape-1.png" width="246" height="412" loading="lazy"  class="shape shape-1 move-anim">
+  <img src="images/shape-2.png" width="343" height="345" loading="lazy" class="shape shape-2 move-anim">
+
+  </div>
+</section>
+
+<section class="about" id="o-nama">
+  <div class="container">
+
+    <div class="about-content">
+      <p class="label-2 section-subtitle" id="about-label">Nasa prica</p>
+      <h2 class="headline-1 section-title">Svaki ukus prica pricu</h2>
+      <p class="section-text">Naša kuhinja je spoj tradicionalnih i modernih ukusa, a svaki zalogaj priča svoju priču. Uživajte u našim specijalitetima, od sočnih bifteka do laganih salata. Naša vinska karta nudi širok izbor vina koji će upotpuniti vaše gastronomske doživljaje. Rezervišite svoje mesto već danas i doživite nezaboravno putovanje kroz ukuse! 🍽️🍷</p>
+      <div class="contact-label">Rezervisite putem poziva</div>
+      <a href="" class="body-1 contact-number hover-underline">+1 123 456 789</a>
+      <a href="" class="btn btn-primary">
+        <span class="text text-1">Procitaj vise</span>
+        <span class="text text-2" aria-hidden="true">Procitaj vise</span>
+      </a>
+
+    </div>
+
+    <div class="about-banner">
+      <img src="images/about-banner.jpg" width="570" height="570" loading="lazy" alt="about banner" class="w-100" data-parallax-item data-parallax-speed="1">
+
+      <div class="abs-img abs-img-1 has-before" data-parallax-item data-parallax-speed="1.75">
+      <img src="images/about-abs-image.jpg" width="285" height="285" loading="lazy" class="w-100">
+      </div>
+
+      <div class="abs-img abs-img-2 has-before">
+      <img src="images/badge-2.png" width="133" height="134" loading="lazy" alt="">
+      </div>
+
+    </div>
+
+    <img src="images/shape-3.png" width="197" height="194" loading="lazy" class="shape">
+
+  </div>
+</section>
+
+<section class="special-dish" id="jelo">
+
+  <div class="special-dish-banner">
+    <img src="images/special-dish-banner.jpg" width="940" height="900" loading="lazy" class="img-cover">
+  </div>
+
+  <div class="special-dish-content bg-black-10">
+    <div class="container">
+
+      <img src="images/badge.png" width="28" height="41" loading="lazy" class="abs-img">
+      <p class="section-subtitle label-2">Specijalno jelo</p>
+      <h2 class="headline-1 section-title">Tortelini od jastoga</h2>
+      <p class="section-text">Ovaj elegantni i ukusni obrok kombinira svježe torteline s bogatim bijelim umakom i komadićima sočanog jastoga. Veliko telo jastoga, koje skriva moćnu školjku, poznato je po velikom broju nežnog ukusnog mesa koje ima jedinstvenu morsku aromu. Jastog je toliko svestran i ukusan da će svi ovi recepti biti hit!
+      </p>
+
+      <div class="wrapper">
+        <del class="del body-3">$40.00</del>
+        <span class="span body-1">$20.00</span>
+      </div>
+
+      <a href="#menu" class="btn btn-primary">
+        <span class="text text-1">Pogledajte nas menu</span>
+        <span class="text text-2" aria-hidden="true">Pogledajte nas menu</span>
+      </a>
+
+    </div>
+  </div>
+
+  <img src="images/shape-4.png" width="179" height="359" loading="lazy" class="shape shape-1">
+  <img src="images/shape-9.png" width="351" height="462" loading="lazy" class="shape shape-2">
+
+</section>
+
+<section class="menu" id="menu">
+  <div class="container">
+
+    <p class="section-subtitle text-center label-2">Specijalna selekcija</p>
+    <h2 class="headline-1 section-title text-center">Nas meni</h2>
+
+    <ul class="grid-list">
+
+      <li aria-label="salata">
+        <div class="menu-card hover:card">
+
+          <div class="card-banner img-holder" style="--width: 100; --height: 100;">
+          <img src="images/menu-1.png" width="100" height="100" loading="lazy" alt="Greek Salad" class="img-cover">
+          </div>
+
+          <div>
+          <div class="title-wrapper">
+            <h3 class="title-3"><a href="" class="card-title">Grcka salata</a></h3>
+            <span class="badge label-1">Sezonsko</span>
+            <span class="span title-2">$15.50</span>
+          </div>
+
+          <p class="card-text label-1">Paradajz, zelena paprika, narezani luk, krastavci, masline i feta sir.</p>
+
+          </div>
+        </div>
+      </li>
+
+      <li aria-label="lazanje">
+        <div class="menu-card hover:card">
+
+          <div class="card-banner img-holder" style="--width: 100; --height: 100;">
+          <img src="images/menu-2.png" width="100" height="100" loading="lazy" class="img-cover">
+          </div>
+
+          <div>
+          <div class="title-wrapper">
+            <h3 class="title-3"><a href="" class="card-title">Lazanje</a></h3>
+            <span class="span title-2">$40.00</span>
+          </div>
+
+          <p class="card-text label-1">Povrce, sirevi, mleveno meso, paradajz sos, zacini i zacini.</p>
+
+          </div>
+        </div>
+      </li>
+
+      <li aria-label="tikva">
+        <div class="menu-card hover:card">
+
+          <div class="card-banner img-holder" style="--width: 100; --height: 100;">
+          <img src="images/menu-3.png" width="100" height="100" loading="lazy" class="img-cover">
+          </div>
+
+          <div>
+          <div class="title-wrapper">
+            <h3 class="title-3"><a href=""class="card-title">Muskatna tikva</a></h3>
+            <span class="span title-2">$10.00</span>
+          </div>
+
+          <p class="card-text label-1">Povrce, sirevi, mleveno meso, paradajz sos, zacini i zacini</p>
+
+          </div>
+        </div>
+      </li>
+
+      <li aria-label="meso">
+        <div class="menu-card hover:card">
+
+          <div class="card-banner img-holder" style="--width: 100; --height: 100;">
+          <img src="images/menu-4.png" width="100" height="100" loading="lazy" class="img-cover">
+          </div>
+
+          <div>
+          <div class="title-wrapper">
+            <h3 class="title-3"><a href=""class="card-title">Specijalno mesa</a></h3>
+            <span class="badge label-1">New</span>
+            <span class="span title-2">$39.00</span>
+          </div>
+
+          <p class="card-text label-1">Povrce, sirevi, mleveno meso, paradajz sos, zacini i zacini.
+          </p>
+
+          </div>
+        </div>
+      </li>
+
+      <li aria-label="masline">
+        <div class="menu-card hover:card">
+
+          <div class="card-banner img-holder" style="--width: 100; --height: 100;">
+          <img src="images/menu-5.png" width="100" height="100" loading="lazy" class="img-cover">
+          </div>
+
+          <div>
+          <div class="title-wrapper">
+            <h3 class="title-3"><a href=""class="card-title">Punjene masline</a></h3>
+            <span class="span title-2">$25.00</span>
+          </div>
+
+          <p class="card-text label-1">Avokado sa mesom rakova, crvenim lukom, salatom od rakova punjenom crvenom paprikom i zelenom paprikom.</p>
+
+          </div>
+        </div>
+      </li>
+
+      <li aria-label="riba">
+        <div class="menu-card hover:card">
+
+          <div class="card-banner img-holder" style="--width: 100; --height: 100;">
+          <img src="images/menu-6.png" width="100" height="100" loading="lazy" class="img-cover">
+          </div>
+
+          <div>
+          <div class="title-wrapper">
+            <h3 class="title-3"><a href=""class="card-title">Riba</a></h3>
+            <span class="span title-2">$49.00</span>
+          </div>
+
+          <p class="card-text label-1">Povrce, sirevi, mleveno meso, paradajz sos, zacini i zacini</p>
+
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <p class="menu-text text-center">Tokom zime svaki dan od <span class="span">7:00 </span> do <span class="span">21:00</span>
+    </p>
+
+    <a href="#menu" class="btn btn-primary">
+      <span class="text text-1">Pogledaj ceo menu</span>
+      <span class="text text-2" aria-hidden="true">Pogledaj ceo menu</span>
+    </a>
+
+    <img src="images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape" class="shape shape-2 move-anim">
+    <img src="images/shape-6.png" width="343" height="345" loading="lazy" alt="shape" class="shape shape-3 move-anim">
+
+  </div>
+</section>
+
+<section class="testi" id="review">
+  <div class="container">
+
+    <div class="quote">”</div>
+    <p class="headline-2 testi-text">Hteo sam da ti se zahvalim sto si me pozvao na onu neverovatnu veceru pre neko vece. Hrana je bila izvanredna.
+    </p>
+
+    <div class="wrapper">
+      <div class="separator"></div>
+      <div class="separator"></div>
+      <div class="separator"></div>
+    </div>
+
+    <div class="profile">
+      <img src="images/testi-avatar.jpg" width="100" height="100" loading="lazy" alt="Sam Jhonson" class="img">
+      <p class="label-2 profile-name">Sam Jhonson</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="reservation" id="rezervacija">
+  <div class="container">
+
+    <div class="form reservation-form">
+    <form action="" class="form-left">
+      <h2 class="headline-1">Online rezervacija</h2>
+      <p class="form-text">Rezervisi na: <a href="" class="link">+1 123 456 789</a> ili popunite formular
+      </p>
+
+      <div class="input-wrapper">
+        <input type="text" name="name" placeholder="Ime" autocomplete="off" class="input-field">
+        <input type="tel" name="phone" placeholder="Telefon" autocomplete="off" class="input-field">
+      </div>
+
+      <div class="input-wrapper">
+
+        <div class="icon-wrapper">
+          <select name="person" class="input-field">
+            <option value="1-person">1 osoba</option>
+            <option value="2-person">2 osobe</option>
+            <option value="3-person">3 osobe</option>
+            <option value="4-person">4 osobe</option>
+            <option value="5-person">5 osoba</option>
+            <option value="6-person">6 osoba</option>
+            <option value="7-person">7 osoba</option>
+          </select>
+        </div>
+
+        <div class="icon-wrapper">
+          <input type="date" name="datum" class="input-field">
+        </div>
+
+        <div class="icon-wrapper">
+          <select name="person" class="input-field">
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+          </select>
+        </div>
+
+      </div>
+
+      <textarea name="Poruka" placeholder="Napisite napomenu..." autocomplete="off" class="input-field"></textarea>
+
+      <button type="submit" class="btn btn-secondary">
+        <span class="text text-1">Rezervisi sto</span>
+        <span class="text text-2" aria-hidden="true">Rezervisi sto</span>
+      </button>
+
+    </form>
+
+    <div class="form-right text-center" style="background-image: url('images/form-pattern.png')">
+
+      <h2 class="headline-1 text-center">Kontaktiraj nas</h2>
+      <p class="contact-label">Zahtev za rezervaciju</p>
+      <a href="" class="body-1 contact-number hover-underline">+1 123 456 789</a>
+      <div class="separator"></div>
+      <p class="contact-label">Lokacija</p>
+      <div class="body-4">Restoran, lokacija</div>
+      <p class="contact-label">Vreme rucka</p>
+      <p class="body-4">Ponedeljak do Nedelja<br>11:00 - 14:30</p>
+      <p class="contact-label">Vreme vecere</p>
+      <p class="body-4">Ponedeljak do Nedelja <br>17:00 - 22:00</p>
+
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+
+    <p class="section-subtitle label-2">Zasto izabrati nas</p>
+    <h2 class="headline-1 section-title">Nasa snaga</h2>
+
+    <ul class="grid-list">
+
+      <li class="feature-item">
+        <div class="feature-card">
+
+        <div class="card-icon">
+          <img src="images/features-icon-1.png" width="100" height="80"loading="lazy">
+        </div>
+        <h3 class="title-2 card-title">Higijenska hrana</h3>
+        <p class="label-1 card-text">Sveža, bezbedna i ukusna.</p>
+
+        </div>
+      </li>
+
+      <li class="feature-item">
+        <div class="feature-card">
+
+        <div class="card-icon">
+          <img src="images/features-icon-2.png" width="100" height="80"loading="lazy">
+        </div>
+        <h3 class="title-2 card-title">Sveze okruzenje</h3>
+        <p class="label-1 card-text">Čisto, osvežavajuće i prijatno. </p>
+
+        </div>
+      </li>
+
+      <li class="feature-item">
+        <div class="feature-card">
+
+        <div class="card-icon">
+          <img src="images/features-icon-3.png" width="100" height="80"loading="lazy">
+        </div>
+        <h3 class="title-2 card-title">Iskusni kuvari</h3>
+        <p class="label-1 card-text">Majstori ukusa, kulinarski virtuozi.</p>
+
+        </div>
+      </li>
+
+      <li class="feature-item">
+        <div class="feature-card">
+
+        <div class="card-icon">
+          <img src="images/features-icon-4.png" width="100" height="80"loading="lazy">
+        </div>
+        <h3 class="title-2 card-title">Dogadjaj i zabava</h3>
+        <p class="label-1 card-text">Veselo, nezaboravno i uzbudljivo!</p>
+
+        </div>
+      </li>
+
+    </ul>
+
+    <img src="images/shape-7.png" width="208" height="178" loading="lazy" alt="shape" class="shape shape-1">
+
+    <img src="images/shape-8.png" width="120" height="115" loading="lazy" alt="shape" class="shape shape-2">
+
+  </div>
+</section>
+
+<section class="event" id="event">
+  <div class="container">
+
+    <p class="section-subtitle label-2 text-center">Poslednje azuriranje</p>
+    <h2 class="section-title headline-1 text-center">Predstojeci dogadjaji</h2>
+
+    <ul class="grid-list">
+
+      <li aria-label="event-1">
+        <div class="event-card has-before hover:shine">
+        <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+        <img src="images/event-1.jpg" width="350" height="450" loading="lazy" class="img-cover">
+        <div class="publish-date label-2">01/01/2024</div>
+        </div>
+
+        <div class="card-content">
+          <p class="card-subtitle label-2 text-center">Hrana, ukus</p>
+          <h3 class="card-title title-2 text-center">Ukus je tako dobar da cete pokusati da jedete očima.</h3>
+        </div>
+
+        </div>
+      </li>
+
+      <li aria-label="event-2">
+        <div class="event-card has-before hover:shine">
+        <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+        <img src="images/event-2.jpg" width="350" height="450" loading="lazy" class="img-cover">
+        <div class="publish-date label-2">01/01/2024</div>
+        </div>
+
+        <div class="card-content">
+          <p class="card-subtitle label-2 text-center">Zdrava hrana</p>
+          <h3 class="card-title title-2 text-center">Ukus je tako dobar da cete pokusati da jedete očima.</h3>
+        </div>
+
+        </div>
+      </li>
+
+      <li aria-label="event-3">
+        <div class="event-card has-before hover:shine">
+        <div class="card-banner img-holder" style="--width: 350; --height: 450;">
+        <img src="images/event-3.jpg" width="350" height="450" loading="lazy" class="img-cover">
+        <div class="publish-date label-2">01/01/2024</div>
+        </div>
+
+        <div class="card-content">
+          <p class="card-subtitle label-2 text-center">Recept</p>
+          <h3 class="card-title title-2 text-center">Ukus je tako dobar da cete pokusati da jedete očima.</h3>
+        </div>
+
+        </div>
+      </li>
+
+    </ul>
+
+    <a href="" class="btn btn-primary">
+      <span class="text text-1">Pogledajte nas blog</span>
+      <span class="text text-2" aria-hidden="true">Pogledajte nas blog</span>
+    </a>
+
+  </div>
+</section>
+
+</article>
+</main>
+
+<footer class="footer">
+    <div class="container">
+      <div class="footer-top grid-list">
+      
+      <div class="footer-brand has-before has-after">
+
+        <a href="#" class="logo">
+          <img src="images/logo.png" width="160" height="50" loading="lazy">
+        </a>
+
+        <div class="body-4">Restoran, lokacija</div>
+        <a href="" class="body-4 contact-link">email@vasrestoran.com</a>
+        <a href="" class="body-4 contact-link">Zakazite: +1 123 456 789</a>
+        <p class="body-4">Otvoreno: 08:00 - 22:00</p>
+
+        <div class="wrapper">
+          <div class="separator"></div>
+          <div class="separator"></div>
+          <div class="separator"></div>
+        </div>
+
+        <p class="title-1">Dobijajte vesti i ponude</p>
+        <p class="label-1">Pretplatite se i dobijate <span class="span">25% Popusta.</span></p>
+
+        <form action="" class="input-wrapper">
+          <div class="icon-wrapper">
+            
+            <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+          </div>
+
+          <button type="submit" class="btn btn-secondary">
+            <span class="text text-1">Prijavi se</span>
+            <span class="text text-2" aria-hidden="true">Prijavi se</span>
+          </button>
+        </form>
+
+      </div>
+
+      <ul class="footer-list">
+        <li><a href="#" class="label-2 footer-link hover-underline">Pocetna</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Meni</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">O nama</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Kuvari</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Kontakt</a></li>
+      </ul>
+
+      <ul class="footer-list">
+        <li><a href="#" class="label-2 footer-link hover-underline">Facebook</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Instagram</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Twitter</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Youtube</a></li>
+        <li><a href="#" class="label-2 footer-link hover-underline">Mapa</a></li>
+      </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright"><i class="fa-regular fa-copyright"></i> Copyright 2024 - 2025
+        <a href="https://milanwebportal.com" class="link">Milan Web Portal</a>. Sva prava zadrzana.
+        </p>
+      </div>
+
+    </div>
+</footer>
+
+<a href="#" class="back-top" btt><i class="fa-solid fa-chevron-up"></i></a>
+
+</body>
+</html>
+<script src="script.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Automotive Design System */
+
+@layer base {
+  :root {
+    /* Dark Theme Colors - HSL */
+    --background: 220 20% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Neon Blue Primary */
+    --primary: 190 100% 50%;
+    --primary-foreground: 220 20% 8%;
+    --primary-glow: 190 100% 65%;
+
+    /* Neon Red Accent */
+    --secondary: 0 100% 60%;
+    --secondary-foreground: 220 20% 8%;
+    --secondary-glow: 0 100% 70%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 190 100% 50%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 20%;
+    --ring: 190 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --neon-blue: 190 100% 50%;
+    --neon-red: 0 100% 60%;
+    --neon-cyan: 180 100% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(190 100% 50%), hsl(220 100% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 8% / 0.3), hsl(220 20% 8%));
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 15% 15%));
+    
+    /* Glows & Shadows */
+    --shadow-neon-blue: 0 0 30px hsl(190 100% 50% / 0.5), 0 0 60px hsl(190 100% 50% / 0.3);
+    --shadow-neon-red: 0 0 30px hsl(0 100% 60% / 0.5), 0 0 60px hsl(0 100% 60% / 0.3);
+    --shadow-card: 0 10px 40px hsl(220 20% 5% / 0.8);
+    --shadow-elevated: 0 20px 60px hsl(220 20% 5% / 0.9);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Urbanist', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer utilities {
+  /* Neon Glow Effects */
+  .glow-blue {
+    box-shadow: var(--shadow-neon-blue);
+  }
+  
+  .glow-red {
+    box-shadow: var(--shadow-neon-red);
+  }
+  
+  .text-glow-blue {
+    text-shadow: 0 0 20px hsl(190 100% 50% / 0.8), 0 0 40px hsl(190 100% 50% / 0.5);
+  }
+  
+  .text-glow-red {
+    text-shadow: 0 0 20px hsl(0 100% 60% / 0.8), 0 0 40px hsl(0 100% 60% / 0.5);
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth Scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { 
+      filter: drop-shadow(0 0 8px hsl(190 100% 50%));
+    }
+    50% { 
+      filter: drop-shadow(0 0 25px hsl(190 100% 50%)) drop-shadow(0 0 40px hsl(190 100% 60%));
+    }
+  }
+
+  /* Parallax Effect */
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}

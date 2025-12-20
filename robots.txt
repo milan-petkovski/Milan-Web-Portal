@@ -1,0 +1,9 @@
+Sitemap: https://milanwebportal.com/sitemap.xml
+
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /test/
+Disallow: /thanks/
