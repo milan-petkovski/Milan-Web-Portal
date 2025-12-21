@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=34&duration=4000&pause=1000&color=E3C48F&center=true&vCenter=true&width=800&lines=Nexus+website;Car+website;Futuristic+website" alt="Nexus Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=34&duration=4000&pause=1000&color=08c5ff&center=true&vCenter=true&width=800&lines=Nexus+website;Car+website;Futuristic+website" alt="Nexus Typing SVG" />
 </p>
 
 <div align="center">
@@ -17,7 +17,7 @@
 
 <p align="center">
   <a href="https://nexus.milanwebportal.com">
-    <img src="https://img.shields.io/badge/Visit-Website-e3c48f?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website Badge">
+    <img src="https://img.shields.io/badge/Visit-Website-08c5ff?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website Badge">
   </a>
 </p>
 
