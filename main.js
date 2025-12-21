@@ -188,7 +188,7 @@ if (/index|projects|\/$/.test(window.location.href)) {
       'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Eduland/README.md',
       'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Frosty/README.md',
       'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Przionica/README.md',
-      'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Nexus/refs/heads/main/README.md'
+      'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Nexus/README.md'
     };
 
     const viewProjectButtons = document.querySelectorAll('.view-project-btn');
