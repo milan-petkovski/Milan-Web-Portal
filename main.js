@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleNewEn = document.getElementById('toggle-new-en');
     const allButtons = [toggleOld, toggleNew, toggleOldEn, toggleNewEn];
     const urlOld = 'https://demo-grilli.netlify.app';
-    const urlNew = 'https://milanwebportal.com/projects/Grilli';
+    const urlNew = 'https://grilli.milanwebportal.com';
 
     function setActive(activeButtonId) {
         allButtons.forEach(btn => {

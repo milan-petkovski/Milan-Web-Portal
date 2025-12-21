@@ -25,12 +25,12 @@
     --blue:#a4b4f6;
     --crni:#222222;
     --border: 1px solid #ffffff4d;
-    --pozadina: linear-gradient(to right top, #000000, #030303, #070707, #0a0a0a, #0d0d0d, #101010, #131313, #161616, #191919, #1c1c1c, #1f1f1f, #222222);
+    --pozadina: #121212;
 }
-body{
+body {
     min-height: 100vh;
     overflow-x: hidden;
-    background: var(--pozadina);
+    background-color: var(--pozadina);
 }
 html{
     font-size: 62.5%;
@@ -179,7 +179,7 @@ li{
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background-image: var(--pozadina);
+  background-image: #000;
   display: grid;
   place-items: center;
   transition: opacity 0.25s, visibility 1s;
