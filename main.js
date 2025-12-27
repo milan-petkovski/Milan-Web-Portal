@@ -571,7 +571,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //#region - GOOGLE ANALYTICS
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookie");
-  const btn = document.getElementById("accept-cookies");
+  // Selektujemo sva dugmad sa novom klasom
+  const buttons = document.querySelectorAll(".accept-cookies-btn");
 
   if (localStorage.getItem("cookiesAccepted") === "true") {
     banner.style.display = "none";
@@ -580,11 +581,14 @@ document.addEventListener("DOMContentLoaded", () => {
     banner.style.display = "flex";
   }
 
-  btn.onclick = function() {
-    localStorage.setItem("cookiesAccepted", "true");
-    banner.style.display = "none";
-    loadGA();
-  }
+  // Dodajemo event listener na svako dugme
+  buttons.forEach(btn => {
+    btn.onclick = function() {
+      localStorage.setItem("cookiesAccepted", "true");
+      banner.style.display = "none";
+      loadGA();
+    };
+  });
 
   function loadGA() {
     if (window.gaLoaded) return;
