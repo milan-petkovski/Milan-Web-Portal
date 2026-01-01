@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-coffee-light/20 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-coffee-cream/60">
-          <p>&copy; 2024 Pržionica. Sva prava zadržana.</p>
+          <p>&copy; 2026 Pržionica. Sva prava zadržana.</p>
           <div className="flex gap-4 mt-4 sm:mt-0">
             <a href="#" className="hover:text-coffee-cream transition-colors">Privatnost</a>
             <a href="#" className="hover:text-coffee-cream transition-colors">Uslovi korišćenja</a>

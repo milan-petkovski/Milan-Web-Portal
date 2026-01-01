@@ -84,7 +84,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-1 text-gray-400 mb-4 md:mb-0">
-              <span>© Copyright 2025 Milan Web Portal. All Rights reserved.</span>
+              <span>© Copyright 2026 Milan Web Portal. All Rights reserved.</span>
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
@@ -101,7 +101,7 @@ const Footer = () => {
 // Simple SVG icon component
 const IceCreamCone = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C8.69 2 6 4.69 6 8C6 8.34 6.04 8.67 6.09 9H6C5.45 9 5 9.45 5 10S5.45 11 6 11H6.09C6.04 11.33 6 11.66 6 12C6 15.31 8.69 18 12 18S18 15.31 18 12C18 11.66 17.96 11.33 17.91 11H18C18.55 11 19 10.55 19 10S18.55 9 18  9H17.91C17.96 8.67 18 8.34 18 8C18 4.69 15.31 2 12 2M12 4C14.21 4 16 5.79 16 8S14.21 12 12 12S8 10.21 8 8S9.79 4 12 4M11 13V21.5C11 21.78 11.22 22 11.5 22S12 21.78 12 21.5V13C12 12.45 11.55 12 11 12S11 12.45 11 13Z"/>
+    <path d="M12 2C8.69 2 6 4.69 6 8C6 8.34 6.04 8.67 6.09 9H6C5.45 9 5 9.45 5 10S5.45 11 6 11H6.09C6.04 11.33 6 11.66 6 12C6 15.31 8.69 18 12 18S18 15.31 18 12C18 11.66 17.96 11.33 17.91 11H18C18.55 11 19 10.55 19 10S18.55 9 18  9H17.91C17.96 8.67 18 8.34 18 8C18 4.69 15.31 2 12 2M12 4C14.21 4 16 5.79 16 8S14.21 12 12 12S8 10.21 8 8S9.79 4 12 4M11 13V21.5C11 21.78 11.22 22 11.5 22S12 21.78 12 21.5V13C12 12.45 11.55 12 11 12S11 12.45 11 13Z" />
   </svg>
 );
 

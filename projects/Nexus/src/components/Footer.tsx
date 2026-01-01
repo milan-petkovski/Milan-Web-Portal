@@ -82,7 +82,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2025 Milan Web Portal. All rights reserved.
+            © 2026 Milan Web Portal. All rights reserved.
           </p>
           <p className="font-orbitron text-sm font-semibold gradient-text">
             Drive Tomorrow.
