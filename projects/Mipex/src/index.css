@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 60% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 20% 92%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 25% 88%;
+    --input: 215 25% 88%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.5rem;
+
+    --navy-deep: 220 60% 12%;
+    --navy-medium: 220 55% 18%;
+    --slate-dark: 215 20% 35%;
+    --slate-medium: 215 18% 55%;
+    --slate-light: 215 15% 75%;
+    --orange-bright: 25 95% 53%;
+    --orange-hover: 25 95% 45%;
+    --orange-glow: 25 100% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(var(--orange-bright)) 0%, hsl(var(--orange-hover)) 100%);
+    --shadow-card: 0 4px 20px -4px hsl(var(--navy-deep) / 0.15);
+    --shadow-hover: 0 8px 30px -8px hsl(var(--navy-deep) / 0.25);
+    --shadow-orange: 0 4px 20px -4px hsl(var(--orange-bright) / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 60% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 55% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 55% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 20%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 25 95% 53%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--orange-bright)) 0%, hsl(var(--orange-glow)) 100%);
+  }
+
+  .bg-navy-gradient {
+    background: linear-gradient(135deg, hsl(var(--navy-deep)) 0%, hsl(var(--navy-medium)) 100%);
+  }
+
+  .bg-orange-gradient {
+    background: linear-gradient(135deg, hsl(var(--orange-bright)) 0%, hsl(var(--orange-hover)) 100%);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .shadow-orange {
+    box-shadow: var(--shadow-orange);
+  }
+}
+
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-orange {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--orange-bright) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px hsl(var(--orange-bright) / 0);
+  }
+}
+
+.animate-counter {
+  animation: counter 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-orange {
+  animation: pulse-orange 2s infinite;
+}
