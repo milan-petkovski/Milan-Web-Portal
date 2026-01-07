@@ -174,7 +174,10 @@ if (/index|projects|\/$/.test(window.location.href)) {
       "#html-projects-heading",
       "#webflow-projects-heading",
       "#ai-projects-heading",
-      "#shopify-projects-heading"
+      "#shopify-projects-heading",
+      "#thumbnail-projects-heading",
+      "#design-projects-heading",
+
     ].map(id => document.querySelector(id)).filter(Boolean);
 
     const projectReadmeUrls = {
