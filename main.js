@@ -181,18 +181,19 @@ if (/index|projects|\/$/.test(window.location.href)) {
     ].map(id => document.querySelector(id)).filter(Boolean);
 
     const projectReadmeUrls = {
-      'milan-web-portal-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/README.md',
-      'cmagency-project-button': 'https://raw.githubusercontent.com/milan-petkovski/cmagency/main/README.md',
-      'leafy-project-button': 'https://raw.githubusercontent.com/milan-petkovski/leafy/main/README.md',
-      'grilli-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Grilli/README.md',
-      'tourly-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Tourly/README.md',
-      'tutz-project-button': 'https://raw.githubusercontent.com/milan-petkovski/tutz/main/README.md',
-      'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/GameX/README.md',
-      'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Eduland/README.md',
-      'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Frosty/README.md',
-      'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Przionica/README.md',
-      'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Nexus/README.md',
-      'mipex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/new/projects/Mipex/README.md'
+      'milan-web-portal-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/README.md',
+      'cmagency-project-button': 'https://raw.githubusercontent.com/milan-petkovski/CM-Agency/refs/heads/main/README.md',
+      'tutz-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Tutz/refs/heads/main/README.md',
+      'leafy-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Leafy/refs/heads/main/README.md',      'kiroprakticno-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Kiroprakticno/refs/heads/main/README.md?token=GHSAT0AAAAAADQ67YCDKYFNEEMERKFCPOAG2LXWWTQ',
+      'grilli-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Grilli/README.md',
+      'tourly-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Tourly/README.md',
+      'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/GameX/README.md',
+      'eduland-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Eduland/README.md',
+      'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Frosty/README.md',
+      'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Przionica/README.md',
+      'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Nexus/README.md',
+      'mipex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Mipex/README.md'
+
     };
 
     const viewProjectButtons = document.querySelectorAll('.view-project-btn');
