@@ -178,7 +178,7 @@ li{
 .preloader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   background: var(--pozadina);
   display: grid;
   place-items: center;
