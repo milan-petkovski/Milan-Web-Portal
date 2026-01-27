@@ -184,7 +184,7 @@ if (/index|projects|\/$/.test(window.location.href)) {
       'milan-web-portal-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/README.md',
       'cmagency-project-button': 'https://raw.githubusercontent.com/milan-petkovski/CM-Agency/refs/heads/main/README.md',
       'tutz-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Tutz/refs/heads/main/README.md',
-      'leafy-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Leafy/refs/heads/main/README.md',      'kiroprakticno-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Kiroprakticno/refs/heads/main/README.md?token=GHSAT0AAAAAADQ67YCDKYFNEEMERKFCPOAG2LXWWTQ',
+      'leafy-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Leafy/refs/heads/main/README.md',      'kiroprakticno-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Kiroprakticno/refs/heads/main/README.md',
       'grilli-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Grilli/README.md',
       'tourly-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Tourly/README.md',
       'gamex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/GameX/README.md',
