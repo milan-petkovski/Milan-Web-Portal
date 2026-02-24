@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All In One | Politika Privatnosti</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="Unapredi svoj workflow uz All In One ekstenziju. Dizajnirana za developere i kreatore koji žele maksimalnu produktivnost bez gomilanja suvišnih dodataka.">
+    <meta name="author" content="Milan Web Portal">
+    <meta name="theme-color" content="#f5f6f7">
+    <link rel="canonical" href="https://milanwebportal.com/allinone">
+    <meta property="og:site_name" content="Milan Web Portal">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://milanwebportal.com/privacy-aio">
+    <meta property="og:title" content="All In One | Politika Privatnosti">
+    <meta property="og:image" content="https://i.postimg.cc/tCNhpbgy/1.png">
+    <link rel="icon" type="image/x-icon" href="images/Brands/aio.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -25,6 +34,21 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+            color: #00ff88;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f6f7; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00ff88;
+            border-radius: 10px;
+            border: 2px solid #f5f6f7;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00e67a;
+        }
         body {
             background-color: #f5f6f7;
             color: #1a1a24;
@@ -41,23 +65,24 @@
 <body class="antialiased font-sans">
 
     <!-- Navigacija -->
-    <nav class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
-        <a href="allinone.html" class="flex items-center gap-2 group">
-            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition"></i>
-            <span class="font-bold text-gray-600">Nazad na početnu</span>
-        </a>
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
         <div class="flex items-center gap-3">
             <div class="grid grid-cols-2 gap-1 w-9 h-9">
                 <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
-                
                 <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
-                
                 <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
-                
                 <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
             </div>
             
-            <span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span>
+            <a href="allinone.html"><span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span></a>
+        </div>
+
+        <div>
+            <a href="aio-instalacija.html" class="inline-flex items-center justify-center bg-[#00ff88] text-black font-bold py-3 px-6 rounded-full hover:bg-green-400 transition shadow-lg shadow-[#00ff88]/30">
+                <span class="max-[425px]:hidden">Preuzmi odmah</span>
+                
+                <span class="hidden max-[425px]:inline">📥</span>
+            </a>
         </div>
     </nav>
 
@@ -133,26 +158,24 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-darkpanel text-white py-12">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    <footer class="bg-darkpanel text-white py-12 mt-24">
+    <a href="allinone.html">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-3">
             <div class="grid grid-cols-2 gap-1 w-9 h-9">
                 <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
-                
                 <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
-                
                 <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
-                
                 <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
             </div>
             
             <span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span>
         </div>
-            <div class="flex gap-6">
-                <a href="allinone.html" class="text-gray-400 hover:text-brand transition text-sm font-medium">Početna</a>
-                <a href="aio-instalacija.html" class="text-gray-400 hover:text-brand transition text-sm font-medium">Instalacija</a>
-            </div>
-        </div>
+    </a>
+    <div class="text-gray-400 text-sm">&copy; 2026 <a href="https://milanwebportal.com">Milan Web Portal</a>. Sva prava zadržana.</div>
+    <div class="flex gap-6">
+        <a href="privacy-aio.html" class="text-gray-400 hover:text-brand transition text-sm font-medium">Politika privatnosti</a>
+    </div>
     </footer>
 
     <script>
