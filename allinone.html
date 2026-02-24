@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALL IN ONE | Najjači alat za produktivnost</title>
+    <title>All In One | Najjači alat za produktivnost</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -35,9 +36,38 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
         .feature-card:hover {
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
+            transform: translateY(-8px);
+            border-color: #00ff88;
+            box-shadow: 0 20px 25px -5px rgba(0, 255, 136, 0.1), 0 10px 10px -5px rgba(0, 255, 136, 0.04);
+        }
+        .mini-ui {
+            background: #1e1e24;
+            border-radius: 16px;
+            padding: 12px;
+            border: 1px solid #333;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pulse-ring {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 255, 136, 0.2);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(2.4); opacity: 0; }
         }
     </style>
 </head>
@@ -60,7 +90,7 @@
         </div>
 
         <div>
-            <a href="#preuzmi" class="bg-[#00ff88] text-black font-bold py-3 px-6 rounded-full hover:bg-green-400 transition shadow-lg shadow-[#00ff88]/30">
+            <a href="aio-instalacija.html" class="bg-[#00ff88] text-black font-bold py-3 px-6 rounded-full hover:bg-green-400 transition shadow-lg shadow-[#00ff88]/30">
                 Preuzmi odmah
             </a>
         </div>
@@ -76,7 +106,7 @@
                 Unapredi svoj workflow uz All In One ekstenziju. Dizajnirana za developere i kreatore koji žele maksimalnu produktivnost bez gomilanja suvišnih dodataka.
             </p>
             <div class="flex items-center gap-4">
-                <a href="#preuzmi" class="bg-brand text-black font-bold py-4 px-8 rounded-full text-lg hover:bg-green-400 transition shadow-xl shadow-brand/30 flex items-center gap-2">
+                <a href="aio-instalacija.html" class="bg-brand text-black font-bold py-4 px-8 rounded-full text-lg hover:bg-green-400 transition shadow-xl shadow-brand/30 flex items-center gap-2">
                     <i data-lucide="download"></i> Dodaj u Chrome
                 </a>
             </div>
@@ -240,26 +270,147 @@
     </section>
 
     <!-- Sve Funkcije Lista -->
-    <section class="py-20 bg-bglight">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-extrabold mb-12 text-center">Šta sve sadrži All In One</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Radio IN</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Kontrola zvuka</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Color Picker</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Dark Mode</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Page Ruler</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Dozvoli kopiranje</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Page Marker</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Screenshot</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Kolačići i Keš</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Font Finder</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Brojač karaktera</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Štoperica</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Beleške</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">Webtime Tracker</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm text-center font-semibold text-gray-700 border border-gray-100">YouTube Dislike</div>
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-20">
+            <h2 class="text-4xl md:text-5xl font-black mb-4">Sve što ti treba</h2>
+            <p class="text-gray-500 text-lg">Bez dodatnog opterećenja za tvoj računar</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="pulse-ring"></div>
+                    <i data-lucide="radio" class="w-10 h-10 text-brand relative z-10"></i>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Radio IN</h4>
             </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="w-full px-6 flex flex-col gap-4">
+                        <div class="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
+                            <div class="w-2/3 h-full bg-brand"></div>
+                        </div>
+                        <div class="flex justify-between text-[10px] font-bold text-gray-500 italic"><span>0%</span><span>500%</span></div>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Zvuk 500%</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-brand shadow-lg border-2 border-white/20"></div>
+                        <span class="font-mono text-brand text-[10px] font-bold">#00FF88</span>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Color Picker</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="w-16 h-8 bg-brand rounded-full relative">
+                        <div class="absolute right-1.5 top-1.5 w-5 h-5 bg-white rounded-full"></div>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Dark Mode</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="w-full flex items-end gap-2 justify-center">
+                        <div class="h-5 w-1 bg-brand/30"></div>
+                        <div class="h-10 w-1 bg-brand"></div>
+                        <div class="h-5 w-1 bg-brand/30"></div>
+                        <div class="h-8 w-1 bg-brand/60"></div>
+                        <div class="h-10 w-1 bg-brand"></div>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Page Ruler</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <i data-lucide="copy" class="w-10 h-10 text-brand"></i>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Copy Content</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <i data-lucide="edit-3" class="w-10 h-10 text-brand"></i>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Page Marker</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="w-14 h-14 border-2 border-brand border-dashed rounded-xl flex items-center justify-center">
+                        <i data-lucide="camera" class="w-6 h-6 text-brand"></i>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Screenshot</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <i data-lucide="trash-2" class="w-10 h-10 text-brand"></i>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Clear Cache</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <span class="text-4xl font-serif text-brand italic">Ff</span>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Font Finder</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="bg-black/20 px-4 py-2 rounded-lg border border-white/5">
+                        <span class="text-brand font-mono text-xl font-bold">1,240</span>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Brojač karaktera</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="text-brand font-mono text-xl font-bold tracking-tighter">00:15:30</div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Štoperica</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <i data-lucide="sticky-note" class="w-10 h-10 text-brand"></i>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Beleške</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="flex items-end gap-1.5 h-12">
+                        <div class="w-2.5 h-4 bg-gray-700 rounded-sm"></div>
+                        <div class="w-2.5 h-10 bg-brand rounded-sm shadow-[0_0_10px_#00ff88]"></div>
+                        <div class="w-2.5 h-6 bg-gray-600 rounded-sm"></div>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Webtime Tracker</h4>
+            </div>
+
+            <div class="bg-bglight p-8 rounded-[2.5rem] border border-gray-100 feature-card text-center">
+                <div class="mini-ui">
+                    <div class="flex items-center gap-2 bg-darkcard px-4 py-2 rounded-full border border-white/10">
+                        <i data-lucide="thumbs-down" class="w-4 h-4 text-white"></i>
+                        <span class="text-white text-xs font-bold">12.5k</span>
+                    </div>
+                </div>
+                <h4 class="font-black text-xs uppercase tracking-widest">Return YT Dislike</h4>
+            </div>
+
         </div>
     </section>
 

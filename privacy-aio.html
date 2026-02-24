@@ -1,109 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - All In One Extension</title>
-    <link rel="stylesheet" href="style.css">
+    <title>All In One | Politika Privatnosti</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#00ff88',
+                        bglight: '#f5f6f7',
+                        darkpanel: '#1e1e24'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f6f7;
+            color: #1a1a24;
+        }
+        .content-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Privacy Policy</h1>
-            <p>Last updated: February 2026</p>
-        </header>
+<body class="antialiased font-sans">
 
-        <section>
-            <h2>1. Introduction</h2>
-            <p>All In One is a browser extension developed by Milan Web Portal. We respect your privacy and are committed to protecting any information that may be processed through our extension.</p>
-        </section>
+    <!-- Navigacija -->
+    <nav class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
+        <a href="allinone.html" class="flex items-center gap-2 group">
+            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition"></i>
+            <span class="font-bold text-gray-600">Nazad na početnu</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <div class="grid grid-cols-2 gap-1 w-9 h-9">
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+            </div>
+            
+            <span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span>
+        </div>
+    </nav>
 
-        <section>
-            <h2>2. Data Collection</h2>
-            <p>Our extension is designed with a "local-first" approach. This means:</p>
-            <ul>
-                <li>We **do not** collect any personally identifiable information (PII).</li>
-                <li>Your notes, web-tracking statistics, and settings are stored **locally** on your device using Chrome Storage.</li>
-                <li>We do not have access to your browsing history or passwords.</li>
+    <!-- Header -->
+    <header class="max-w-5xl mx-auto px-6 py-12 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Politika Privatnosti</h1>
+        <p class="text-gray-500 font-medium italic">Poslednji put ažurirano: Februar 2026.</p>
+    </header>
+
+    <!-- Sadržaj -->
+    <main class="max-w-4xl mx-auto px-6 pb-24 space-y-8">
+        
+        <div class="content-card">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                <i data-lucide="info" class="text-brand"></i>
+                Uvod
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+                All In One je ekstenzija razvijena od strane Milan Web Portal. Izuzetno cenimo tvoju privatnost i posvećeni smo zaštiti svih informacija koje se mogu procesuirati putem našeg dodatka.
+            </p>
+        </div>
+
+        <div class="content-card">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                <i data-lucide="database" class="text-brand"></i>
+                Prikupljanje podataka
+            </h2>
+            <p class="text-gray-600 leading-relaxed mb-4">
+                Naša ekstenzija je dizajnirana po principu lokalne obrade podataka. To znači sledeće:
+            </p>
+            <ul class="space-y-3">
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-brand shrink-0"></i>
+                    <span class="text-gray-600">Ne prikupljamo nikakve lične podatke niti informacije o identitetu.</span>
+                </li>
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-brand shrink-0"></i>
+                    <span class="text-gray-600">Beleške, statistika praćenja vremena i sva podešavanja čuvaju se isključivo na tvom uređaju.</span>
+                </li>
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-5 h-5 text-brand shrink-0"></i>
+                    <span class="text-gray-600">Nemamo nikakav pristup tvojoj istoriji pregledanja ili lozinkama.</span>
+                </li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <h2>3. Third-Party Services</h2>
-            <p>The "YouTube Dislike" feature uses the public <em>Return YouTube Dislike API</em> to fetch dislike counts. No personal data is sent to this service. The "Radio IN" feature streams audio directly from the official radio server.</p>
-        </section>
+        <div class="content-card">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                <i data-lucide="share-2" class="text-brand"></i>
+                Eksterni servisi
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+                Opcija "YouTube Dislike" koristi javni API servisa Return YouTube Dislike kako bi prikazala broj dislajkova. Radio IN funkcija strimuje zvuk direktno sa zvaničnog radio servera. Sa dobijenom dozvolom od radio stanice. Nikakvi lični podaci se ne šalju ovim servisima.
+            </p>
+        </div>
 
-        <section>
-            <h2>4. Permissions Usage</h2>
-            <p>Permissions like <code>scripting</code> and <code>all_urls</code> are used exclusively to provide core features such as Dark Mode, Ruler, and Enable Copy. These actions are performed locally in your browser.</p>
-        </section>
+        <div class="content-card">
+            <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-brand"></i>
+                Dozvole ekstenzije
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+                Dozvole poput "scripting" i "all_urls" se koriste isključivo za rad osnovnih funkcija kao što su Dark Mode, Ruler i dozvola kopiranja teksta. Sve ove radnje se izvršavaju lokalno unutar tvog pretraživača.
+            </p>
+        </div>
 
-        <footer>
-            <p>Contact: <a href="mailto:contact@milanwebportal.com">contact@milanwebportal.com</a></p>
-            <p>&copy; 2026 Milan Web Portal</p>
-        </footer>
-    </div>
+        <div class="bg-brand/10 p-8 rounded-3xl border border-brand/20 text-center">
+            <h3 class="text-xl font-bold mb-2">Pitanja?</h3>
+            <p class="text-gray-600 mb-4">Ukoliko imaš bilo kakve nedoumice, slobodno nas kontaktiraj.</p>
+            <a href="mailto:contact@milanwebportal.com" class="text-darkpanel font-extrabold hover:text-brand transition">contact@milanwebportal.com</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darkpanel text-white py-12">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+        <div class="flex items-center gap-3">
+            <div class="grid grid-cols-2 gap-1 w-9 h-9">
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+            </div>
+            
+            <span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span>
+        </div>
+            <div class="flex gap-6">
+                <a href="allinone.html" class="text-gray-400 hover:text-brand transition text-sm font-medium">Početna</a>
+                <a href="aio-instalacija.html" class="text-gray-400 hover:text-brand transition text-sm font-medium">Instalacija</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
-
-
-<style>
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
-    line-height: 1.6;
-    margin: 0;
-    padding: 40px 20px;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-h1 {
-    color: #38bdf8;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-h2 {
-    color: #f1f5f9;
-    margin-top: 30px;
-    border-bottom: 1px solid #334155;
-    padding-bottom: 5px;
-}
-
-section p {
-    margin: 15px 0;
-    color: #94a3b8;
-}
-
-ul {
-    padding-left: 20px;
-    color: #94a3b8;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-footer {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #334155;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #38bdf8;
-    text-decoration: none;
-}
-</style>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>All In one</title>
+</head>
+<body>
+<div id="mainView">
+  <header>
+    <h1>ALL IN ONE</h1>
+  </header>
+  
+  <main class="grid-container">
+    <div class="card col-card">
+      <div class="card-header">
+        <span>Radio IN</span>
+        <button id="radioBtn">Play</button>
+      </div>
+      <input type="range" id="radioVol" min="0" max="100" value="12" class="range-slider">
+    </div>
+
+    <div class="card col-card">
+      <div class="card-header">
+        <span>Zvuk <b id="volText">100%</b></span>
+        <button id="resetVolBtn" class="secondary">Reset</button>
+      </div>
+      <input type="range" id="masterVol" min="0" max="500" value="100" class="range-slider">
+    </div>
+
+    <div class="card clickable" id="colorBtn">
+      <span>Color Picker</span>
+      <span class="icon">🎨</span>
+    </div>
+
+    <div class="card">
+      <span>Dark Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="nightToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="card clickable" id="rulerBtn">
+      <span>Page Ruler</span>
+      <span class="icon">📏</span>
+    </div>
+
+    <div class="card">
+      <span>Dozvoli kopiranje</span>
+      <label class="switch">
+        <input type="checkbox" id="copyToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="card clickable" id="markerBtn">
+      <span>Page Marker</span>
+      <span class="icon">✏️</span>
+    </div>
+
+    <div class="card clickable" id="screenBtn">
+      <span>Screenshot</span>
+      <span class="icon">📸</span>
+    </div>
+
+    <div class="card clickable" id="clearCacheBtn">
+      <span>Kolačići i Keš</span>
+      <span class="icon">🍪</span>
+    </div>
+
+    <div class="card clickable" id="fontBtn">
+      <span>Font Finder</span>
+      <span class="icon">🔤</span>
+    </div>
+
+    <div class="card clickable" id="counterBtn">
+      <span>Brojač karaktera</span>
+      <span class="icon">🔡</span>
+    </div>
+
+    <div class="card clickable" id="stopwatchBtn">
+      <span>Štoperica</span>
+      <span class="icon">⌛</span>
+    </div>    
+    
+    <div class="card clickable" id="notesBtn">
+      <span>Beleške</span>
+      <span class="icon">📝</span>
+    </div>
+
+    <div class="card clickable" id="trackerBtn">
+      <span>Webtime Tracker</span>
+      <span class="icon">⏱️</span>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="card special-card">
+      <span>Return YouTube Dislike</span>
+      <label class="switch">
+        <input type="checkbox" id="ytToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </footer>
+</div>
+
+<div id="cookieModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <h1 style="margin-bottom: 18px">KOLAČIĆI I KEŠ</h1>
+    
+    <div class="settings-row">
+      <span style="font-size: 12px; color: var(--text-dim);">Automatski obriši kolacice</span>
+      <label class="switch">
+        <input type="checkbox" id="cookieToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <button id="realClearBtn" class="modern-btn">
+      Obriši podatke ovog sajta
+    </button>
+    
+    <button id="closeCookieModal">Zatvori</button>
+  </div>
+</div>
+
+<div id="counterView" class="sub-view" style="display: none;">
+    <div class="sub-header">
+      <button id="counterBackBtn" class="secondary icon-btn">←</button>
+      <h1>BROJAČ KARAKTERA</h1>
+      <div class="spacer"></div> 
+    </div>
+    <div class="counter-container">
+        <textarea id="counterArea" placeholder="Nalepi tekst ovde..."></textarea>
+    </div>
+    <div class="stats-grid counter-stats">
+      <div class="stat-box">
+        <div class="stat-label">Karaktera</div>
+        <div id="charCount" class="stat-value highlight">0</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Reči</div>
+        <div id="wordCount" class="stat-value highlight">0</div>
+      </div>
+    </div>
+</div>
+
+<div id="stopwatchView" class="sub-view" style="display: none;">
+    <div class="sub-header">
+      <button id="swBackBtn" class="secondary icon-btn">←</button>
+      <h1 id="status">SPREMAN</h1>
+      <div class="spacer"></div>
+    </div>
+    <div id="timer">00:00:00</div>
+    <div class="sw-main-controls">
+      <button id="start" class="prvi">START</button>
+      <button id="lap" class="drugi">LAP</button>
+      <button id="stop" class="treci">STOP</button>
+    </div>
+    <div class="section-label">TRENUTNO ZABELEŽENO</div>
+    <ul id="laps" class="current-laps-list compact"></ul>
+    <div class="history-section">
+        <div class="history-header">
+            <span>ISTORIJA LAJVOVA</span>
+            <button id="clear-history">OBRIŠI SVE</button>
+        </div>
+        <div id="history-list" class="styled-accordion"></div>
+    </div>
+</div>
+
+<div id="customModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <p>Da li sigurno želiš da obrišeš svu istoriju?</p>
+        <div class="modal-buttons">
+          <button id="cancelClear" class="secondary">OTKAŽI</button>
+          <button id="confirmClear" class="treci">OBRIŠI</button>
+        </div>
+    </div>
+</div>
+
+<div id="notesView" class="sub-view" style="display: none;">
+    <div class="sub-header">
+      <button id="backBtn" class="secondary icon-btn">←</button>
+      <h1>BELEŠKE</h1>
+      <div class="spacer"></div> 
+    </div>
+    <textarea id="noteArea" placeholder="Kreni da kucaš..."></textarea>
+    <div class="save-status">
+      <span id="saveIndicator">Sačuvano</span>
+    </div>
+</div>
+
+<div id="trackerView" class="sub-view" style="display: none;">
+    <div class="sub-header">
+      <button id="trackerBackBtn" class="secondary icon-btn">←</button>
+      <h1>WEBTIME TRACKER</h1>
+      <button id="trackerRefreshBtn" class="secondary icon-btn refresh-btn">↻</button>
+    </div>
+    <div class="tracker-controls">
+      <input type="date" id="trackerDate" class="modern-input">
+      <select id="trackerMode" class="modern-input">
+          <option value="day">Dnevni prikaz</option>
+          <option value="month">Mesečni prikaz</option>
+          <option value="all">Sve vreme</option>
+      </select>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div id="statTotalLabel" class="stat-label">Danas</div>
+        <div id="statTotal" class="stat-value highlight">0s</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Ovaj mesec</div>
+        <div id="statMonth" class="stat-value">0s</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Dnevni prosek</div>
+        <div id="statAvg" class="stat-value">0s</div>
+      </div>
+    </div>
+    <div id="trackerList"></div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

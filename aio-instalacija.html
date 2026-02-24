@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All In One | Instalacija</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#00ff88',
+                        bglight: '#f5f6f7',
+                        darkpanel: '#1e1e24',
+                        darkcard: '#2a2a32'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f6f7;
+            color: #1a1a24;
+        }
+        .step-number {
+            background: #00ff88;
+            color: black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        .instruction-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <!-- Navigacija -->
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+        <a href="allinone.html" class="flex items-center gap-2 group">
+            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition"></i>
+            <span class="font-bold text-gray-600">Nazad na početnu</span>
+        </a>
+        <div class="flex items-center gap-3">
+            <div class="grid grid-cols-2 gap-1 w-9 h-9">
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+            </div>
+            
+            <span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span>
+        </div>
+    </nav>
+
+    <!-- Glavna sekcija -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="text-center mb-16">
+            <h1 class="text-5xl font-extrabold mb-6">Instaliraj All In One</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Prati ove jednostavne korake kako bi ručno dodao ekstenziju u svoj Chrome pretraživač.
+            </p>
+        </div>
+
+        <!-- Dugme za preuzimanje -->
+        <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 text-center mb-20 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-brand"></div>
+            <i data-lucide="archive" class="w-16 h-16 text-brand mx-auto mb-6"></i>
+            <h2 class="text-3xl font-bold mb-4 text-darkpanel">Preuzmi ZIP Arhivu</h2>
+            <p class="mb-8 text-gray-500 font-medium">Verzija 1.0.0 • Veličina: 37.3 KB </p>
+            <a href="https://drive.google.com/uc?export=download&id=1ppsXNZHtF53WGIzHy_7vJi5hW-QPcLbm" class="inline-flex items-center gap-3 bg-brand text-black font-extrabold py-5 px-10 rounded-full text-xl hover:bg-green-400 transition shadow-2xl shadow-brand/40">
+                <i data-lucide="download-cloud"></i> Preuzmi fajl
+            </a>
+        </div>
+
+        <!-- Uputstvo korak po korak -->
+        <div class="space-y-8 mb-24">
+            <h2 class="text-3xl font-extrabold mb-10 flex items-center gap-3">
+                <i data-lucide="help-circle" class="text-brand"></i>
+                Kako instalirati?
+            </h2>
+
+            <!-- Korak 1 -->
+            <div class="instruction-card flex gap-6 items-start">
+                <div class="step-number shadow-lg shadow-brand/20">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Raspakuj arhivu</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nakon što preuzmeš ZIP fajl klikni desnim klikom na njega i izaberi opciju "Extract here" ili "Raspakuj ovde". Dobićeš folder koji sadrži sve fajlove ekstenzije.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Korak 2 -->
+            <div class="instruction-card flex gap-6 items-start">
+                <div class="step-number shadow-lg shadow-brand/20">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Otvorite Chrome Extensions</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        U svoj Chrome pretraživač u polje za adresu upiši sledeću komandu i pritisni Enter:
+                    </p>
+                    <code class="bg-gray-100 px-4 py-2 rounded-lg font-mono text-brand font-bold">chrome://extensions</code>
+                </div>
+            </div>
+
+            <!-- Korak 3 -->
+            <div class="instruction-card flex gap-6 items-start border-brand/30 border-2">
+                <div class="step-number shadow-lg shadow-brand/20">3</div>
+                <div class="w-full">
+                    <h3 class="text-2xl font-bold mb-2">Uključi Developer Mode</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        U gornjem desnom uglu stranice pronađi prekidač na kome piše "Developer mode" i pomeri ga na desno da bude aktivan.
+                    </p>
+                    <div class="bg-darkpanel p-4 rounded-xl flex items-center justify-between border border-gray-700">
+                        <span class="text-white text-sm font-semibold">Developer mode</span>
+                        <div class="w-10 h-5 bg-brand rounded-full relative">
+                            <div class="w-5 h-5 bg-white rounded-full absolute right-0 shadow-md"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Korak 4 -->
+            <div class="instruction-card flex gap-6 items-start">
+                <div class="step-number shadow-lg shadow-brand/20">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Učitaj folder</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Klikni na dugme "Load unpacked" koje se pojavilo u levom uglu. Pronađi i izaberi folder koji si malopre raspakovao. To je to. All In One je sada spreman za rad.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Box -->
+        <div class="bg-brand/10 border-2 border-brand/20 p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="bg-brand p-3 rounded-full">
+                    <i data-lucide="message-square" class="text-black"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg text-darkpanel">Treba ti pomoć?</h4>
+                    <p class="text-gray-600 text-sm">Piši nam ukoliko imaš problem sa instalacijom.</p>
+                </div>
+            </div>
+            <a href="mailto:support@milanwebportal.com" class="bg-darkpanel text-white font-bold py-3 px-6 rounded-xl hover:bg-black transition">Kontaktiraj nas</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darkpanel text-white py-12 mt-24">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+            <div class="grid grid-cols-2 gap-1 w-9 h-9">
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-tr-xl rounded-sm"></div>
+                
+                <div class="bg-[#00ff88] w-full h-full rounded-sm"></div>
+            </div>
+            
+            <span class="font-extrabold text-2xl tracking-tight text-[#00ff88] uppercase">All In One</span>
+        </div>
+            <div class="text-gray-400 text-sm">
+                &copy; 2026 Milan Web Portal. Sva prava zadržana.
+            </div>
+            <div class="flex gap-6">
+                <a href="privacy-aio.html" class="text-gray-400 hover:text-brand transition text-sm font-medium">Politika privatnosti</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
