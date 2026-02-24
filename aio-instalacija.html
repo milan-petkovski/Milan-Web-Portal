@@ -102,14 +102,31 @@
 
     <!-- Glavna sekcija -->
     <main class="max-w-4xl mx-auto px-6 py-12">
+    
+    <div class="md:hidden text-center py-10">
+        <div class="bg-white p-8 rounded-[2.5rem] shadow-xl border border-gray-100 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-brand"></div>
+            <i data-lucide="monitor" class="w-16 h-16 text-brand mx-auto mb-6"></i>
+            <h1 class="text-3xl font-extrabold mb-4 text-darkpanel">Otvori na računaru</h1>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Chrome ekstenzije nije moguće instalirati na mobilnim telefonima. Pošalji link sebi i završi instalaciju na svom PC-u ili Laptopu.
+            </p>
+            
+            <a href="mailto:?subject=Instaliraj All In One Ekstenziju&body=Otvori ovaj link na svom računaru da instaliraš ekstenziju: https://milanwebportal.com/aio-instalacija" 
+               class="inline-flex items-center gap-3 bg-brand text-black font-extrabold py-5 px-8 rounded-full text-lg w-full justify-center shadow-xl shadow-brand/30">
+                <i data-lucide="send"></i> Pošalji na PC
+            </a>
+        </div>
+    </div>
+
+    <div class="hidden md:block">
         <div class="text-center mb-16">
-            <h1 class="text-5xl font-extrabold mb-6">Instaliraj All In One</h1>
+            <h1 class="text-5xl font-extrabold mb-6 text-darkpanel">Instaliraj All In One</h1>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                 Prati ove jednostavne korake kako bi ručno dodao ekstenziju u svoj Chrome pretraživač.
             </p>
         </div>
 
-        <!-- Dugme za preuzimanje -->
         <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 text-center mb-20 relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-2 bg-brand"></div>
             <i data-lucide="archive" class="w-16 h-16 text-brand mx-auto mb-6"></i>
@@ -120,66 +137,24 @@
             </a>
         </div>
 
-        <!-- Uputstvo korak po korak -->
         <div class="space-y-8 mb-24">
-            <h2 class="text-3xl font-extrabold mb-10 flex items-center gap-3">
+            <h2 class="text-3xl font-extrabold mb-10 flex items-center gap-3 text-darkpanel">
                 <i data-lucide="help-circle" class="text-brand"></i>
                 Kako instalirati?
             </h2>
 
-            <!-- Korak 1 -->
-            <div class="instruction-card flex gap-6 items-start">
-                <div class="step-number shadow-lg shadow-brand/20">1</div>
+            <div class="instruction-card flex gap-6 items-start bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <div class="step-number bg-brand text-black w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 shadow-lg shadow-brand/20">1</div>
                 <div>
-                    <h3 class="text-2xl font-bold mb-2">Raspakuj arhivu</h3>
+                    <h3 class="text-2xl font-bold mb-2 text-darkpanel">Raspakuj arhivu</h3>
                     <p class="text-gray-600 leading-relaxed">
                         Nakon što preuzmeš ZIP fajl klikni desnim klikom na njega i izaberi opciju "Extract here" ili "Raspakuj ovde". Dobićeš folder koji sadrži sve fajlove ekstenzije.
                     </p>
                 </div>
             </div>
 
-            <!-- Korak 2 -->
-            <div class="instruction-card flex gap-6 items-start">
-                <div class="step-number shadow-lg shadow-brand/20">2</div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">Otvorite Chrome Extensions</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        U svoj Chrome pretraživač u polje za adresu upiši sledeću komandu i pritisni Enter:
-                    </p>
-                    <code class="bg-gray-100 px-4 py-2 rounded-lg font-mono text-brand font-bold">chrome://extensions</code>
-                </div>
             </div>
 
-            <!-- Korak 3 -->
-            <div class="instruction-card flex gap-6 items-start border-brand/30 border-2">
-                <div class="step-number shadow-lg shadow-brand/20">3</div>
-                <div class="w-full">
-                    <h3 class="text-2xl font-bold mb-2">Uključi Developer Mode</h3>
-                    <p class="text-gray-600 leading-relaxed mb-4">
-                        U gornjem desnom uglu stranice pronađi prekidač na kome piše "Developer mode" i pomeri ga na desno da bude aktivan.
-                    </p>
-                    <div class="bg-darkpanel p-4 rounded-xl flex items-center justify-between border border-gray-700">
-                        <span class="text-white text-sm font-semibold">Developer mode</span>
-                        <div class="w-10 h-5 bg-brand rounded-full relative">
-                            <div class="w-5 h-5 bg-white rounded-full absolute right-0 shadow-md"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Korak 4 -->
-            <div class="instruction-card flex gap-6 items-start">
-                <div class="step-number shadow-lg shadow-brand/20">4</div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">Učitaj folder</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Klikni na dugme "Load unpacked" koje se pojavilo u levom uglu. Pronađi i izaberi folder koji si malopre raspakovao. To je to. All In One je sada spreman za rad.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Support Box -->
         <div class="bg-brand/10 border-2 border-brand/20 p-8 rounded-[2rem] flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center gap-4">
                 <div class="bg-brand p-3 rounded-full">
@@ -192,10 +167,11 @@
             </div>
             <a href="mailto:contact@milanwebportal.com" class="bg-darkpanel text-white font-bold py-3 px-6 rounded-xl hover:bg-black transition">Kontaktiraj nas</a>
         </div>
+    </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-darkpanel text-white py-12 mt-24">
+    <footer class="bg-darkpanel text-white py-12">
     <a href="allinone.html">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-3">
