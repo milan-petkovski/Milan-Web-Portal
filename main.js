@@ -192,7 +192,8 @@ if (/index|projects|\/$/.test(window.location.href)) {
       'frosty-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Frosty/README.md',
       'przionica-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Przionica/README.md',
       'nexus-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Nexus/README.md',
-      'mipex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Mipex/README.md'
+      'mipex-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Milan-Web-Portal/refs/heads/main/projects/Mipex/README.md',
+      'sinapis-project-button': 'https://raw.githubusercontent.com/milan-petkovski/Sinapis/refs/heads/main/README.md'
 
     };
 

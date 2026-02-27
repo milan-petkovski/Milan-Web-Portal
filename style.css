@@ -1236,7 +1236,7 @@ header ul li a#icon i {
     mask-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, #000 15%, #000 85%, rgba(0,0,0,0) 100%); 
 }
 .clients .card {
-    max-width: 900px;
+    max-width: 1200px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1838,7 +1838,6 @@ body.popup-open {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   text-align: center;
   transition: all 0.5s ease;
-  cursor: pointer;
 }
 .about .item:hover {
   border-color: var(--kafa);
@@ -3124,5 +3123,77 @@ body.popup-open {
     }
     #payment img {
         width: 50px;
+    }
+}
+
+.aio-promo {
+    border: 1px solid #00ff88;
+    border-radius: 20px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #ffffff0d, #ffffff05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+    text-align: left;
+}
+.aio-promo-content h2 {
+    color: #00ff88;
+    font-size: 23px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.aio-promo-content p {
+    color: var(--siva);
+    font-size: 17px;
+    margin-bottom: 25px;
+    max-width: 80%;
+}
+
+.aio-btn {
+    background-color: #00ff88;
+    color: var(--crna);
+    padding: 12px 24px;
+    font-size: 13px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.aio-btn:hover {
+    background-color: var(--bela);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+    transform: translateY(-3px);
+}
+
+.aio-promo-image img {
+    width: 120px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@media (max-width: 768px) {
+    .aio-promo {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+        margin: 40px 5%;
+    }
+    .aio-promo-content p {
+        max-width: 100%;
+    }
+    .aio-promo-image {
+        margin-top: 30px;
     }
 }
