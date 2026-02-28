@@ -1,22 +1,23 @@
 //JAVASCRIPT
 
-//#region - HVATAC GRESAKA
-let hasError = false;
-window.onerror = function(message, source, lineno, colno, error) {
-    hasError = true;
-    console.error("DOSLO JE DO GREŠKE:");
-    console.error("IZVOR: " + source);
-    console.error("LINIJA: " + lineno);
-    console.error("KOLONA: " + colno);
-    console.error("GREŠKA: " + error);
-    return true;
-};
-//#endregion
-
 //#region - COPY TEXT
 function copyText() {
     navigator.clipboard.writeText("contact@milanwebportal.com");
-    alert("The email has been copied to the temporary memory!");
+    
+    // Kreiranje elementa
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerHTML = `<iconify-icon icon="solar:check-circle-bold"></iconify-icon> Email je uspešno kopiran!`;
+    document.body.appendChild(toast);
+
+    // Animacija ulaska
+    setTimeout(() => toast.classList.add("show"), 10);
+
+    // Animacija izlaska i brisanje
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 600);
+    }, 2500);
 }
 //#endregion
 
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //#endregion
 
 //#region - HEADER
-if (/projects|index|roadmap|payment|\/$/.test(window.location.href)) {
+if (/projects|index|workflow|payment|\/$/.test(window.location.href)) {
 const header = document.querySelector("header");
 const placeholder = document.getElementById("header-placeholder");
 const headerHeight = header.offsetHeight;
@@ -139,7 +140,7 @@ window.addEventListener("scroll", () => {
 //#endregion
 
 //#region - BACK TO TOP
-if (/projects|index|roadmap|payment|\/$/.test(window.location.href)) {
+if (/projects|index|workflow|payment|\/$/.test(window.location.href)) {
 const progressCircle = document.querySelector('#progress circle');
 const progressWrapper = document.querySelector('#back-to-top');
 const radius = progressCircle.r.baseVal.value;
@@ -349,8 +350,8 @@ if (/linktree|\/$/.test(window.location.href)) {
 
     window.shareContent = async function() {
       const shareData = {
-        title: 'Milan Petkovski - Junior Full-Stack Web Developer',
-        text: 'Check out my Linktree!',
+        title: 'Milan Petkovski - 🚀 Pomažem biznisima da povećaju prodaju uz moderne veb-sajtove',
+        text: 'Pogledaj moj linktree!',
         url: window.location.href,
         files: [],
       };
@@ -426,8 +427,8 @@ if (budgetInput) {
 }
 //#endregion
 
-//#region - ROADMAP
-if (/roadmap/.test(window.location.pathname)) {
+//#region - WORKFLOW
+if (/workflow/.test(window.location.pathname)) {
 async function fetchCommits(username, repo) {
     const url = `https://api.github.com/repos/${username}/${repo}/commits?per_page=100&page=1`;
     const response = await fetch(url);

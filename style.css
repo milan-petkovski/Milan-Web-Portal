@@ -112,6 +112,9 @@ li{
     transition: transform 0.3s ease-out;
     transform-origin: center;
 }
+.workflow-intro .section-title::after {
+    display: none;
+}
 .section-title i {
     color: var(--kafa);
     margin-left: 10px;
@@ -1677,6 +1680,31 @@ footer .cookie button{
     width: auto;
     padding: 8px 16px;
 }
+.toast {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--kafa); 
+    color: #13131a;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Ekstremno jaka tamna senka i široki sjaj u boji kafe */
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.9), 0 0 50px rgba(211, 173, 127, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    white-space: nowrap;
+}
+
+.toast.show {
+    bottom: 50px; 
+}
 @media (max-width: 768px) {
     #mreze iconify-icon {
         font-size: 40px;
@@ -2837,6 +2865,8 @@ body.popup-open {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 .linktree .container {
     background: rgba(50, 50, 50, 0.25);
@@ -2877,7 +2907,7 @@ body.popup-open {
 .linktree .container p {
     color: var(--siva);
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .linktree .container .links {
   display: flex;
@@ -3017,7 +3047,7 @@ body.popup-open {
     transform: scale(1.1);
 }
 .linktree .container #credit{
-    margin-top: 30px;
+    margin-top: 20px;
     font-size: 1.6rem;
     margin-bottom: 0;
 }
@@ -3140,6 +3170,11 @@ body.popup-open {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     transition: 0.5s;
     text-align: left;
+}
+.aio-promo:hover {
+  border-color: #00ff88;
+  box-shadow: 0 15px 30px rgb(0, 255, 136, 0.3);
+  background: #00130a;
 }
 .aio-promo-content h2 {
     color: #00ff88;
