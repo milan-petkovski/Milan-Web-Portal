@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/3JxXsBZ5/Przionica.png" width="500px" alt="Przionica Screenshot">
+  <img src="https://i.postimg.cc/TPgRGBnZ/website17.jpg" width="500px" alt="Przionica Screenshot">
 </div>  <br>
 
 <p align="center">
