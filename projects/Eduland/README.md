@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/vBRhFZp8/eduland.png" width="500px" alt="Eduland Screenshot">
+  <img src="https://i.postimg.cc/q7yk0W2m/website11.jpg" width="500px" alt="Eduland Screenshot">
 </div>  
 <br>
 
