@@ -429,46 +429,73 @@ if (budgetInput) {
 
 //#region - WORKFLOW
 if (/workflow/.test(window.location.pathname)) {
-async function fetchCommits(username, repo) {
-    const url = `https://api.github.com/repos/${username}/${repo}/commits?per_page=100&page=1`;
-    const response = await fetch(url);
-
-    if (!response.ok) {
-        throw new Error('Error loading commits');
+    async function fetchAllCommits(username) {
+        const reposUrl = `https://api.github.com/users/${username}/repos?type=public&per_page=100`;
+        const reposResponse = await fetch(reposUrl);
+        
+        if (!reposResponse.ok) {
+            throw new Error('Greska pri ucitavanju repozitorijuma');
+        }
+        
+        const repos = await reposResponse.json();
+        let allCommits = [];
+        
+        const fetchPromises = repos.map(async (repo) => {
+            const commitsUrl = `https://api.github.com/repos/${username}/${repo.name}/commits?author=${username}&per_page=10`;
+            const response = await fetch(commitsUrl);
+            if (response.ok) {
+                const commits = await response.json();
+                return commits.map(c => ({
+                    ...c,
+                    repoName: repo.name
+                }));
+            }
+            return [];
+        });
+        
+        const results = await Promise.all(fetchPromises);
+        
+        results.forEach(repoCommits => {
+            allCommits = allCommits.concat(repoCommits);
+        });
+        
+        allCommits.sort((a, b) => new Date(b.commit.author.date) - new Date(a.commit.author.date));
+        
+        return allCommits.slice(0, 30);
     }
 
-    const commits = await response.json();
-    return commits;
-}
+    function displayRoadmap(commits) {
+        const list = document.getElementById('timeline-list');
 
-function displayRoadmap(commits) {
-    const list = document.getElementById('timeline-list');
+        if (commits.length === 0) {
+            list.innerHTML = '<li>Nema pronadjenih commitova.</li>';
+            return;
+        }
 
-    list.innerHTML = commits.map((commit, index) => `
-        <li class="${index % 2 === 0 ? 'odd' : 'even'}">
-            <div class="timeline-content">
-              <span class="date">${new Date(commit.commit.author.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).replace(/(\d{2}) (\w+) (\d{4})/, '$1. $2 $3.')}</span>
-              <h1>${commit.commit.message.split('\n')[0]}</h1>
-              <p>Autor: ${commit.commit.author.name}</p>
-              <div class="github-link-container">
-                <iconify-icon icon="skill-icons:github-dark" class="github-icon"></iconify-icon>
-                <a href="${commit.html_url}" target="_blank" class="github-link">Pogledaj na GitHub-u</a>
-              </div>
-            </div>
-        </li>
-    `).join('');
-}
+        list.innerHTML = commits.map((commit, index) => `
+            <li class="${index % 2 === 0 ? 'odd' : 'even'}">
+                <div class="timeline-content">
+                  <span class="date">${new Date(commit.commit.author.date).toLocaleDateString('en-GB', { timeZone: 'Europe/Belgrade', day: '2-digit', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }).replace(/(\d{2}) (\w+) (\d{4})/, '$1. $2 $3.')}</span>
+                  <h1>${commit.commit.message.split('\n')[0]}</h1>
+                  <p>Projekat: <strong style="color: var(--kafa);">${commit.repoName}</strong></p>
+                  <p>Autor: ${commit.commit.author.name}</p>
+                  <div class="github-link-container">
+                    <iconify-icon icon="skill-icons:github-dark" class="github-icon"></iconify-icon>
+                    <a href="${commit.html_url}" target="_blank" class="github-link">Pogledaj na GitHubu</a>
+                  </div>
+                </div>
+            </li>
+        `).join('');
+    }
 
-// Tvoj GitHub repo
-const username = 'milan-petkovski';
-const repo = 'Milan-Web-Portal';
+    const username = 'milan-petkovski';
 
-fetchCommits(username, repo)
-    .then(displayRoadmap)
-    .catch(err => {
-        document.getElementById('timeline-list').innerHTML ='<li>Greška pri učitavanju komitova.</li>';
-        console.error(err);
-    });
+    fetchAllCommits(username)
+        .then(displayRoadmap)
+        .catch(err => {
+            document.getElementById('timeline-list').innerHTML ='<li>Greska pri ucitavanju commitova. Sacekaj malo zbog GitHub limita.</li>';
+            console.error(err);
+        });
 }
 //#endregion
 

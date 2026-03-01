@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lexend', sans-serif;
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-decoration: none;
     outline: none;
     -webkit-tap-highlight-color: transparent;
@@ -45,7 +46,6 @@ html{
     border-radius: 30px;
     background-color: var(--bela);
 }
-
 /* ------------- OSTALO ------------- */
 section{
     padding: 32px 7%;
@@ -2918,7 +2918,6 @@ body.popup-open {
   display: flex;
   align-items: center;
   padding: 12px 18px;
-  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
@@ -3014,7 +3013,6 @@ body.popup-open {
     align-items: center;
     justify-content: center;
     padding: 12px 18px;
-    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
