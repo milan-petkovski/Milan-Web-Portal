@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/505yBGHj/Frosty.png" width="500px" alt="Frosty Screenshot">
+  <img src="https://i.postimg.cc/43VJZjpj/website16.jpg" width="500px" alt="Frosty Screenshot">
 </div>  <br>
 
 <p align="center">
