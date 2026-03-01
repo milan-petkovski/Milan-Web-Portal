@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/WpGxGM9W/Mipex.png" width="500px" alt="Mipex Screenshot">
+  <img src="https://i.postimg.cc/mrCbRK76/website14.jpg" width="500px" alt="Mipex Screenshot">
 </div>  <br>
 
 <p align="center">
