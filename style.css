@@ -1946,6 +1946,7 @@ body.popup-open {
   }
   .about .zavrsni {
     font-size: 1.5em;
+    margin-top: 15px;
   }
 }
 @media (max-width: 480px) {
@@ -3225,7 +3226,6 @@ body.popup-open {
         flex-direction: column;
         text-align: center;
         padding: 30px 20px;
-        margin: 40px 5%;
     }
     .aio-promo-content p {
         max-width: 100%;
