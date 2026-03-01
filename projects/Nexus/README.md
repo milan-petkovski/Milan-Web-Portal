@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/B6QgMPW3/nexus.png" width="500px" alt="Nexus Screenshot">
+  <img src="https://i.postimg.cc/pdz2x3K7/website15.jpg" width="500px" alt="Nexus Screenshot">
 </div>  
 <br>
 
