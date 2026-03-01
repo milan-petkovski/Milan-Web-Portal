@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/nVX9PNGN/milanwebportal.png" width="500px" alt="Milan Web Portal Screenshot">
+  <img src="https://i.postimg.cc/BndqrJPH/website1.jpg" width="500px" alt="Milan Web Portal Screenshot">
 </div>  
 <br>
 
