@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/CKZ0rcgT/tourly.jpg" width="500px" alt="Tourly Screenshot">
+  <img src="https://i.postimg.cc/fbmwZ1YC/website9.jpg" width="500px" alt="Tourly Screenshot">
 </div>  
 <br>
 
