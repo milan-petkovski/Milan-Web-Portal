@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/SxvVdrdM/grilli.jpg" width="500px" alt="Grilli Screenshot">
+  <img src="https://i.postimg.cc/tgWXy8FN/website7.jpg" width="500px" alt="Grilli Screenshot">
 </div>  
 <br>
 
