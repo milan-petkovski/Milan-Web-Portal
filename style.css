@@ -324,9 +324,13 @@ header.scrolled .logo{
     display: flex;
 }
 header .logo img {
-    width: 20%;
+    width: clamp(220px, 20%, 380px);
+    height: auto;
     filter: drop-shadow(0 0 0.5rem var(--kafa));
     transition: width 0.5s ease, transform 0.5s ease;
+}
+header.scrolled .logo img {
+    width: clamp(160px, 12vw, 220px);
 }
 header.scrolled .logo img {
     width: 50%;
