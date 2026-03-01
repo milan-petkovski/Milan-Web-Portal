@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-  <img src="https://i.postimg.cc/VNzMjbQC/gamex.png" width="500px" alt="GameX Screenshot">
+  <img src="https://i.postimg.cc/cJwsZPfT/website10.jpg" width="500px" alt="GameX Screenshot">
 </div>  
 <br>
 
